@@ -1,6 +1,7 @@
-import spacy 
 from nltk.corpus import wordnet as wn
+import spacy 
 import streamlit as st
+from textblob import TextBlob
 
 # Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
@@ -12,7 +13,7 @@ def get_synonyms(word):
         for lemma in syn.lemmas():
             synonym = lemma.name().replace("_"," ").lower()
             if synonym != word:
-                synonym.add(synonym)
+                synonyms.add(synonym)
     return list(synonyms)
 
 def normalise_text(text):
@@ -25,6 +26,27 @@ def expand_with_synonyms(words):
         expanded.update(get_synonyms(word))
     return expanded
 
+def build_known_vocab(careers):
+    vocab = set()
+    for career in careers:
+        vocab.update(map(str.lower, career["hard_skills"]))
+        vocab.update(map(str.lower, career["soft_skills"]))
+        vocab.update(map(str.lower, career["tags"]))
+    return vocab
+
+def correct_spelling(words, known_vocab=None):
+    corrected=[]
+    for word in words:
+        # Add words in KNOWN_VOCAB
+        if known_vocab and word.lower() in known_vocab:
+            corrected.append(word)
+        # Ignore short words
+        elif len(word) < 3:
+            corrected.append(word)
+        else:
+            corrected_word = str(TextBlob(word).correct())
+            corrected.append(corrected_word)
+    return corrected
 
 
 st.title("Waku - Career Recommender")
@@ -113,7 +135,7 @@ user_data["alt_education"] = st.multiselect("Have you completed any alternative 
 # Job info
 user_data["previous_experience"] = st.radio("Do you have any previous or current work experience?", ["Yes", "No"], index=None)
 if user_data["previous_experience"] == "Yes":
-    st.write("Please tell us about your previous or current work experience (Optional but recommended):")
+    st.write("Please tell us about your previous or current work experience from past to present. (Optional but recommended):")
     roles = st.multiselect("Fields or roles you've worked in:", options=positions, accept_new_options=True)
     experience_list = []
 
@@ -255,6 +277,9 @@ careers = [
     }
 ]
 
+# Initialise vocab
+KNOWN_VOCAB = build_known_vocab(careers)
+
 # Basic matching logic
 def career_match(user_data, career):
     score = 0
@@ -271,25 +296,21 @@ def career_match(user_data, career):
         return [s.strip() for s in user_data.get(field, "").split(",") if s.strip()]
 
     # Match hard skills
-    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data["hard_skills_text"])
-    hard_matches = set(career["hard_skills"]).intersection(set([s.strip() for s in user_hard_skills if s.strip()]))
-    score += weights["hard_skills"] * len(hard_matches)
-
+    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data.get(["hard_skills_text", ""]))
     normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
-    expanded_hard_skills = expand_with_synonyms(normalised_hard_skills)
+    corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
+    expanded_hard_skills = expand_with_synonyms(corrected_hard_skills)
 
-    hard_matches = set(career["hard_skills"]).intersection(expanded_hard_skills)
+    hard_matches = set(map(str.lower, career["hard_skills"])).intersection(expanded_hard_skills)
     score += weights["hard_skills"] * len(hard_matches)
 
     # Soft skills match
-    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data["soft_skills_text"])
-    soft_matches = set(career["soft_skills"]).intersection(set([s.strip() for s in user_soft_skills if s.strip()]))
-    score += weights["soft_skills"] * len(soft_matches)
-
+    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get(["soft_skills_text"], ""))
     normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
-    expanded_soft_skills = expand_with_synonyms(normalised_soft_skills)
+    corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
+    expanded_soft_skills = expand_with_synonyms(corrected_soft_skills)
 
-    soft_matches = set(career["soft_skills"]).intersection(expanded_soft_skills)
+    soft_matches = set(map(str.lower, career["soft_skills"])).intersection(expanded_soft_skills)
     score += weights["soft_skills"] * len(soft_matches)
 
     # Industry match
@@ -334,19 +355,26 @@ def career_match(user_data, career):
 
     # Tag/Personality match
     combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
-    tag_matches = [tag for tag in career["tags"] if tag.lower() in combined_text]
+    normalised_text = normalise_text(combined_text)
+    corrected_text = correct_spelling(normalised_text, KNOWN_VOCAB)
+    expanded_text = expand_with_synonyms(corrected_text)
+
+    tag_matches = [tag for tag in career["tags"] if tag.lower() in expanded_text]
     score += weights["tags"] * len(tag_matches)
 
     # Dislikes match
     negative_text = f"{user_data.get("dislikes", "")}".lower()
-    negative_matches = [tag for tag in career["tags"] if tag.lower() in negative_text]
+    normalised_negative_text = normalise_text(negative_text)
+    corrected_negative_text = correct_spelling(normalised_negative_text, KNOWN_VOCAB)
+    expanded_negative_text = expand_with_synonyms(corrected_negative_text)
+
+    negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
     score -= weights["tags"] * len(negative_matches)
 
     # Job Satisfaction match
     job_satisfaction = user_data.get("job_satisfaction", 5)
     job_satisfaction = int(job_satisfaction)
     roles = [experience["role"] for experience in user_data.get("experience_details", [])]
-    yoe = [experience["yoe"] for experience in user_data.get("experience_details", [])] # Not currently in use
 
     # If career matches the user's current job (Assuming they list their jobs from past to present).
     if roles:
