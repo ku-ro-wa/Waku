@@ -48,6 +48,21 @@ def correct_spelling(words, known_vocab=None):
             corrected.append(corrected_word)
     return corrected
 
+def parse_alt_education(entry):
+    try:
+        ed_type, topic = entry.split(":", 1)
+        return ed_type.strip(), topic.strip()
+    except ValueError:
+        return "Other", entry.strip()
+
+def relevant_to_career(topic, career):
+    topic_lower = topic.lower()
+    fields_to_match = (
+        career["hard_skills"]
+        + career["related_majors"]
+        + career.get("tags", [])
+    )
+    return any(word.lower() in topic_lower for word in fields_to_match)
 
 st.title("Waku - Career Recommender")
 
@@ -63,25 +78,31 @@ industries = [
 ]
 
 other_education = [
-    "Cert: AWS Certified Solutions Architect",
-    "Cert: Google Data Analytics Certificate",
-    "Cert: PMP – Project Management Professional",
-    "Cert: CompTIA Security+",
-    "Cert: First Aid / CPR",
-    "Bootcamp: Full-Stack Web Development",
-    "Bootcamp: Data Science Immersive",
-    "Bootcamp: Cybersecurity",
-    "Bootcamp: UI/UX Design",
-    "Trade: Electrician Training",
-    "Trade: Welding Certification",
-    "Trade: Automotive Technician Training",
-    "Vocational: CNA Certification",
-    "Vocational: Real Estate License",
-    "Vocational: Massage Therapy Certification",
-    "Other: Coursera / edX Certificates",
-    "Other: Udacity Nanodegree",
-    "Other: Google Career Certificates"
+    "Cert: Google Data Analytics Certificate",           # → Data Scientist
+    "Cert: UX Design Professional Certificate",           # → UX Designer
+    "Cert: First Aid / CPR",                              # → Registered Nurse
+    "Cert: Teaching Certification",                       # → High School Teacher
+    "Trade: Electrician Training",                        # → Electrician
+    "Cert: Digital Marketing Certificate",                # → Marketing Manager
+    "Cert: Culinary Arts Certificate",                    # → Chef
+    "Other: Law Prep Program",                            # → Lawyer (minimal alt-ed support)
+    "Cert: Human Services Certificate",                   # → Social Worker
+    "Cert: Adobe Creative Suite Certification",           # → Graphic Designer
 ]
+
+alt_ed_topic_to_careers = {
+    "Google Data Analytics Certificate": ["Data Scientist"],
+    "UX Design Professional Certificate": ["UX Designer"],
+    "First Aid / CPR": ["Registered Nurse"],
+    "Teaching Certification": ["High School Teacher"],
+    "Electrician Training": ["Electrician"],
+    "Digital Marketing Certificate": ["Marketing Manager"],
+    "Culinary Arts Certificate": ["Chef"],
+    "Law Prep Program": ["Lawyer"],
+    "Human Services Certificate": ["Social Worker"],
+    "Adobe Creative Suite Certification": ["Graphic Designer"]
+}
+
 
 positions = [
     "Software Developer", "UX Designer", "Data Analyst", "IT Support", "Teacher",
@@ -125,12 +146,15 @@ user_data["interested_fields"] = st.multiselect("Are there specific industries y
 # Education info
 user_data["in_college"] = st.radio("Have you gone or are you currently in college?", ["Yes", "No"], index=None)
 if user_data["in_college"] == "Yes":
+    user_data["education_level"] = "bachelor"
     user_data["college_major"] = st.multiselect("What did you study or what are you studying in college?", options=industries, accept_new_options=True)
     user_data["in_postgrad"] = st.radio("Have you done or are you currently pursuing graduate studies?", ["Yes", "No"], index=None)
     if user_data["in_postgrad"] == "Yes":
+        user_data["education_level"] = "master+"
         user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=industries, accept_new_options=True)
 
 user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=other_education, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
+parsed_alt_education = [parse_alt_education(e) for e in user_data.get("alt_education", [])] # Parse the user's alt education
 
 # Job info
 user_data["previous_experience"] = st.radio("Do you have any previous or current work experience?", ["Yes", "No"], index=None)
@@ -277,6 +301,8 @@ careers = [
     }
 ]
 
+score_breakdown = []
+
 # Initialise vocab
 KNOWN_VOCAB = build_known_vocab(careers)
 
@@ -293,10 +319,13 @@ def career_match(user_data, career):
     }
 
     def parse_text_list(field):
-        return [s.strip() for s in user_data.get(field, "").split(",") if s.strip()]
+        value = user_data.get(field, "")
+        if not isinstance(value, str):
+            return []
+        return [s.strip() for s in value.split(",") if s.strip()]
 
     # Match hard skills
-    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data.get(["hard_skills_text", ""]))
+    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data.get("hard_skills_text", ""))
     normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
     corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
     expanded_hard_skills = expand_with_synonyms(corrected_hard_skills)
@@ -305,7 +334,7 @@ def career_match(user_data, career):
     score += weights["hard_skills"] * len(hard_matches)
 
     # Soft skills match
-    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get(["soft_skills_text"], ""))
+    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get("soft_skills_text", ""))
     normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
     corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
     expanded_soft_skills = expand_with_synonyms(corrected_soft_skills)
@@ -346,12 +375,28 @@ def career_match(user_data, career):
         print("User has not selected a postgraduate major")
 
     # Alt education match
+    for ed_type, topic in parsed_alt_education:
+        if ed_type in career["alt_education"]:
+            score += weights["alt_education"]
+        
+        if career["title"] in alt_ed_topic_to_careers.get(topic, []):
+            score += weights["alt_education"] * 1.2
+
+        elif relevant_to_career(topic, career):
+            score += weights["alt_education"] * 0.8
+
     try:
         alt_edu = user_data.get("alt_education", [])
         if set(alt_edu).intersection(set(career.get("alt_education", []))):
             score += weights["alt_education"]
     except AttributeError:
         print("User has not selected any alternate education")
+
+    # Education level match
+    user_education = user_data.get("education_level", "").lower()
+    if user_education in [ed.lower() for ed in career.get("required_education", [])]:
+        score += weights["education"]
+     
 
     # Tag/Personality match
     combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
@@ -393,6 +438,24 @@ def career_match(user_data, career):
             multiplier = max([level_weights.get(level, 0) for level in levels], default=0.5)
             score += min(int(exp["yoe"]), 15) * multiplier
 
+    score_breakdown.append({
+        "score": score,
+        "matches": {
+            "hard_skills": hard_matches,
+            "soft_skills": soft_matches,
+            "industry_match": field_matches,
+            "major_match": major_matches,
+            "postgrad_match": postgrad_matches,
+            "alt_education_match": alt_edu,
+            "education_level_match": user_education,
+            "tags": tag_matches,
+            "negative_tags": negative_matches,
+            "job_satisfaction_match": job_satisfaction  
+        }
+    })
+
+    print(score_breakdown)
+
     return score
 
 ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True)
@@ -401,3 +464,4 @@ ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), rever
 st.subheader("Top Career Matches:")
 for i, career in enumerate(ranked_careers[:3]):
     st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
+    
