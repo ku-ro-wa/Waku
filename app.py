@@ -1,4 +1,5 @@
 from nltk.corpus import wordnet as wn
+from sentence_transformers import SentenceTransformer, util
 import spacy 
 import streamlit as st
 from textblob import TextBlob
@@ -6,7 +7,23 @@ from textblob import TextBlob
 # Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
 
+# Load sentence-transformers model
+@st.cache_resource
+def load_st_model():
+    return SentenceTransformer("all-MiniLM-L6-v2")
+
+model = load_st_model
+
 # Utility functions
+def get_synonyms_filtered(word, pos='n'):
+    synonyms = set()
+    for syn in wn.synsets(word, pos=pos):   # 'n' noun, 'v' verb
+        for lemma in syn.lemmas():
+            name = lemma.name().replace("_", " ").lower()
+            if name != word:
+                synonyms.add(name)
+    return list(synonyms)
+
 def get_synonyms(word):
     synonyms = set()
     for syn in wn.synsets(word):
@@ -20,10 +37,10 @@ def normalise_text(text):
     doc = nlp(text.lower())
     return [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
 
-def expand_with_synonyms(words):
+def expand_with_synonyms(words, pos='n'):
     expanded = set(words)
     for word in words:
-        expanded.update(get_synonyms(word))
+        expanded.update(get_synonyms_filtered(word, pos))
     return expanded
 
 def build_known_vocab(careers):
@@ -63,6 +80,9 @@ def relevant_to_career(topic, career):
         + career.get("tags", [])
     )
     return any(word.lower() in topic_lower for word in fields_to_match)
+
+
+
 
 st.title("Waku - Career Recommender")
 
@@ -328,7 +348,8 @@ def career_match(user_data, career):
     user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data.get("hard_skills_text", ""))
     normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
     corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
-    expanded_hard_skills = expand_with_synonyms(corrected_hard_skills)
+    # Hard skills - nouns
+    expanded_hard_skills = expand_with_synonyms(corrected_hard_skills, 'n')
 
     hard_matches = set(map(str.lower, career["hard_skills"])).intersection(expanded_hard_skills)
     score += weights["hard_skills"] * len(hard_matches)
@@ -337,7 +358,8 @@ def career_match(user_data, career):
     user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get("soft_skills_text", ""))
     normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
     corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
-    expanded_soft_skills = expand_with_synonyms(corrected_soft_skills)
+    # Soft skills - nouns
+    expanded_soft_skills = expand_with_synonyms(corrected_soft_skills, 'n')
 
     soft_matches = set(map(str.lower, career["soft_skills"])).intersection(expanded_soft_skills)
     score += weights["soft_skills"] * len(soft_matches)
@@ -402,16 +424,20 @@ def career_match(user_data, career):
     combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
     normalised_text = normalise_text(combined_text)
     corrected_text = correct_spelling(normalised_text, KNOWN_VOCAB)
-    expanded_text = expand_with_synonyms(corrected_text)
+    # Combine noun and verb expansions
+    expanded_text_nouns = expand_with_synonyms(corrected_text, 'n')
+    expanded_text_verbs = expand_with_synonyms(corrected_text, 'v')
 
-    tag_matches = [tag for tag in career["tags"] if tag.lower() in expanded_text]
-    score += weights["tags"] * len(tag_matches)
+    tag_matches_n = [tag for tag in career["tags"] if tag.lower() in expanded_text_nouns]
+    tag_matches_v = [tag for tag in career["tags"] if tag.lower() in expanded_text_verbs]
+    score += weights["tags"] * (0.8 * len(tag_matches_n) + 0.4 * len(tag_matches_v))
 
     # Dislikes match
     negative_text = f"{user_data.get("dislikes", "")}".lower()
     normalised_negative_text = normalise_text(negative_text)
     corrected_negative_text = correct_spelling(normalised_negative_text, KNOWN_VOCAB)
-    expanded_negative_text = expand_with_synonyms(corrected_negative_text)
+    # Negative matches - verbs
+    expanded_negative_text = expand_with_synonyms(corrected_negative_text, 'v')
 
     negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
     score -= weights["tags"] * len(negative_matches)
@@ -448,7 +474,8 @@ def career_match(user_data, career):
             "postgrad_match": postgrad_matches,
             "alt_education_match": alt_edu,
             "education_level_match": user_education,
-            "tags": tag_matches,
+            "tags_n": tag_matches_n,
+            "tags_v": tag_matches_v,
             "negative_tags": negative_matches,
             "job_satisfaction_match": job_satisfaction  
         }
