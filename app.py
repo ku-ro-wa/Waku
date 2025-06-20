@@ -12,23 +12,14 @@ nlp = spacy.load("en_core_web_sm")
 def load_st_model():
     return SentenceTransformer("all-MiniLM-L6-v2")
 
-model = load_st_model
+model = load_st_model()
 
 # Utility functions
-def get_synonyms_filtered(word, pos='n'):
+def get_synonyms(word, pos='n'):
     synonyms = set()
     for syn in wn.synsets(word, pos=pos):   # 'n' noun, 'v' verb
         for lemma in syn.lemmas():
-            name = lemma.name().replace("_", " ").lower()
-            if name != word:
-                synonyms.add(name)
-    return list(synonyms)
-
-def get_synonyms(word):
-    synonyms = set()
-    for syn in wn.synsets(word):
-        for lemma in syn.lemmas():
-            synonym = lemma.name().replace("_"," ").lower()
+            synonym = lemma.name().replace("_", " ").lower()
             if synonym != word:
                 synonyms.add(synonym)
     return list(synonyms)
@@ -40,7 +31,7 @@ def normalise_text(text):
 def expand_with_synonyms(words, pos='n'):
     expanded = set(words)
     for word in words:
-        expanded.update(get_synonyms_filtered(word, pos))
+        expanded.update(get_synonyms(word, pos))
     return expanded
 
 def build_known_vocab(careers):
@@ -81,7 +72,29 @@ def relevant_to_career(topic, career):
     )
     return any(word.lower() in topic_lower for word in fields_to_match)
 
+def embed_user_input_and_tags(user_input, tags, model, threshold=0.5):
+    user_input_embeddings = model.encode(user_input, convert_to_tensor=True)
+    tags_embeddings = model.encode(tags, convert_to_tensor=True)
 
+    # Compute using cosine similarity (default)
+    similarities = util.cos_sim(user_input_embeddings, tags_embeddings)[0]
+    matched = [ 
+        tag for tag, score in zip(tags, similarities)
+        if score >= threshold
+    ]
+    return matched
+
+# For each match, apply global weight
+# Add match into dictionary if not already in dictionary
+# If match is in dictionary update weight value if value is higher than current value
+def deduplicate_weighted_matches(match_groups: list[tuple[list[str], float]]) -> dict[str, float]:
+
+    weighted_matches = {}    # Dictionary to store each match along with its respective weight
+    for matches, weight in match_groups:
+        for match in matches:
+            weighted_matches[match] = max(weighted_matches.get(match, 0), weight)
+    
+    return weighted_matches
 
 
 st.title("Waku - Career Recommender")
@@ -98,7 +111,7 @@ industries = [
 ]
 
 other_education = [
-    "Cert: Google Data Analytics Certificate",           # → Data Scientist
+    "Cert: Google Data Analytics Certificate",            # → Data Scientist
     "Cert: UX Design Professional Certificate",           # → UX Designer
     "Cert: First Aid / CPR",                              # → Registered Nurse
     "Cert: Teaching Certification",                       # → High School Teacher
@@ -321,6 +334,7 @@ careers = [
     }
 ]
 
+# Initialise list for feedback
 score_breakdown = []
 
 # Initialise vocab
@@ -366,8 +380,27 @@ def career_match(user_data, career):
 
     # Industry match
     field_matches = set(career["preferred_fields"]).intersection(user_data.get("interested_fields", []))
-    score += weights["fields"] * len(field_matches)
+    normalised_field_matches = normalise_text(", ".join(field_matches))
+    corrected_field_matches = correct_spelling(normalised_field_matches, KNOWN_VOCAB)
+    # Field names - nouns
+    expanded_field_matches = expand_with_synonyms(corrected_field_matches, 'n')
+    expanded_field_matches_n = set(map(str.lower, career["preferred_fields"])).intersection(expanded_field_matches)
+
+    # Can use for display purposes
+    # expanded_field_matches_n = [field for field in career["preferred_fields"] if field.lower() in expanded_field_matches]
     
+    # Semantic matching for fields
+    semantic_field_matches = embed_user_input_and_tags("".join(corrected_field_matches), career.get("preferred_fields", []), model)
+
+    weighted_field_matches = ([
+        ([expanded_field_matches_n], 0.8),
+        (semantic_field_matches, 0.4)
+    ])
+
+    # Add each weighted match to the score
+    for match in weighted_field_matches:
+        score += weights["fields"] * weighted_field_matches[match]
+
     # College match
     try:
         college_major = user_data.get("college_major", [])
@@ -419,28 +452,54 @@ def career_match(user_data, career):
     if user_education in [ed.lower() for ed in career.get("required_education", [])]:
         score += weights["education"]
      
-
     # Tag/Personality match
     combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
     normalised_text = normalise_text(combined_text)
     corrected_text = correct_spelling(normalised_text, KNOWN_VOCAB)
+
     # Combine noun and verb expansions
     expanded_text_nouns = expand_with_synonyms(corrected_text, 'n')
     expanded_text_verbs = expand_with_synonyms(corrected_text, 'v')
 
+    # Exact/Synonym-based scoring for Tag/Personality
     tag_matches_n = [tag for tag in career["tags"] if tag.lower() in expanded_text_nouns]
     tag_matches_v = [tag for tag in career["tags"] if tag.lower() in expanded_text_verbs]
-    score += weights["tags"] * (0.8 * len(tag_matches_n) + 0.4 * len(tag_matches_v))
+
+    # Semantic matching for Tag/Personality
+    semantic_tag_matches = embed_user_input_and_tags("".join(corrected_text), career.get("tags", []), model)
+
+    positive_weighted_matches = deduplicate_weighted_matches([
+        (tag_matches_n, 0.8),
+        (tag_matches_v, 0.6),
+        (semantic_tag_matches, 0.4)
+    ])
+
+    # Add each weighted match to the score
+    for match in positive_weighted_matches:
+        score += weights["tags"] * positive_weighted_matches[match]
 
     # Dislikes match
     negative_text = f"{user_data.get("dislikes", "")}".lower()
     normalised_negative_text = normalise_text(negative_text)
     corrected_negative_text = correct_spelling(normalised_negative_text, KNOWN_VOCAB)
+
     # Negative matches - verbs
     expanded_negative_text = expand_with_synonyms(corrected_negative_text, 'v')
 
+    # Exact/Synonym-based scoring for Dislikes
     negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
-    score -= weights["tags"] * len(negative_matches)
+
+    # Semantic scoring for Dislikes
+    semantic_negative_matches = embed_user_input_and_tags("".join(corrected_negative_text), career.get("tags", []), model)
+
+    negative_weighted_matches = deduplicate_weighted_matches([
+        (negative_matches, 0.8),
+        (semantic_negative_matches, 0.4)
+    ])
+
+    # Subtract each weighted match to the score
+    for match in negative_weighted_matches:
+        score -= weights["tags"] * negative_weighted_matches[match]
 
     # Job Satisfaction match
     job_satisfaction = user_data.get("job_satisfaction", 5)
