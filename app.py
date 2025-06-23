@@ -56,6 +56,13 @@ def correct_spelling(words, known_vocab=None):
             corrected.append(corrected_word)
     return corrected
 
+def match_and_count(user_set, career_list):
+    target_lookup = set(map(str.lower, career_list))
+    matches = [item for item in career_list if item.lower() in user_set]
+    count = len(user_set.intersection(target_lookup))
+
+    return count, matches
+
 def parse_alt_education(entry):
     try:
         ed_type, topic = entry.split(":", 1)
@@ -365,8 +372,10 @@ def career_match(user_data, career):
     # Hard skills - nouns
     expanded_hard_skills = expand_with_synonyms(corrected_hard_skills, 'n')
 
-    hard_matches = set(map(str.lower, career["hard_skills"])).intersection(expanded_hard_skills)
-    score += weights["hard_skills"] * len(hard_matches)
+    hard_matches_count, hard_matches = match_and_count(expanded_hard_skills, career["hard_skills"])
+    score += weights["hard_skills"] * hard_matches_count
+
+    st.write("Matched hard skills:", hard_matches)
 
     # Soft skills match
     user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get("soft_skills_text", ""))
@@ -375,8 +384,10 @@ def career_match(user_data, career):
     # Soft skills - nouns
     expanded_soft_skills = expand_with_synonyms(corrected_soft_skills, 'n')
 
-    soft_matches = set(map(str.lower, career["soft_skills"])).intersection(expanded_soft_skills)
-    score += weights["soft_skills"] * len(soft_matches)
+    soft_matches_count, soft_matches = match_and_count(expanded_soft_skills, career["soft_skills"])
+    score += weights["soft_skills"] * soft_matches_count
+
+    st.write("Matched soft skills:", soft_matches)
 
     # Industry match
     field_matches = set(career["preferred_fields"]).intersection(user_data.get("interested_fields", []))
@@ -384,16 +395,15 @@ def career_match(user_data, career):
     corrected_field_matches = correct_spelling(normalised_field_matches, KNOWN_VOCAB)
     # Field names - nouns
     expanded_field_matches = expand_with_synonyms(corrected_field_matches, 'n')
-    expanded_field_matches_n = set(map(str.lower, career["preferred_fields"])).intersection(expanded_field_matches)
+    expanded_field_matches_count, expanded_field_matches_n = match_and_count(expanded_field_matches, career["preferred_fields"])
 
-    # Can use for display purposes
-    # expanded_field_matches_n = [field for field in career["preferred_fields"] if field.lower() in expanded_field_matches]
+    st.write("Matched fields:", expanded_field_matches_n)
     
     # Semantic matching for fields
     semantic_field_matches = embed_user_input_and_tags("".join(corrected_field_matches), career.get("preferred_fields", []), model)
 
-    weighted_field_matches = ([
-        ([expanded_field_matches_n], 0.8),
+    weighted_field_matches = deduplicate_weighted_matches([
+        (expanded_field_matches_n, 0.8),
         (semantic_field_matches, 0.4)
     ])
 
@@ -440,13 +450,6 @@ def career_match(user_data, career):
         elif relevant_to_career(topic, career):
             score += weights["alt_education"] * 0.8
 
-    try:
-        alt_edu = user_data.get("alt_education", [])
-        if set(alt_edu).intersection(set(career.get("alt_education", []))):
-            score += weights["alt_education"]
-    except AttributeError:
-        print("User has not selected any alternate education")
-
     # Education level match
     user_education = user_data.get("education_level", "").lower()
     if user_education in [ed.lower() for ed in career.get("required_education", [])]:
@@ -489,7 +492,7 @@ def career_match(user_data, career):
     # Exact/Synonym-based scoring for Dislikes
     negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
 
-    # Semantic scoring for Dislikes
+    # Semantic matching for Dislikes
     semantic_negative_matches = embed_user_input_and_tags("".join(corrected_negative_text), career.get("tags", []), model)
 
     negative_weighted_matches = deduplicate_weighted_matches([
@@ -531,7 +534,7 @@ def career_match(user_data, career):
             "industry_match": field_matches,
             "major_match": major_matches,
             "postgrad_match": postgrad_matches,
-            "alt_education_match": alt_edu,
+            "alt_education_match": topic,
             "education_level_match": user_education,
             "tags_n": tag_matches_n,
             "tags_v": tag_matches_v,
