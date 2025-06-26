@@ -181,7 +181,8 @@ user_data = {}
 
 # Basic info
 user_data["age"] = st.selectbox("How old are you?", options=[str(i) for i in range(16, 61)], index=None, placeholder="Select your age")
-user_data["interested_fields"] = st.multiselect("Are there specific industries you already have an interest in?", options=industries, accept_new_options=True)
+user_data["interested_fields"] = st.multiselect("Are there specific fields you already have an interest in?", options=industries)
+user_data["interested_fields_text"] = st.text_input("Other fields of interest (optional):")
 
 # Education info
 user_data["in_college"] = st.radio("Have you gone or are you currently in college?", ["Yes", "No"], index=None)
@@ -211,9 +212,9 @@ if user_data["previous_experience"] == "Yes":
     user_data["job_satisfaction"] = st.slider("On a scale of 1-10 how satisfied are you with your current job?", 0, 10, 0, 1)
 
 # Skills
-user_data["hard_skills"] = st.multiselect("Select your hard skills:", options=hard_skills, accept_new_options=True)
+user_data["hard_skills"] = st.multiselect("Select your hard skills:", options=hard_skills)
 user_data["hard_skills_text"] = st.text_input("Other hard skills (optional):")
-user_data["soft_skills"] = st.multiselect("Select your soft skills:", options=soft_skills, accept_new_options=True)
+user_data["soft_skills"] = st.multiselect("Select your soft skills:", options=soft_skills)
 user_data["soft_skills_text"] = st.text_input("Other soft skills (optional):")
 
 # Qualitative inputs
@@ -366,76 +367,148 @@ def career_match(user_data, career):
         return [s.strip() for s in value.split(",") if s.strip()]
 
     # Match hard skills
-    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list(user_data.get("hard_skills_text", ""))
-    normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
-    corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
-    # Hard skills - nouns
-    expanded_hard_skills = expand_with_synonyms(corrected_hard_skills, 'n')
+    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list("hard_skills_text")
+    hard_matches = set(career["hard_skills"]).intersection(set([s.strip() for s in user_hard_skills if s.strip()]))
+    
+    if hard_matches:
+        score += weights["hard_skills"] * len(hard_matches)
+        st.write("Matched hard skills:", hard_matches)
+    else:
+        normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
+        corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
+        # Hard skills - nouns
+        expanded_hard_skills = expand_with_synonyms(corrected_hard_skills, 'n')
 
-    hard_matches_count, hard_matches = match_and_count(expanded_hard_skills, career["hard_skills"])
-    score += weights["hard_skills"] * hard_matches_count
+        hard_matches_count, hard_matches = match_and_count(expanded_hard_skills, career["hard_skills"])
+        score += 0.7 * (weights["hard_skills"] * hard_matches_count)
 
-    st.write("Matched hard skills:", hard_matches)
+        st.write("Matched hard skills:", hard_matches)
 
     # Soft skills match
-    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list(user_data.get("soft_skills_text", ""))
-    normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
-    corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
-    # Soft skills - nouns
-    expanded_soft_skills = expand_with_synonyms(corrected_soft_skills, 'n')
+    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list("soft_skills_text")
+    soft_matches = set(career["soft_skills"]).intersection(set([s.strip() for s in user_soft_skills if s.strip()]))
+    
+    if soft_matches:
+        score += weights["soft_skills"] * len(soft_matches)
+        st.write("Matched soft skills:", soft_matches)
+    else:
+        normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
+        corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
+        # Soft skills - nouns
+        expanded_soft_skills = expand_with_synonyms(corrected_soft_skills, 'n')
 
-    soft_matches_count, soft_matches = match_and_count(expanded_soft_skills, career["soft_skills"])
-    score += weights["soft_skills"] * soft_matches_count
+        soft_matches_count, soft_matches = match_and_count(expanded_soft_skills, career["soft_skills"])
+        score += weights["soft_skills"] * soft_matches_count
 
-    st.write("Matched soft skills:", soft_matches)
+        st.write("Matched soft skills:", soft_matches)
 
     # Industry match
-    field_matches = set(career["preferred_fields"]).intersection(user_data.get("interested_fields", []))
-    normalised_field_matches = normalise_text(", ".join(field_matches))
-    corrected_field_matches = correct_spelling(normalised_field_matches, KNOWN_VOCAB)
-    # Field names - nouns
-    expanded_field_matches = expand_with_synonyms(corrected_field_matches, 'n')
-    expanded_field_matches_count, expanded_field_matches_n = match_and_count(expanded_field_matches, career["preferred_fields"])
+    user_fields = user_data.get("interested_fields", []) + parse_text_list("interested_fields_text")
+    field_matches = set(career["preferred_fields"]).intersection(set([s.strip() for s in user_fields if s.strip()]))
+    # field_matches = set(career["preferred_fields"]).intersection(user_data.get("interested_fields", []))
 
-    st.write("Matched fields:", expanded_field_matches_n)
+    if field_matches:
+        score += weights["fields"] * len(field_matches)
+        st.write("Matched fields:", field_matches)
+    else:
+        normalised_field_matches = normalise_text(", ".join(field_matches))
+        corrected_field_matches = correct_spelling(normalised_field_matches, KNOWN_VOCAB)
+        # Field names - nouns
+        expanded_field_matches = expand_with_synonyms(corrected_field_matches, 'n')
+        expanded_field_matches_count, expanded_field_matches_n = match_and_count(expanded_field_matches, career["preferred_fields"])
+
+        st.write("Matched fields:", expanded_field_matches_n)
     
-    # Semantic matching for fields
-    semantic_field_matches = embed_user_input_and_tags("".join(corrected_field_matches), career.get("preferred_fields", []), model)
+        # Semantic matching for fields
+        semantic_field_matches = embed_user_input_and_tags(" ".join(corrected_field_matches), career.get("preferred_fields", []), model)
 
-    weighted_field_matches = deduplicate_weighted_matches([
-        (expanded_field_matches_n, 0.8),
-        (semantic_field_matches, 0.4)
-    ])
+        weighted_field_matches = deduplicate_weighted_matches([
+            (expanded_field_matches_n, 0.8),
+            (semantic_field_matches, 0.4)
+        ])
 
-    # Add each weighted match to the score
-    for match in weighted_field_matches:
-        score += weights["fields"] * weighted_field_matches[match]
+        # Add each weighted match to the score
+        for match in weighted_field_matches:
+            score += weights["fields"] * weighted_field_matches[match]
 
     # College match
     try:
-        college_major = user_data.get("college_major", [])
+        college_majors = user_data.get("college_major", [])
         score += weights["education"] / 2   # Flat score for college major
-        major_matches = set(career["related_majors"]).intersection(set([s.strip() for s in college_major if s.strip()]))
+        major_matches = set(career["related_majors"]).intersection(set([s.strip() for s in college_majors if s.strip()]))
+        base_score = weights["education"] * len(major_matches)
 
         if major_matches:
             if "bachelor" in career.get("required_education", []):
-                score += 1.5 * (weights["education"] * len(major_matches))
+                score += 1.5 * base_score
             else:
-                score += (weights["education"] * len(major_matches))
+                score += base_score
+            st.write("Matched majors:", major_matches)
+        else:
+            normalised_college_majors = normalise_text(", ".join(college_majors))
+            corrected_college_majors = correct_spelling(normalised_college_majors, KNOWN_VOCAB)
+            # Majors - nouns
+            expanded_college_majors = expand_with_synonyms(corrected_college_majors, 'n')
+            expanded_college_majors_count, expanded_college_majors_n = match_and_count(expanded_college_majors, career["related_majors", []])
+
+            st.write("Matched majors:", expanded_college_majors_n)
+
+            # Semantic matching for majors
+            semantic_college_majors = embed_user_input_and_tags(" ".join(corrected_college_majors), career.get("related_majors", []), model)
+
+            weighted_major_matches = deduplicate_weighted_matches([
+                (expanded_college_majors_n, 0.8),
+                (semantic_college_majors, 0.4)
+            ])
+
+            # Add each weighted match to the score
+            for match in weighted_major_matches:
+                weighted_score = weights["related_majors"] * weighted_major_matches[match]
+                if "bachelor" in career.get("required_education", []):
+                    score += 1.5 * weighted_score
+                else:
+                    score += weighted_score
+
     except AttributeError:
         print("User has not selected a college major")
     
     # Postgrad match
     try:
-        postgrad_major = user_data.get("postgrad_major", [])
+        postgrad_majors = user_data.get("postgrad_major", [])
         score += weights["education"] / 2 # Flat score for postrad major
-        postgrad_matches = set(career["related_majors"]).intersection(set([s.strip() for s in postgrad_major if s.strip]))
-        
+        postgrad_matches = set(career["related_majors"]).intersection(set([s.strip() for s in postgrad_majors if s.strip]))
+        base_score = weights["education"] * len(postgrad_matches)
+
         if postgrad_matches:
             if "master+" in career["required_education"]:
-                score += 1.5 * (weights["education"] * len(postgrad_matches))
+                score += 1.5 * base_score
             else:
-                score += weights["education"] * len(postgrad_matches)
+                score += base_score
+            st.write("Matched majors:", postgrad_matches)
+        else:
+            normalised_postgrad_majors = normalise_text(", ".join(postgrad_majors))
+            corrected_postgrad_majors = correct_spelling(normalised_postgrad_majors, KNOWN_VOCAB)
+            # Majors - nouns
+            expanded_postgrad_majors = expand_with_synonyms(corrected_postgrad_majors, 'n')
+            expanded_postgrad_majors_count, expanded_postgrad_majors_n = match_and_count(expanded_postgrad_majors, career.get("related_majors", []), model)
+
+            st.write("Matched majors:", expanded_college_majors_n)
+
+            # Semantic matching for postgrad majors
+            semantic_postgrad_majors = embed_user_input_and_tags(" ".join(corrected_postgrad_majors), career.get("related_majors", []), model)
+
+            weighted_postgrad_matches = deduplicate_weighted_matches([
+                (expanded_postgrad_majors_n, 0.8),
+                (semantic_postgrad_majors, 0.4)
+            ])
+
+            # Add each weighted match to the score
+            for match in weighted_postgrad_matches:
+                weighted_score = weights["related_majors"] * weighted_major_matches[match]
+                if "master+" in career.get("required_education", []):
+                    score += 1.5 * weighted_score
+                else:
+                    score += weighted_score
     except AttributeError:
         print("User has not selected a postgraduate major")
 
@@ -469,7 +542,7 @@ def career_match(user_data, career):
     tag_matches_v = [tag for tag in career["tags"] if tag.lower() in expanded_text_verbs]
 
     # Semantic matching for Tag/Personality
-    semantic_tag_matches = embed_user_input_and_tags("".join(corrected_text), career.get("tags", []), model)
+    semantic_tag_matches = embed_user_input_and_tags(" ".join(corrected_text), career.get("tags", []), model)
 
     positive_weighted_matches = deduplicate_weighted_matches([
         (tag_matches_n, 0.8),
@@ -493,7 +566,7 @@ def career_match(user_data, career):
     negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
 
     # Semantic matching for Dislikes
-    semantic_negative_matches = embed_user_input_and_tags("".join(corrected_negative_text), career.get("tags", []), model)
+    semantic_negative_matches = embed_user_input_and_tags(" ".join(corrected_negative_text), career.get("tags", []), model)
 
     negative_weighted_matches = deduplicate_weighted_matches([
         (negative_matches, 0.8),
