@@ -1,3 +1,4 @@
+from collections import defaultdict
 from nltk.corpus import wordnet as wn
 from sentence_transformers import SentenceTransformer, util
 import spacy 
@@ -366,23 +367,79 @@ def career_match(user_data, career):
             return []
         return [s.strip() for s in value.split(",") if s.strip()]
 
+    def match_user_to_targets(
+            user_input,
+            target_list,
+            weight,
+            use_synonyms,
+            use_semantics,
+            pos,
+            pos2=None,
+            apply_multipliers=False,
+            education_required=None,
+            user_education=None,
+            known_vocab=None,
+            model=None
+    ):
+        
+        score = 0
+        matches = defaultdict(float)
+
+        # Normalise and spell-correct input
+        normalised = normalise_text(", ".join(user_input))
+        corrected = correct_spelling(normalised, known_vocab)
+
+        # Exact matches
+        exact_matches = set(target_list).intersection(set([s.strip() for s in corrected]))
+        for match in exact_matches:
+            matches[match] = max(matches[match], 1.0)
+
+        # Synonym matching
+        if use_synonyms:
+            expanded = expand_with_synonyms(corrected, pos)
+            for match in target_list:
+                if match.lower() in expanded:
+                    matches[match] = max(matches[match], 0.7)
+
+            if pos2 and pos2 != pos:
+                expanded2 = expand_with_synonyms(corrected, pos2)
+                for match in target_list:
+                    if match.lower() in expanded2:
+                        matches[match] = max(matches[match], 0.5)                    
+
+        # Semantic matching
+        if use_semantics:
+            semantic_matches = embed_user_input_and_tags("".join(corrected), target_list, model)
+            for match in semantic_matches:
+                matches[match] = max(matches[match], 0.4)
+
+        # Total weighted score
+        for match in matches:
+            score += weight * matches[match]
+
+        # Education multiplier
+        if apply_multipliers and education_required and user_education:
+            if user_education == education_required:
+                score *= 1.5
+
+        return score, matches
+
     # Match hard skills
     user_hard_skills = user_data.get("hard_skills", []) + parse_text_list("hard_skills_text")
-    hard_matches = set(career["hard_skills"]).intersection(set([s.strip() for s in user_hard_skills if s.strip()]))
-    
-    if hard_matches:
-        score += weights["hard_skills"] * len(hard_matches)
-        st.write("Matched hard skills:", hard_matches)
-    else:
-        normalised_hard_skills = normalise_text(", ".join(user_hard_skills))
-        corrected_hard_skills = correct_spelling(normalised_hard_skills, KNOWN_VOCAB)
-        # Hard skills - nouns
-        expanded_hard_skills = expand_with_synonyms(corrected_hard_skills, 'n')
 
-        hard_matches_count, hard_matches = match_and_count(expanded_hard_skills, career["hard_skills"])
-        score += 0.7 * (weights["hard_skills"] * hard_matches_count)
+    hs_add_to_score, hard_skills_matches = match_user_to_targets(
+        user_input=user_hard_skills,
+        target_list=career["hard_skills"],
+        weight=weights["hard_skills"],
+        use_synonyms=True,
+        use_semantics=False,
+        pos='n',
+        known_vocab=KNOWN_VOCAB
+    )
 
-        st.write("Matched hard skills:", hard_matches)
+    score += hs_add_to_score
+
+    st.write("Matched hard skills:", hard_skills_matches)
 
     # Soft skills match
     user_soft_skills = user_data.get("soft_skills", []) + parse_text_list("soft_skills_text")
