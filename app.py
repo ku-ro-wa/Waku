@@ -57,12 +57,6 @@ def correct_spelling(words, known_vocab=None):
             corrected.append(corrected_word)
     return corrected
 
-def match_and_count(user_set, career_list):
-    target_lookup = set(map(str.lower, career_list))
-    matches = [item for item in career_list if item.lower() in user_set]
-    count = len(user_set.intersection(target_lookup))
-
-    return count, matches
 
 def parse_alt_education(entry):
     try:
@@ -104,6 +98,82 @@ def deduplicate_weighted_matches(match_groups: list[tuple[list[str], float]]) ->
     
     return weighted_matches
 
+def match_user_to_targets(
+    user_input,
+    target_list,
+    weight,
+    use_synonyms,
+    use_semantics,
+    pos,
+    pos2=None,
+    apply_multipliers=False,
+    education_required=None,
+    user_education=None,
+    known_vocab=None,
+    model=None
+):
+    """
+    Flexible utility for matching user input (skills, majors, interests, etc.) to job targets.
+        
+    Parameters:
+    - user_input: list of user terms (raw strings)
+    - target_list: list of target terms from job profile
+    - weight: numeric base weight for the field
+    - use_synonyms: whether to expand user input with synonyms
+    - use_semantics: whether to perform semantic similarity matching
+    - pos: part-of-speech tag for WordNet (e.g., 'n' for nouns)
+    - apply_multipliers: apply 1.5x multiplier for education if required level is matched
+    - education_required: "bachelor" or "master+"
+    - user_level: "bachelor", "master+", etc.
+    - known_vocab: set of known valid words for spellchecking
+    - model: sentence-transformers model (if use_semantics=True)
+    
+    Returns:
+    - score_contribution (float)
+    - matched_items (dict with weights)
+    """
+    score = 0
+    matches = defaultdict(float)
+
+    # Normalise and spell-correct input
+    normalised = normalise_text(", ".join(user_input))
+    corrected = correct_spelling(normalised, known_vocab)
+
+    # Exact matches
+    exact_matches = set(target_list).intersection(set([s.strip() for s in corrected]))
+    for match in exact_matches:
+        matches[match] = max(matches[match], 1.0)
+
+    # Synonym matching
+    if use_synonyms:
+        expanded = expand_with_synonyms(corrected, pos)
+        for match in target_list:
+            if match.lower() in expanded:
+                matches[match] = max(matches[match], 0.7)
+
+        if pos2 and pos2 != pos:
+            expanded2 = expand_with_synonyms(corrected, pos2)
+            for match in target_list:
+                if match.lower() in expanded2:
+                    matches[match] = max(matches[match], 0.5)                    
+
+    # Semantic matching
+    if use_semantics and model:
+        semantic_matches = embed_user_input_and_tags("".join(corrected), target_list, model)
+        for match in semantic_matches:
+            matches[match] = max(matches[match], 0.4)
+
+    # Total weighted score
+    for match in matches:
+        score += weight * matches[match]
+
+    # Education multiplier
+    if apply_multipliers and education_required and user_education:
+        if user_education == education_required:
+            score *= 1.5
+
+    return score, matches
+    
 
 st.title("Waku - Career Recommender")
 
@@ -367,63 +437,6 @@ def career_match(user_data, career):
             return []
         return [s.strip() for s in value.split(",") if s.strip()]
 
-    def match_user_to_targets(
-            user_input,
-            target_list,
-            weight,
-            use_synonyms,
-            use_semantics,
-            pos,
-            pos2=None,
-            apply_multipliers=False,
-            education_required=None,
-            user_education=None,
-            known_vocab=None,
-            model=None
-    ):
-        
-        score = 0
-        matches = defaultdict(float)
-
-        # Normalise and spell-correct input
-        normalised = normalise_text(", ".join(user_input))
-        corrected = correct_spelling(normalised, known_vocab)
-
-        # Exact matches
-        exact_matches = set(target_list).intersection(set([s.strip() for s in corrected]))
-        for match in exact_matches:
-            matches[match] = max(matches[match], 1.0)
-
-        # Synonym matching
-        if use_synonyms:
-            expanded = expand_with_synonyms(corrected, pos)
-            for match in target_list:
-                if match.lower() in expanded:
-                    matches[match] = max(matches[match], 0.7)
-
-            if pos2 and pos2 != pos:
-                expanded2 = expand_with_synonyms(corrected, pos2)
-                for match in target_list:
-                    if match.lower() in expanded2:
-                        matches[match] = max(matches[match], 0.5)                    
-
-        # Semantic matching
-        if use_semantics:
-            semantic_matches = embed_user_input_and_tags("".join(corrected), target_list, model)
-            for match in semantic_matches:
-                matches[match] = max(matches[match], 0.4)
-
-        # Total weighted score
-        for match in matches:
-            score += weight * matches[match]
-
-        # Education multiplier
-        if apply_multipliers and education_required and user_education:
-            if user_education == education_required:
-                score *= 1.5
-
-        return score, matches
-
     # Match hard skills
     user_hard_skills = user_data.get("hard_skills", []) + parse_text_list("hard_skills_text")
 
@@ -441,198 +454,142 @@ def career_match(user_data, career):
 
     st.write("Matched hard skills:", hard_skills_matches)
 
-    # Soft skills match
+    # Match soft skills
     user_soft_skills = user_data.get("soft_skills", []) + parse_text_list("soft_skills_text")
-    soft_matches = set(career["soft_skills"]).intersection(set([s.strip() for s in user_soft_skills if s.strip()]))
-    
-    if soft_matches:
-        score += weights["soft_skills"] * len(soft_matches)
-        st.write("Matched soft skills:", soft_matches)
-    else:
-        normalised_soft_skills = normalise_text(", ".join(user_soft_skills))
-        corrected_soft_skills = correct_spelling(normalised_soft_skills, KNOWN_VOCAB)
-        # Soft skills - nouns
-        expanded_soft_skills = expand_with_synonyms(corrected_soft_skills, 'n')
 
-        soft_matches_count, soft_matches = match_and_count(expanded_soft_skills, career["soft_skills"])
-        score += weights["soft_skills"] * soft_matches_count
+    ss_add_to_score, soft_skills_matches = match_user_to_targets( 
+        user_input=user_soft_skills,
+        target_list=career["soft_skills"],
+        weight=weights["soft_skills"],
+        use_synonyms=True,
+        use_semantics=False,
+        pos='n',
+        known_vocab=KNOWN_VOCAB
+    )
 
-        st.write("Matched soft skills:", soft_matches)
+    score += ss_add_to_score
 
-    # Industry match
-    user_fields = user_data.get("interested_fields", []) + parse_text_list("interested_fields_text")
-    field_matches = set(career["preferred_fields"]).intersection(set([s.strip() for s in user_fields if s.strip()]))
-    # field_matches = set(career["preferred_fields"]).intersection(user_data.get("interested_fields", []))
+    st.write("Matches soft skills: ", soft_skills_matches)
 
-    if field_matches:
-        score += weights["fields"] * len(field_matches)
-        st.write("Matched fields:", field_matches)
-    else:
-        normalised_field_matches = normalise_text(", ".join(field_matches))
-        corrected_field_matches = correct_spelling(normalised_field_matches, KNOWN_VOCAB)
-        # Field names - nouns
-        expanded_field_matches = expand_with_synonyms(corrected_field_matches, 'n')
-        expanded_field_matches_count, expanded_field_matches_n = match_and_count(expanded_field_matches, career["preferred_fields"])
+    # Match fields/industries
+    user_fields = user_data.get("interested_fields", []) + parse_text_list("intereseted_fields_text")
 
-        st.write("Matched fields:", expanded_field_matches_n)
-    
-        # Semantic matching for fields
-        semantic_field_matches = embed_user_input_and_tags(" ".join(corrected_field_matches), career.get("preferred_fields", []), model)
+    fields_add_to_score, field_matches = match_user_to_targets(
+        user_input=user_fields,
+        target_list=career["preferred_fields"],
+        weight=weights["fields"],
+        use_synonyms=True,
+        use_semantics=True,
+        pos='n',
+        known_vocab=KNOWN_VOCAB,
+        model=model
+    )
 
-        weighted_field_matches = deduplicate_weighted_matches([
-            (expanded_field_matches_n, 0.8),
-            (semantic_field_matches, 0.4)
-        ])
+    score += fields_add_to_score
 
-        # Add each weighted match to the score
-        for match in weighted_field_matches:
-            score += weights["fields"] * weighted_field_matches[match]
+    st.write("Matched fields/industries: ", field_matches)
 
-    # College match
-    try:
-        college_majors = user_data.get("college_major", [])
-        score += weights["education"] / 2   # Flat score for college major
-        major_matches = set(career["related_majors"]).intersection(set([s.strip() for s in college_majors if s.strip()]))
-        base_score = weights["education"] * len(major_matches)
+    # Match college majors
+    college_majors = user_data.get("college_major", [])
 
-        if major_matches:
-            if "bachelor" in career.get("required_education", []):
-                score += 1.5 * base_score
-            else:
-                score += base_score
-            st.write("Matched majors:", major_matches)
-        else:
-            normalised_college_majors = normalise_text(", ".join(college_majors))
-            corrected_college_majors = correct_spelling(normalised_college_majors, KNOWN_VOCAB)
-            # Majors - nouns
-            expanded_college_majors = expand_with_synonyms(corrected_college_majors, 'n')
-            expanded_college_majors_count, expanded_college_majors_n = match_and_count(expanded_college_majors, career["related_majors", []])
+    majors_add_to_score, major_matches = match_user_to_targets(
+        user_input=college_majors,
+        target_list=career["related_majors"],
+        weight=weights["education"],
+        use_synonyms=True,
+        use_semantics=True,
+        pos='n',
+        apply_multipliers=True,
+        education_required='bachelor',
+        user_education='bachelor',
+        known_vocab=KNOWN_VOCAB,
+        model=model
+    )
 
-            st.write("Matched majors:", expanded_college_majors_n)
+    score += majors_add_to_score
 
-            # Semantic matching for majors
-            semantic_college_majors = embed_user_input_and_tags(" ".join(corrected_college_majors), career.get("related_majors", []), model)
+    st.write("Matched majors: ", major_matches)
 
-            weighted_major_matches = deduplicate_weighted_matches([
-                (expanded_college_majors_n, 0.8),
-                (semantic_college_majors, 0.4)
-            ])
+    # Match postgrad majors
+    postgrad_majors = user_data.get("postgrad_major", [])
 
-            # Add each weighted match to the score
-            for match in weighted_major_matches:
-                weighted_score = weights["related_majors"] * weighted_major_matches[match]
-                if "bachelor" in career.get("required_education", []):
-                    score += 1.5 * weighted_score
-                else:
-                    score += weighted_score
+    postgrad_majors_add_to_score, postgrad_major_matches = match_user_to_targets(
+        user_input=postgrad_majors,
+        target_list=career["related_majors"],
+        weight=weights["education"],
+        use_synonyms=True,
+        use_semantics=True,
+        pos='n',
+        apply_multipliers=True,
+        education_required='master+',
+        user_education='master+',
+        known_vocab=KNOWN_VOCAB,
+        model=model
+    )
 
-    except AttributeError:
-        print("User has not selected a college major")
-    
-    # Postgrad match
-    try:
-        postgrad_majors = user_data.get("postgrad_major", [])
-        score += weights["education"] / 2 # Flat score for postrad major
-        postgrad_matches = set(career["related_majors"]).intersection(set([s.strip() for s in postgrad_majors if s.strip]))
-        base_score = weights["education"] * len(postgrad_matches)
+    score += postgrad_majors_add_to_score
 
-        if postgrad_matches:
-            if "master+" in career["required_education"]:
-                score += 1.5 * base_score
-            else:
-                score += base_score
-            st.write("Matched majors:", postgrad_matches)
-        else:
-            normalised_postgrad_majors = normalise_text(", ".join(postgrad_majors))
-            corrected_postgrad_majors = correct_spelling(normalised_postgrad_majors, KNOWN_VOCAB)
-            # Majors - nouns
-            expanded_postgrad_majors = expand_with_synonyms(corrected_postgrad_majors, 'n')
-            expanded_postgrad_majors_count, expanded_postgrad_majors_n = match_and_count(expanded_postgrad_majors, career.get("related_majors", []), model)
+    st.write("Matched postgrad majors: ", postgrad_major_matches)
 
-            st.write("Matched majors:", expanded_college_majors_n)
-
-            # Semantic matching for postgrad majors
-            semantic_postgrad_majors = embed_user_input_and_tags(" ".join(corrected_postgrad_majors), career.get("related_majors", []), model)
-
-            weighted_postgrad_matches = deduplicate_weighted_matches([
-                (expanded_postgrad_majors_n, 0.8),
-                (semantic_postgrad_majors, 0.4)
-            ])
-
-            # Add each weighted match to the score
-            for match in weighted_postgrad_matches:
-                weighted_score = weights["related_majors"] * weighted_major_matches[match]
-                if "master+" in career.get("required_education", []):
-                    score += 1.5 * weighted_score
-                else:
-                    score += weighted_score
-    except AttributeError:
-        print("User has not selected a postgraduate major")
-
-    # Alt education match
+    # Match alt education 
     for ed_type, topic in parsed_alt_education:
         if ed_type in career["alt_education"]:
-            score += weights["alt_education"]
+            score += weights["alt_education"] * 0.4
         
         if career["title"] in alt_ed_topic_to_careers.get(topic, []):
-            score += weights["alt_education"] * 1.2
+            score += weights["alt_education"] * 1
 
         elif relevant_to_career(topic, career):
-            score += weights["alt_education"] * 0.8
+            score += weights["alt_education"] * 0.7
 
-    # Education level match
-    user_education = user_data.get("education_level", "").lower()
-    if user_education in [ed.lower() for ed in career.get("required_education", [])]:
-        score += weights["education"]
-     
-    # Tag/Personality match
+        else:
+            normalised = normalise_text(", ".join(topic))
+            corrected = correct_spelling(normalised, KNOWN_VOCAB)
+            expanded = expand_with_synonyms(corrected, 'n')
+            semantic_matches = embed_user_input_and_tags("".join(corrected), career["alt_education"], model, 0.5)
+
+            if expanded in career["alt_education"]:
+                score += weights["alt_education"] * 0.7
+            elif semantic_matches in career["alt_education"]:
+                score += weights["alt_education"] * 0.4
+
+    # Match for tags/personality
     combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
-    normalised_text = normalise_text(combined_text)
-    corrected_text = correct_spelling(normalised_text, KNOWN_VOCAB)
 
-    # Combine noun and verb expansions
-    expanded_text_nouns = expand_with_synonyms(corrected_text, 'n')
-    expanded_text_verbs = expand_with_synonyms(corrected_text, 'v')
+    positive_text_add_to_score, positive_text_matches = match_user_to_targets(
+        user_input=combined_text,
+        target_list=career["tags"],
+        weight=weights["tags"],
+        use_synonyms=True,
+        use_semantics=True,
+        pos='n',
+        pos2='v',
+        known_vocab=KNOWN_VOCAB,
+        model=model
+    ) 
 
-    # Exact/Synonym-based scoring for Tag/Personality
-    tag_matches_n = [tag for tag in career["tags"] if tag.lower() in expanded_text_nouns]
-    tag_matches_v = [tag for tag in career["tags"] if tag.lower() in expanded_text_verbs]
+    score += positive_text_add_to_score
 
-    # Semantic matching for Tag/Personality
-    semantic_tag_matches = embed_user_input_and_tags(" ".join(corrected_text), career.get("tags", []), model)
+    st.write("Matched positive keywords (may not be exact): ", positive_text_matches)
 
-    positive_weighted_matches = deduplicate_weighted_matches([
-        (tag_matches_n, 0.8),
-        (tag_matches_v, 0.6),
-        (semantic_tag_matches, 0.4)
-    ])
-
-    # Add each weighted match to the score
-    for match in positive_weighted_matches:
-        score += weights["tags"] * positive_weighted_matches[match]
-
-    # Dislikes match
+    # Match for negative text
     negative_text = f"{user_data.get("dislikes", "")}".lower()
-    normalised_negative_text = normalise_text(negative_text)
-    corrected_negative_text = correct_spelling(normalised_negative_text, KNOWN_VOCAB)
 
-    # Negative matches - verbs
-    expanded_negative_text = expand_with_synonyms(corrected_negative_text, 'v')
+    negative_text_minus_from_score, negative_text_matches = match_user_to_targets(
+        user_input=negative_text,
+        target_list=career["tags"],
+        weight=weights["tags"],
+        use_synonyms=True,
+        use_semantics=True,
+        pos='v',
+        known_vocab=KNOWN_VOCAB,
+        model=model
+    )
 
-    # Exact/Synonym-based scoring for Dislikes
-    negative_matches = [tag for tag in career["tags"] if tag.lower() in expanded_negative_text]
+    score -= negative_text_minus_from_score
 
-    # Semantic matching for Dislikes
-    semantic_negative_matches = embed_user_input_and_tags(" ".join(corrected_negative_text), career.get("tags", []), model)
+    st.write("Matched negative keywords (may not be exact): ", negative_text_matches)
 
-    negative_weighted_matches = deduplicate_weighted_matches([
-        (negative_matches, 0.8),
-        (semantic_negative_matches, 0.4)
-    ])
-
-    # Subtract each weighted match to the score
-    for match in negative_weighted_matches:
-        score -= weights["tags"] * negative_weighted_matches[match]
 
     # Job Satisfaction match
     job_satisfaction = user_data.get("job_satisfaction", 5)
@@ -655,24 +612,24 @@ def career_match(user_data, career):
             levels = career.get("experience_level", [])
             multiplier = max([level_weights.get(level, 0) for level in levels], default=0.5)
             score += min(int(exp["yoe"]), 15) * multiplier
-
+    
+    """
     score_breakdown.append({
         "score": score,
         "matches": {
-            "hard_skills": hard_matches,
-            "soft_skills": soft_matches,
+            "hard_skills": hard_skills_matches,
+            "soft_skills": soft_skills_matches,
             "industry_match": field_matches,
             "major_match": major_matches,
-            "postgrad_match": postgrad_matches,
+            "postgrad_match": postgrad_major_matches,
             "alt_education_match": topic,
-            "education_level_match": user_education,
-            "tags_n": tag_matches_n,
-            "tags_v": tag_matches_v,
-            "negative_tags": negative_matches,
+            "positive_tags": positive_text_matches,
+            "negative_tags": negative_text_matches,
             "job_satisfaction_match": job_satisfaction  
         }
     })
-
+    """
+    
     print(score_breakdown)
 
     return score
