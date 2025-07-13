@@ -1,9 +1,16 @@
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
 from sentence_transformers import SentenceTransformer, util
+from textblob import TextBlob
+import json
+import os
 import spacy 
 import streamlit as st
-from textblob import TextBlob
+
+# Load career data
+careers_file_path = os.path.join("data", "careers.json")
+with open(careers_file_path, 'r') as f:
+    careers = json.load(f)
 
 # Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
@@ -201,18 +208,9 @@ other_education = [
     "Cert: Adobe Creative Suite Certification",           # → Graphic Designer
 ]
 
-alt_ed_topic_to_careers = {
-    "Google Data Analytics Certificate": ["Data Scientist"],
-    "UX Design Professional Certificate": ["UX Designer"],
-    "First Aid / CPR": ["Registered Nurse"],
-    "Teaching Certification": ["High School Teacher"],
-    "Electrician Training": ["Electrician"],
-    "Digital Marketing Certificate": ["Marketing Manager"],
-    "Culinary Arts Certificate": ["Chef"],
-    "Law Prep Program": ["Lawyer"],
-    "Human Services Certificate": ["Social Worker"],
-    "Adobe Creative Suite Certification": ["Graphic Designer"]
-}
+alt_education_map_file_path = os.path.join("data", "alt_education_map.json")
+with open(alt_education_map_file_path, 'r') as f:
+    alt_ed_topic_to_careers = json.load(f)
 
 
 positions = [
@@ -299,120 +297,6 @@ st.subheader("Collected Input")
 st.json(user_data)
 
 
-# Possible Careers
-careers = [
-    {
-        "title": "Data Scientist",
-        "hard_skills": ["Python", "Data Analysis", "Machine Learning"],
-        "preferred_fields": ["Tech", "Data", "Finance"],
-        "soft_skills": ["Problem Solving", "Critical Thinking", "Communication"],
-        "related_majors": ["Computer Science", "Statistics", "Data Science"],
-        "required_education": ["bachelor", "master+"],
-        "alt_education": ["Bootcamp", "Certificate", "Self-Taught"],
-        "experience_level": ["entry", "mid", "senior"],
-        "tags": ["Analytical", "Data-Driven", "Curious"]
-    },
-    {
-        "title": "UX Designer",
-        "hard_skills": ["UI/UX Design", "Figma", "User Research"],
-        "preferred_fields": ["Tech", "Media", "Advertising"],
-        "soft_skills": ["Empathy", "Communication", "Adaptability"],
-        "related_majors": ["Graphic Design", "Human-Computer Interaction", "Psychology"],
-        "required_education": ["bachelor"],
-        "alt_education": ["Bootcamp", "Certificate", "Self-Taught"],
-        "experience_level": ["entry", "mid"],
-        "tags": ["Creative", "User-focused", "Visual"]
-    },
-    {
-        "title": "Registered Nurse",
-        "hard_skills": ["Patient Care", "Medical Terminology", "IV Administration"],
-        "preferred_fields": ["Healthcare", "Medicine", "Emergency Services"],
-        "soft_skills": ["Empathy", "Attention to Detail", "Stress Management"],
-        "related_majors": ["Nursing"],
-        "required_education": ["associate", "bachelor"],
-        "alt_education": ["RN Diploma Program"],
-        "experience_level": ["entry", "mid"],
-        "tags": ["Compassionate", "Resilient", "Team-Oriented"]
-    },
-    {
-        "title": "High School Teacher",
-        "hard_skills": ["Lesson Planning", "Subject Expertise", "Classroom Management"],
-        "preferred_fields": ["Education", "Youth Services", "Public Sector"],
-        "soft_skills": ["Patience", "Public Speaking", "Empathy"],
-        "related_majors": ["Education", "Subject-specific majors (e.g., Math, English)"],
-        "required_education": ["bachelor", "master+"],
-        "alt_education": ["Teaching Certification", "Alternative Certification Program"],
-        "experience_level": ["entry", "mid", "senior"],
-        "tags": ["Mentor", "Supportive", "Structured"]
-    },
-    {
-        "title": "Electrician",
-        "hard_skills": ["Wiring", "Blueprint Reading", "Electrical Code Knowledge"],
-        "preferred_fields": ["Construction", "Maintenance", "Utilities"],
-        "soft_skills": ["Problem Solving", "Manual Dexterity", "Attention to Detail"],
-        "related_majors": ["Electrical Technology", "Engineering Technology"],
-        "required_education": ["high school", "associate"],
-        "alt_education": ["Apprenticeship", "Vocational Training"],
-        "experience_level": ["entry", "mid", "senior"],
-        "tags": ["Hands-on", "Skilled Trade", "Independent"]
-    },
-    {
-        "title": "Marketing Manager",
-        "hard_skills": ["SEO", "Content Strategy", "Market Analysis"],
-        "preferred_fields": ["Advertising", "Retail", "Tech"],
-        "soft_skills": ["Creativity", "Leadership", "Persuasion"],
-        "related_majors": ["Marketing", "Business Administration", "Communications"],
-        "required_education": ["bachelor", "master+"],
-        "alt_education": ["Certificate", "MBA (preferred)"],
-        "experience_level": ["mid", "senior"],
-        "tags": ["Strategic", "Creative", "Goal-Oriented"]
-    },
-    {
-        "title": "Chef",
-        "hard_skills": ["Culinary Techniques", "Food Safety", "Menu Planning"],
-        "preferred_fields": ["Hospitality", "Food Services", "Tourism"],
-        "soft_skills": ["Creativity", "Multitasking", "Time Management"],
-        "related_majors": ["Culinary Arts", "Hospitality Management"],
-        "required_education": ["associate"],
-        "alt_education": ["Culinary School", "Apprenticeship"],
-        "experience_level": ["entry", "mid", "senior"],
-        "tags": ["Artistic", "Detail-Oriented", "Energetic"]
-    },
-    {
-        "title": "Lawyer",
-        "hard_skills": ["Legal Research", "Litigation", "Contract Law"],
-        "preferred_fields": ["Law", "Government", "Business"],
-        "soft_skills": ["Critical Thinking", "Negotiation", "Written Communication"],
-        "related_majors": ["Law", "Political Science", "Criminal Justice"],
-        "required_education": ["master+"],
-        "alt_education": [],
-        "experience_level": ["mid", "senior"],
-        "tags": ["Analytical", "Articulate", "Ethical"]
-    },
-    {
-        "title": "Social Worker",
-        "hard_skills": ["Case Management", "Counseling", "Report Writing"],
-        "preferred_fields": ["Social Services", "Education", "Healthcare"],
-        "soft_skills": ["Empathy", "Active Listening", "Problem Solving"],
-        "related_majors": ["Social Work", "Psychology", "Sociology"],
-        "required_education": ["bachelor", "master+"],
-        "alt_education": ["Human Services Certification"],
-        "experience_level": ["entry", "mid"],
-        "tags": ["Supportive", "Advocate", "Community-Focused"]
-    },
-    {
-        "title": "Graphic Designer",
-        "hard_skills": ["Adobe Photoshop", "Typography", "Brand Design"],
-        "preferred_fields": ["Media", "Advertising", "Publishing"],
-        "soft_skills": ["Creativity", "Communication", "Time Management"],
-        "related_majors": ["Graphic Design", "Visual Arts", "Multimedia Arts"],
-        "required_education": ["bachelor"],
-        "alt_education": ["Certificate", "Portfolio-Based Entry", "Self-Taught"],
-        "experience_level": ["entry", "mid"],
-        "tags": ["Visual", "Creative", "Artistic"]
-    }
-]
-
 # Initialise list for feedback
 score_breakdown = []
 
@@ -452,7 +336,8 @@ def career_match(user_data, career):
 
     score += hs_add_to_score
 
-    st.write("Matched hard skills:", hard_skills_matches)
+    if hard_skills_matches:
+        st.write("Matched hard skills:", hard_skills_matches)
 
     # Match soft skills
     user_soft_skills = user_data.get("soft_skills", []) + parse_text_list("soft_skills_text")
@@ -469,7 +354,8 @@ def career_match(user_data, career):
 
     score += ss_add_to_score
 
-    st.write("Matches soft skills: ", soft_skills_matches)
+    if soft_skills_matches:
+        st.write("Matches soft skills: ", soft_skills_matches)
 
     # Match fields/industries
     user_fields = user_data.get("interested_fields", []) + parse_text_list("intereseted_fields_text")
@@ -487,7 +373,8 @@ def career_match(user_data, career):
 
     score += fields_add_to_score
 
-    st.write("Matched fields/industries: ", field_matches)
+    if field_matches:
+        st.write("Matched fields/industries: ", field_matches)
 
     # Match college majors
     college_majors = user_data.get("college_major", [])
@@ -508,7 +395,8 @@ def career_match(user_data, career):
 
     score += majors_add_to_score
 
-    st.write("Matched majors: ", major_matches)
+    if major_matches:
+        st.write("Matched majors: ", major_matches)
 
     # Match postgrad majors
     postgrad_majors = user_data.get("postgrad_major", [])
@@ -529,7 +417,8 @@ def career_match(user_data, career):
 
     score += postgrad_majors_add_to_score
 
-    st.write("Matched postgrad majors: ", postgrad_major_matches)
+    if postgrad_major_matches:
+        st.write("Matched postgrad majors: ", postgrad_major_matches)
 
     # Match alt education 
     for ed_type, topic in parsed_alt_education:
@@ -570,7 +459,8 @@ def career_match(user_data, career):
 
     score += positive_text_add_to_score
 
-    st.write("Matched positive keywords (may not be exact): ", positive_text_matches)
+    if positive_text_matches:
+        st.write("Matched positive keywords (may not be exact): ", positive_text_matches)
 
     # Match for negative text
     negative_text = f"{user_data.get("dislikes", "")}".lower()
@@ -588,7 +478,8 @@ def career_match(user_data, career):
 
     score -= negative_text_minus_from_score
 
-    st.write("Matched negative keywords (may not be exact): ", negative_text_matches)
+    if negative_text_matches:
+        st.write("Matched negative keywords (may not be exact): ", negative_text_matches)
 
 
     # Job Satisfaction match
