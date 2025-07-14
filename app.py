@@ -7,11 +7,6 @@ import os
 import spacy 
 import streamlit as st
 
-# Load career data
-careers_file_path = os.path.join("data", "careers.json")
-with open(careers_file_path, 'r') as f:
-    careers = json.load(f)
-
 # Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
 
@@ -180,70 +175,83 @@ def match_user_to_targets(
             score *= 1.5
 
     return score, matches
+
+@st.cache_data
+def get_data_from_json(filename, required_keys=None):
+    """
+    Retrieves data from a specified JSON file located in the 'data' directory.
+
+    Args:
+        filename (str): The name of the JSON file (e.g., "careers.json").
+
+    Returns:
+        dict or list: The data loaded from the JSON file.
+                      Returns None if the file is not found or an error occurs.
+    """ 
+    # Construct the full path to the JSON file
+    data_dir = "data"
+    file_path = os.path.join(data_dir, filename)
+
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        return data
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found at '{file_path}'")
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from '{filename}'. Check file format.")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return None
+
+    # Key validation
+    if required_keys and isinstance(data, list):
+        for entry in data:
+            for key in required_keys:
+                if key not in entry:
+                    print(f"Warning: Missing key '{key}' in an entry of '{filename}'")
+
+def exists_checker(var):
+    """
+    Very simple function to check a variable's existence.
+
+    Args:
+        var: The name of the variable to be tested.
     
+    - Can probably be made more robust.
+    """
+    if var is not None:
+        print(f"The variable {var} exists.")
+    elif var is None:
+        st.error(f"Error: the variable {var} does not exist/could not be loaded.")
+        
+# Load career data
+careers = get_data_from_json("careers.json")
+exists_checker(careers)
 
+# Load options data
+industries = get_data_from_json("industries.json")
+exists_checker(industries)
+
+alternate_education = get_data_from_json("alternate_education.json")
+exists_checker(alternate_education)
+
+alt_ed_topic_to_careers = get_data_from_json("alt_education_map.json")
+exists_checker(alt_ed_topic_to_careers)
+
+career_titles = get_data_from_json("career_titles.json")
+exists_checker(career_titles)
+
+hard_skills = get_data_from_json("hard_skills.json")
+exists_checker(hard_skills)
+
+soft_skills = get_data_from_json("soft_skills.json")
+exists_checker(soft_skills)
+
+
+# Form title
 st.title("Waku - Career Recommender")
-
-industries = [
-    "Medicine / Healthcare", "Law / Legal", "Engineering",
-    "Computer Science / IT", "Education", "Business / Finance",
-    "Economics", "Arts / Design", "Environment / Sustainability",
-    "Psychology / Social Work", "Marketing / Advertising",
-    "Government / Public Policy", "Media / Communications",
-    "Science / Research", "Trades / Skilled Labor",
-    "Entrepreneurship", "Manufacturing", "Logistics / Supply Chain",
-    "Hospitality / Tourism", "I'm not sure yet"
-]
-
-other_education = [
-    "Cert: Google Data Analytics Certificate",            # → Data Scientist
-    "Cert: UX Design Professional Certificate",           # → UX Designer
-    "Cert: First Aid / CPR",                              # → Registered Nurse
-    "Cert: Teaching Certification",                       # → High School Teacher
-    "Trade: Electrician Training",                        # → Electrician
-    "Cert: Digital Marketing Certificate",                # → Marketing Manager
-    "Cert: Culinary Arts Certificate",                    # → Chef
-    "Other: Law Prep Program",                            # → Lawyer (minimal alt-ed support)
-    "Cert: Human Services Certificate",                   # → Social Worker
-    "Cert: Adobe Creative Suite Certification",           # → Graphic Designer
-]
-
-alt_education_map_file_path = os.path.join("data", "alt_education_map.json")
-with open(alt_education_map_file_path, 'r') as f:
-    alt_ed_topic_to_careers = json.load(f)
-
-
-positions = [
-    "Software Developer", "UX Designer", "Data Analyst", "IT Support", "Teacher",
-    "Marketing Manager", "Chef", "Lawyer", "Social Worker",
-    "Sales Associate", "Registered Nurse", "Mechanical Engineer", "High School Teacher",
-    "Graphic Designer", "Customer Service Rep", "Freelancer"," Electrician",
-    "Other"
-]
-
-hard_skills = [
-    "Python", "Excel", "CAD", "SQL", 
-    "UI/UX Design", "Figma", "User Research", "HTML/CSS",
-    "Legal Research", "Litigation", "Contract Law",
-    "JavaScript", "Patient Care", "Medical Terminology", "IV Administration",
-    "Data Analysis", "Machine Learning", "Mechanical Design", "Accounting",
-    "Java", "Lesson Planning", "Subject Expertise", "Classroom Management",
-    "Wiring", "Blueprint Reading", "Electrical Code Knowledge", "SEO", 
-    "Content Strategy", "Market Analysis", "Culinary Techniques", "Food Safety", 
-    "Menu Planning", "Case Management", "Counseling", "Report Writing",
-    "Adobe Photoshop", "Typography", "Brand Design",
-    "Other"
-]
-
-soft_skills = [
-    "Leadership", "Communication", "Teamwork", "Problem Solving",
-    "Critical Thinking", "Creativity", "Time Management", "Self-Awareness",
-    "Adaptability", "Empathy", "Attention to Detail", "Stress Management",
-    "Motivated", "Good Listener", "Confidence", "Empathy", 
-    "Patience", "Public Speaking", "Manual Dexterity", "Persuasion",
-    "Multitasking", "Negotiation", "Written Communication", "Active Listening",
-    "Other"
-]
 
 # Collect responses from user
 user_data = {}
@@ -263,14 +271,14 @@ if user_data["in_college"] == "Yes":
         user_data["education_level"] = "master+"
         user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=industries, accept_new_options=True)
 
-user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=other_education, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
+user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=alternate_education, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
 parsed_alt_education = [parse_alt_education(e) for e in user_data.get("alt_education", [])] # Parse the user's alt education
 
 # Job info
 user_data["previous_experience"] = st.radio("Do you have any previous or current work experience?", ["Yes", "No"], index=None)
 if user_data["previous_experience"] == "Yes":
     st.write("Please tell us about your previous or current work experience from past to present. (Optional but recommended):")
-    roles = st.multiselect("Fields or roles you've worked in:", options=positions, accept_new_options=True)
+    roles = st.multiselect("Fields or roles you've worked in:", options=career_titles, accept_new_options=True)
     experience_list = []
 
     for role in roles:
