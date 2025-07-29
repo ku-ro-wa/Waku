@@ -1,9 +1,72 @@
 [
-    "Leadership", "Communication", "Teamwork", "Problem Solving",
-    "Critical Thinking", "Creativity", "Time Management", "Self-Awareness",
-    "Adaptability", "Empathy", "Attention to Detail", "Stress Management",
-    "Motivated", "Good Listener", "Confidence", "Empathy", 
-    "Patience", "Public Speaking", "Manual Dexterity", "Persuasion",
-    "Multitasking", "Negotiation", "Written Communication", "Active Listening",
-    "Other"
+  {
+    "soft_skills": [
+      "Problem Solving",
+      "Critical Thinking",
+      "Communication"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Adaptability"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Empathy",
+      "Attention to Detail",
+      "Stress Management"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Patience",
+      "Public Speaking",
+      "Empathy"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Problem Solving",
+      "Manual Dexterity",
+      "Attention to Detail"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Creativity",
+      "Leadership",
+      "Persuasion"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Creativity",
+      "Multitasking",
+      "Time Management"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Critical Thinking",
+      "Negotiation",
+      "Written Communication"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Empathy",
+      "Active Listening",
+      "Problem Solving"
+    ]
+  },
+  {
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ]
+  }
 ]

@@ -3,130 +3,4093 @@
     "title": "Data Scientist",
     "category": "Tech",
     "description": "Extract insights from data using statistical and machine learning methods.",
-    "hard_skills": ["Python", "Data Analysis", "Machine Learning"],
-    "preferred_fields": ["Tech", "Data", "Finance"],
-    "soft_skills": ["Problem Solving", "Critical Thinking", "Communication"],
-    "related_majors": ["Computer Science", "Statistics", "Data Science"],
-    "required_education": ["bachelor", "master+"],
-    "alt_education": ["Bootcamp", "Certificate", "Self-Taught"],
-    "experience_level": ["entry", "mid", "senior"],
-    "tags": ["Analytical", "Data-Driven", "Curious"]
+    "hard_skills": [
+      "Python",
+      "Data Analysis",
+      "Machine Learning"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Data",
+      "Finance"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Critical Thinking",
+      "Communication"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Statistics",
+      "Data Science"
+    ],
+    "required_education": [
+      "bachelor",
+      "master+"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Certificate",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Data-Driven",
+      "Curious"
+    ]
   },
   {
     "title": "UX Designer",
     "category": "Design",
     "description": "Design user-friendly and intuitive interfaces for digital products.",
-    "hard_skills": ["UI/UX Design", "Figma", "User Research"],
-    "preferred_fields": ["Tech", "Media", "Advertising"],
-    "soft_skills": ["Empathy", "Communication", "Adaptability"],
-    "related_majors": ["Graphic Design", "Human-Computer Interaction", "Psychology"],
-    "required_education": ["bachelor"],
-    "alt_education": ["Bootcamp", "Certificate", "Self-Taught"],
-    "experience_level": ["entry", "mid"],
-    "tags": ["Creative", "User-focused", "Visual"]
+    "hard_skills": [
+      "UI/UX Design",
+      "Figma",
+      "User Research"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Human-Computer Interaction",
+      "Psychology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Certificate",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "User-focused",
+      "Visual"
+    ]
   },
   {
     "title": "Registered Nurse",
     "category": "Healthcare",
     "description": "Provide direct patient care, administer medications, and educate patients and families.",
-    "hard_skills": ["Patient Care", "Medical Terminology", "IV Administration"],
-    "preferred_fields": ["Healthcare", "Medicine", "Emergency Services"],
-    "soft_skills": ["Empathy", "Attention to Detail", "Stress Management"],
-    "related_majors": ["Nursing"],
-    "required_education": ["associate", "bachelor"],
-    "alt_education": ["RN Diploma Program"],
-    "experience_level": ["entry", "mid"],
-    "tags": ["Compassionate", "Resilient", "Team-Oriented"]
+    "hard_skills": [
+      "Patient Care",
+      "Medical Terminology",
+      "IV Administration"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Emergency Services"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Attention to Detail",
+      "Stress Management"
+    ],
+    "related_majors": [
+      "Nursing"
+    ],
+    "required_education": [
+      "associate",
+      "bachelor"
+    ],
+    "alt_education": [
+      "RN Diploma Program"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Compassionate",
+      "Resilient",
+      "Team-Oriented"
+    ]
   },
   {
     "title": "High School Teacher",
     "category": "Education",
     "description": "Educate and guide high school students in various subjects, fostering their academic and personal growth.",
-    "hard_skills": ["Lesson Planning", "Subject Expertise", "Classroom Management"],
-    "preferred_fields": ["Education", "Youth Services", "Public Sector"],
-    "soft_skills": ["Patience", "Public Speaking", "Empathy"],
-    "related_majors": ["Education", "Subject-specific majors (e.g., Math, English)"],
-    "required_education": ["bachelor", "master+"],
-    "alt_education": ["Teaching Certification", "Alternative Certification Program"],
-    "experience_level": ["entry", "mid", "senior"],
-    "tags": ["Mentor", "Supportive", "Structured"]
+    "hard_skills": [
+      "Lesson Planning",
+      "Subject Expertise",
+      "Classroom Management"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Youth Services",
+      "Public Sector"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Public Speaking",
+      "Empathy"
+    ],
+    "related_majors": [
+      "Education",
+      "Subject-specific majors (e.g., Math, English)"
+    ],
+    "required_education": [
+      "bachelor",
+      "master+"
+    ],
+    "alt_education": [
+      "Teaching Certification",
+      "Alternative Certification Program"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Mentor",
+      "Supportive",
+      "Structured"
+    ]
   },
   {
     "title": "Electrician",
     "category": "Skilled Trades",
     "description": "Install, maintain, and repair electrical wiring, equipment, and fixtures.",
-    "hard_skills": ["Wiring", "Blueprint Reading", "Electrical Code Knowledge"],
-    "preferred_fields": ["Construction", "Maintenance", "Utilities"],
-    "soft_skills": ["Problem Solving", "Manual Dexterity", "Attention to Detail"],
-    "related_majors": ["Electrical Technology", "Engineering Technology"],
-    "required_education": ["high school", "associate"],
-    "alt_education": ["Apprenticeship", "Vocational Training"],
-    "experience_level": ["entry", "mid", "senior"],
-    "tags": ["Hands-on", "Skilled Trade", "Independent"]
+    "hard_skills": [
+      "Wiring",
+      "Blueprint Reading",
+      "Electrical Code Knowledge"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Utilities"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Manual Dexterity",
+      "Attention to Detail"
+    ],
+    "related_majors": [
+      "Electrical Technology",
+      "Engineering Technology"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship",
+      "Vocational Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
   },
   {
     "title": "Marketing Manager",
     "category": "Business",
     "description": "Develop and implement marketing strategies to promote products or services and drive brand awareness.",
-    "hard_skills": ["SEO", "Content Strategy", "Market Analysis"],
-    "preferred_fields": ["Advertising", "Retail", "Tech"],
-    "soft_skills": ["Creativity", "Leadership", "Persuasion"],
-    "related_majors": ["Marketing", "Business Administration", "Communications"],
-    "required_education": ["bachelor", "master+"],
-    "alt_education": ["Certificate", "MBA (preferred)"],
-    "experience_level": ["mid", "senior"],
-    "tags": ["Strategic", "Creative", "Goal-Oriented"]
+    "hard_skills": [
+      "SEO",
+      "Content Strategy",
+      "Market Analysis"
+    ],
+    "preferred_fields": [
+      "Advertising",
+      "Retail",
+      "Tech"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Leadership",
+      "Persuasion"
+    ],
+    "related_majors": [
+      "Marketing",
+      "Business Administration",
+      "Communications"
+    ],
+    "required_education": [
+      "bachelor",
+      "master+"
+    ],
+    "alt_education": [
+      "Certificate",
+      "MBA (preferred)"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Creative",
+      "Goal-Oriented"
+    ]
   },
   {
     "title": "Chef",
     "category": "Hospitality",
     "description": "Plan menus, prepare food, and manage kitchen operations in restaurants or other food service establishments.",
-    "hard_skills": ["Culinary Techniques", "Food Safety", "Menu Planning"],
-    "preferred_fields": ["Hospitality", "Food Services", "Tourism"],
-    "soft_skills": ["Creativity", "Multitasking", "Time Management"],
-    "related_majors": ["Culinary Arts", "Hospitality Management"],
-    "required_education": ["associate"],
-    "alt_education": ["Culinary School", "Apprenticeship"],
-    "experience_level": ["entry", "mid", "senior"],
-    "tags": ["Artistic", "Detail-Oriented", "Energetic"]
+    "hard_skills": [
+      "Culinary Techniques",
+      "Food Safety",
+      "Menu Planning"
+    ],
+    "preferred_fields": [
+      "Hospitality",
+      "Food Services",
+      "Tourism"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Multitasking",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Culinary Arts",
+      "Hospitality Management"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Culinary School",
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Artistic",
+      "Detail-Oriented",
+      "Energetic"
+    ]
   },
   {
     "title": "Lawyer",
     "category": "Law",
     "description": "Advise and represent clients in legal matters, conduct research, and litigate cases.",
-    "hard_skills": ["Legal Research", "Litigation", "Contract Law"],
-    "preferred_fields": ["Law", "Government", "Business"],
-    "soft_skills": ["Critical Thinking", "Negotiation", "Written Communication"],
-    "related_majors": ["Law", "Political Science", "Criminal Justice"],
-    "required_education": ["master+"],
+    "hard_skills": [
+      "Legal Research",
+      "Litigation",
+      "Contract Law"
+    ],
+    "preferred_fields": [
+      "Law",
+      "Government",
+      "Business"
+    ],
+    "soft_skills": [
+      "Critical Thinking",
+      "Negotiation",
+      "Written Communication"
+    ],
+    "related_majors": [
+      "Law",
+      "Political Science",
+      "Criminal Justice"
+    ],
+    "required_education": [
+      "master+"
+    ],
     "alt_education": [],
-    "experience_level": ["mid", "senior"],
-    "tags": ["Analytical", "Articulate", "Ethical"]
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Articulate",
+      "Ethical"
+    ]
   },
   {
     "title": "Social Worker",
     "category": "Social Services",
     "description": "Help individuals, families, and communities cope with various challenges and improve their well-being.",
-    "hard_skills": ["Case Management", "Counseling", "Report Writing"],
-    "preferred_fields": ["Social Services", "Education", "Healthcare"],
-    "soft_skills": ["Empathy", "Active Listening", "Problem Solving"],
-    "related_majors": ["Social Work", "Psychology", "Sociology"],
-    "required_education": ["bachelor", "master+"],
-    "alt_education": ["Human Services Certification"],
-    "experience_level": ["entry", "mid"],
-    "tags": ["Supportive", "Advocate", "Community-Focused"]
+    "hard_skills": [
+      "Case Management",
+      "Counseling",
+      "Report Writing"
+    ],
+    "preferred_fields": [
+      "Social Services",
+      "Education",
+      "Healthcare"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Active Listening",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Social Work",
+      "Psychology",
+      "Sociology"
+    ],
+    "required_education": [
+      "bachelor",
+      "master+"
+    ],
+    "alt_education": [
+      "Human Services Certification"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Supportive",
+      "Advocate",
+      "Community-Focused"
+    ]
   },
   {
     "title": "Graphic Designer",
     "category": "Design",
     "description": "Create visual concepts using computer software or by hand, to communicate ideas that inspire, inform, or captivate consumers.",
-    "hard_skills": ["Adobe Photoshop", "Typography", "Brand Design"],
-    "preferred_fields": ["Media", "Advertising", "Publishing"],
-    "soft_skills": ["Creativity", "Communication", "Time Management"],
-    "related_majors": ["Graphic Design", "Visual Arts", "Multimedia Arts"],
-    "required_education": ["bachelor"],
-    "alt_education": ["Certificate", "Portfolio-Based Entry", "Self-Taught"],
-    "experience_level": ["entry", "mid"],
-    "tags": ["Visual", "Creative", "Artistic"]
+    "hard_skills": [
+      "Adobe Photoshop",
+      "Typography",
+      "Brand Design"
+    ],
+    "preferred_fields": [
+      "Media",
+      "Advertising",
+      "Publishing"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Visual Arts",
+      "Multimedia Arts"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio-Based Entry",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Visual",
+      "Creative",
+      "Artistic"
+    ]
+  },
+  {
+    "title": "Accountant",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Financial Analyst",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Auditor",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Investment Banker",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Financial Planner",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Credit Analyst",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Tax Specialist",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Treasury Analyst",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Risk Manager",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Budget Analyst",
+    "category": "Finance",
+    "description": "Manage financial operations and analysis.",
+    "hard_skills": [
+      "Financial Analysis",
+      "Excel",
+      "Accounting"
+    ],
+    "preferred_fields": [
+      "Finance",
+      "Banking",
+      "Corporate"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Analytical",
+      "Ethical"
+    ],
+    "related_majors": [
+      "Finance",
+      "Accounting",
+      "Economics"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "MBA"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Analytical",
+      "Detail-Oriented",
+      "Numerical"
+    ]
+  },
+  {
+    "title": "Pharmacist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Physical Therapist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Occupational Therapist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Radiologic Technologist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Medical Laboratory Scientist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Dietitian",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Respiratory Therapist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Dentist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Paramedic",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Phlebotomist",
+    "category": "Healthcare",
+    "description": "Provide medical care and services.",
+    "hard_skills": [
+      "Patient Assessment",
+      "Medical Knowledge",
+      "Clinical Procedures"
+    ],
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Wellness"
+    ],
+    "soft_skills": [
+      "Empathy",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "related_majors": [
+      "Nursing",
+      "Medicine",
+      "Public Health"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Residency"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Compassionate",
+      "Detail-Oriented",
+      "Trustworthy"
+    ]
+  },
+  {
+    "title": "Elementary School Teacher",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "College Professor",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Instructional Designer",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "School Counselor",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Special Education Teacher",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Corporate Trainer",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Librarian",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Early Childhood Educator",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Educational Consultant",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "ESL Teacher",
+    "category": "Education",
+    "description": "Teach and guide learners.",
+    "hard_skills": [
+      "Curriculum Development",
+      "Instructional Design",
+      "Assessment"
+    ],
+    "preferred_fields": [
+      "Education",
+      "Training",
+      "Nonprofit"
+    ],
+    "soft_skills": [
+      "Patience",
+      "Communication",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Education",
+      "Psychology",
+      "Special Education"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Teaching Certificate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Supportive",
+      "Organized",
+      "Patient"
+    ]
+  },
+  {
+    "title": "Plumber",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Carpenter",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Welder",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "HVAC Technician",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Auto Mechanic",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Mason",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Painter",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Sheet Metal Worker",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Bricklayer",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Heavy Equipment Operator",
+    "category": "Skilled Trades",
+    "description": "Perform specialized manual tasks and maintenance.",
+    "hard_skills": [
+      "Technical Skills",
+      "Safety Procedures",
+      "Blueprint Reading"
+    ],
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Attention to Detail",
+      "Manual Dexterity"
+    ],
+    "related_majors": [
+      "Vocational Training",
+      "Technical School"
+    ],
+    "required_education": [
+      "high school",
+      "associate"
+    ],
+    "alt_education": [
+      "Apprenticeship"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Hands-on",
+      "Skilled Trade",
+      "Independent"
+    ]
+  },
+  {
+    "title": "Operations Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Project Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Business Analyst",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "HR Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Sales Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Product Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Management Consultant",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Supply Chain Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Procurement Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Quality Manager",
+    "category": "Business",
+    "description": "Oversee business operations and strategy.",
+    "hard_skills": [
+      "Strategic Planning",
+      "Budgeting",
+      "Data Analysis"
+    ],
+    "preferred_fields": [
+      "Corporate",
+      "Consulting",
+      "Retail"
+    ],
+    "soft_skills": [
+      "Leadership",
+      "Communication",
+      "Problem Solving"
+    ],
+    "related_majors": [
+      "Business Administration",
+      "Management",
+      "Finance"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "MBA",
+      "Certificate"
+    ],
+    "experience_level": [
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Strategic",
+      "Analytical",
+      "Goal-Oriented"
+    ]
+  },
+  {
+    "title": "Network Engineer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Cybersecurity Analyst",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "DevOps Engineer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Cloud Architect",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Database Administrator",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Systems Administrator",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Mobile Developer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "QA Engineer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Data Engineer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "category": "Tech",
+    "description": "Develop and maintain technical systems and software.",
+    "hard_skills": [
+      "Programming",
+      "System Design",
+      "Debugging"
+    ],
+    "preferred_fields": [
+      "Tech",
+      "Software",
+      "IT"
+    ],
+    "soft_skills": [
+      "Problem Solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "related_majors": [
+      "Computer Science",
+      "Information Technology"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Bootcamp",
+      "Self-Taught"
+    ],
+    "experience_level": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "tags": [
+      "Technical",
+      "Innovative",
+      "Analytical"
+    ]
+  },
+  {
+    "title": "Interior Designer",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Industrial Designer",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Fashion Designer",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "UX Researcher",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Art Director",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Animator",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Video Editor",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "3D Modeler",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Illustrator",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Motion Graphics Designer",
+    "category": "Design",
+    "description": "Create visual and interactive designs.",
+    "hard_skills": [
+      "Design Tools",
+      "Typography",
+      "Layout"
+    ],
+    "preferred_fields": [
+      "Design",
+      "Media",
+      "Advertising"
+    ],
+    "soft_skills": [
+      "Creativity",
+      "Communication",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Graphic Design",
+      "Fine Arts",
+      "HCI"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certificate",
+      "Portfolio"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Creative",
+      "Visual",
+      "User-focused"
+    ]
+  },
+  {
+    "title": "Assembly Line Worker",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Production Supervisor",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Maintenance Technician",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "CNC Machinist",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Quality Inspector",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Plant Manager",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Process Engineer",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Logistics Coordinator",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Inventory Specialist",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Forklift Operator",
+    "category": "Manufacturing",
+    "description": "Produce goods and ensure quality control.",
+    "hard_skills": [
+      "Process Improvement",
+      "Quality Assurance",
+      "Machine Operation"
+    ],
+    "preferred_fields": [
+      "Manufacturing",
+      "Industrial"
+    ],
+    "soft_skills": [
+      "Attention to Detail",
+      "Teamwork",
+      "Efficiency"
+    ],
+    "related_majors": [
+      "Industrial Engineering",
+      "Manufacturing Technology"
+    ],
+    "required_education": [
+      "associate"
+    ],
+    "alt_education": [
+      "Certificate",
+      "On-the-Job Training"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Process-Driven",
+      "Quality-Focused",
+      "Team-Oriented"
+    ]
+  },
+  {
+    "title": "Warehouse Manager",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Logistics Analyst",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Transportation Planner",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Freight Broker",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Customs Specialist",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Inventory Planner",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Distribution Manager",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Fleet Manager",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Import/Export Coordinator",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
+  },
+  {
+    "title": "Shipping Clerk",
+    "category": "Logistics",
+    "description": "Manage supply chain and distribution operations.",
+    "hard_skills": [
+      "Logistics Management",
+      "Inventory Control",
+      "ERP Systems"
+    ],
+    "preferred_fields": [
+      "Logistics",
+      "Retail",
+      "Manufacturing"
+    ],
+    "soft_skills": [
+      "Organization",
+      "Problem Solving",
+      "Time Management"
+    ],
+    "related_majors": [
+      "Supply Chain Management",
+      "Business"
+    ],
+    "required_education": [
+      "bachelor"
+    ],
+    "alt_education": [
+      "Certification",
+      "Associate"
+    ],
+    "experience_level": [
+      "entry",
+      "mid"
+    ],
+    "tags": [
+      "Organized",
+      "Analytical",
+      "Detail-Oriented"
+    ]
   }
 ]

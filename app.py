@@ -80,13 +80,20 @@ def embed_user_input_and_tags(user_input, tags, model, threshold=0.5):
     user_input_embeddings = model.encode(user_input, convert_to_tensor=True)
     tags_embeddings = model.encode(tags, convert_to_tensor=True)
 
-    # Compute using cosine similarity (default)
-    similarities = util.cos_sim(user_input_embeddings, tags_embeddings)[0]
-    matched = [ 
-        tag for tag, score in zip(tags, similarities)
-        if score >= threshold
-    ]
-    return matched
+    # Check if embeddings are non-empty
+    if (
+        hasattr(user_input_embeddings, 'shape') and user_input_embeddings.shape[0] > 0
+        and hasattr(tags_embeddings, 'shape') and tags_embeddings.shape[0] > 0
+    ):
+        # Compute using cosine similarity (default)
+        similarities = util.cos_sim(user_input_embeddings, tags_embeddings)[0]
+        matched = [ 
+            tag for tag, score in zip(tags, similarities)
+            if score >= threshold
+        ]
+        return matched
+    else:
+        return []
 
 # For each match, apply global weight
 # Add match into dictionary if not already in dictionary
@@ -181,12 +188,12 @@ def get_data_from_json(filename, required_keys=None):
     """
     Retrieves data from a specified JSON file located in the 'data' directory.
 
-    Args:
-        filename (str): The name of the JSON file (e.g., "careers.json").
+    Parameters:
+    - filename (str): The name of the JSON file (e.g., "careers.json").
 
     Returns:
-        dict or list: The data loaded from the JSON file.
-                      Returns None if the file is not found or an error occurs.
+    - dict or list: The data loaded from the JSON file.
+                    Returns None if the file is not found or an error occurs.
     """ 
     # Construct the full path to the JSON file
     data_dir = "data"
@@ -216,15 +223,15 @@ def exists_checker(var):
     """
     Very simple function to check a variable's existence.
 
-    Args:
-        var: The name of the variable to be tested.
+    Parameters:
+    - var: The name of the variable to be tested.
     
     - Can probably be made more robust.
     """
     if var is not None:
-        print(f"The variable {var} exists.")
+        print(f"The selected variable exists.")
     elif var is None:
-        st.error(f"Error: the variable {var} does not exist/could not be loaded.")
+        st.error(f"Error: the variable does not exist/could not be loaded.")
         
 # Load career data
 careers = get_data_from_json("careers.json")
@@ -300,7 +307,7 @@ user_data["dislikes"] = st.text_area("Are there types of work or settings you'd 
 user_data["important"] = st.text_area("What is important to you in a career? (You can answer in a few words or sentences)")
 user_data["self_description"] = st.text_area("Describe yourself in a few words or sentences!")
 
-# Debug print
+# Debug print (temp)
 st.subheader("Collected Input")
 st.json(user_data)
 
@@ -451,7 +458,7 @@ def career_match(user_data, career):
                 score += weights["alt_education"] * 0.4
 
     # Match for tags/personality
-    combined_text = f"{user_data.get("likes", "")} {user_data.get("important", "")} {user_data.get("self_description", "")}".lower()
+    combined_text = f"{user_data.get('likes', '')} {user_data.get('important', '')} {user_data.get('self_description', '')}".lower()
 
     positive_text_add_to_score, positive_text_matches = match_user_to_targets(
         user_input=combined_text,
@@ -471,7 +478,7 @@ def career_match(user_data, career):
         st.write("Matched positive keywords (may not be exact): ", positive_text_matches)
 
     # Match for negative text
-    negative_text = f"{user_data.get("dislikes", "")}".lower()
+    negative_text = f"{user_data.get('dislikes', '')}".lower()
 
     negative_text_minus_from_score, negative_text_matches = match_user_to_targets(
         user_input=negative_text,
@@ -512,31 +519,18 @@ def career_match(user_data, career):
             multiplier = max([level_weights.get(level, 0) for level in levels], default=0.5)
             score += min(int(exp["yoe"]), 15) * multiplier
     
-    """
-    score_breakdown.append({
-        "score": score,
-        "matches": {
-            "hard_skills": hard_skills_matches,
-            "soft_skills": soft_skills_matches,
-            "industry_match": field_matches,
-            "major_match": major_matches,
-            "postgrad_match": postgrad_major_matches,
-            "alt_education_match": topic,
-            "positive_tags": positive_text_matches,
-            "negative_tags": negative_text_matches,
-            "job_satisfaction_match": job_satisfaction  
-        }
-    })
-    """
+
     
     print(score_breakdown)
 
     return score
 
+# Display career matches
 ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True)
 
 # Display top matches
 st.subheader("Top Career Matches:")
 for i, career in enumerate(ranked_careers[:3]):
     st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
+
     

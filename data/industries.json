@@ -1,10 +1,72 @@
 [
-    "Medicine / Healthcare", "Law / Legal", "Engineering",
-    "Computer Science / IT", "Education", "Business / Finance",
-    "Economics", "Arts / Design", "Environment / Sustainability",
-    "Psychology / Social Work", "Marketing / Advertising",
-    "Government / Public Policy", "Media / Communications",
-    "Science / Research", "Trades / Skilled Labor",
-    "Entrepreneurship", "Manufacturing", "Logistics / Supply Chain",
-    "Hospitality / Tourism", "I'm not sure yet"
+  {
+    "preferred_fields": [
+      "Tech",
+      "Data",
+      "Finance"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Tech",
+      "Media",
+      "Advertising"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Healthcare",
+      "Medicine",
+      "Emergency Services"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Education",
+      "Youth Services",
+      "Public Sector"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Construction",
+      "Maintenance",
+      "Utilities"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Advertising",
+      "Retail",
+      "Tech"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Hospitality",
+      "Food Services",
+      "Tourism"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Law",
+      "Government",
+      "Business"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Social Services",
+      "Education",
+      "Healthcare"
+    ]
+  },
+  {
+    "preferred_fields": [
+      "Media",
+      "Advertising",
+      "Publishing"
+    ]
+  }
 ]

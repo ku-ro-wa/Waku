@@ -1,7 +1,32 @@
 [
-    "Software Developer", "UX Designer", "Data Analyst", "IT Support", "Teacher",
-    "Marketing Manager", "Chef", "Lawyer", "Social Worker",
-    "Sales Associate", "Registered Nurse", "Mechanical Engineer", "High School Teacher",
-    "Graphic Designer", "Customer Service Rep", "Freelancer"," Electrician",
-    "Other"
+  {
+    "title": "Data Scientist"
+  },
+  {
+    "title": "UX Designer"
+  },
+  {
+    "title": "Registered Nurse"
+  },
+  {
+    "title": "High School Teacher"
+  },
+  {
+    "title": "Electrician"
+  },
+  {
+    "title": "Marketing Manager"
+  },
+  {
+    "title": "Chef"
+  },
+  {
+    "title": "Lawyer"
+  },
+  {
+    "title": "Social Worker"
+  },
+  {
+    "title": "Graphic Designer"
+  }
 ]

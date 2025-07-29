@@ -1,12 +1,60 @@
 [
-    "Cert: Google Data Analytics Certificate",            
-    "Cert: UX Design Professional Certificate",          
-    "Cert: First Aid / CPR",                              
-    "Cert: Teaching Certification",                       
-    "Trade: Electrician Training",                       
-    "Cert: Digital Marketing Certificate",               
-    "Cert: Culinary Arts Certificate",                   
-    "Other: Law Prep Program",                           
-    "Cert: Human Services Certificate",                   
-    "Cert: Adobe Creative Suite Certification"           
+  {
+    "alt_education": [
+      "Bootcamp",
+      "Certificate",
+      "Self-Taught"
+    ]
+  },
+  {
+    "alt_education": [
+      "Bootcamp",
+      "Certificate",
+      "Self-Taught"
+    ]
+  },
+  {
+    "alt_education": [
+      "RN Diploma Program"
+    ]
+  },
+  {
+    "alt_education": [
+      "Teaching Certification",
+      "Alternative Certification Program"
+    ]
+  },
+  {
+    "alt_education": [
+      "Apprenticeship",
+      "Vocational Training"
+    ]
+  },
+  {
+    "alt_education": [
+      "Certificate",
+      "MBA (preferred)"
+    ]
+  },
+  {
+    "alt_education": [
+      "Culinary School",
+      "Apprenticeship"
+    ]
+  },
+  {
+    "alt_education": []
+  },
+  {
+    "alt_education": [
+      "Human Services Certification"
+    ]
+  },
+  {
+    "alt_education": [
+      "Certificate",
+      "Portfolio-Based Entry",
+      "Self-Taught"
+    ]
+  }
 ]

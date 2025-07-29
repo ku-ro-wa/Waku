@@ -1,13 +1,72 @@
 [
-    "Python", "Excel", "CAD", "SQL", 
-    "UI/UX Design", "Figma", "User Research", "HTML/CSS",
-    "Legal Research", "Litigation", "Contract Law",
-    "JavaScript", "Patient Care", "Medical Terminology", "IV Administration",
-    "Data Analysis", "Machine Learning", "Mechanical Design", "Accounting",
-    "Java", "Lesson Planning", "Subject Expertise", "Classroom Management",
-    "Wiring", "Blueprint Reading", "Electrical Code Knowledge", "SEO", 
-    "Content Strategy", "Market Analysis", "Culinary Techniques", "Food Safety", 
-    "Menu Planning", "Case Management", "Counseling", "Report Writing",
-    "Adobe Photoshop", "Typography", "Brand Design",
-    "Other"
+  {
+    "hard_skills": [
+      "Python",
+      "Data Analysis",
+      "Machine Learning"
+    ]
+  },
+  {
+    "hard_skills": [
+      "UI/UX Design",
+      "Figma",
+      "User Research"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Patient Care",
+      "Medical Terminology",
+      "IV Administration"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Lesson Planning",
+      "Subject Expertise",
+      "Classroom Management"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Wiring",
+      "Blueprint Reading",
+      "Electrical Code Knowledge"
+    ]
+  },
+  {
+    "hard_skills": [
+      "SEO",
+      "Content Strategy",
+      "Market Analysis"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Culinary Techniques",
+      "Food Safety",
+      "Menu Planning"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Legal Research",
+      "Litigation",
+      "Contract Law"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Case Management",
+      "Counseling",
+      "Report Writing"
+    ]
+  },
+  {
+    "hard_skills": [
+      "Adobe Photoshop",
+      "Typography",
+      "Brand Design"
+    ]
+  }
 ]
