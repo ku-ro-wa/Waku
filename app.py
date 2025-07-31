@@ -219,6 +219,26 @@ def get_data_from_json(filename, required_keys=None):
                 if key not in entry:
                     print(f"Warning: Missing key '{key}' in an entry of '{filename}'")
 
+def return_json_list_from_dict(file_name, attribute):
+    """
+    Converts a dictionary to a list of dictionaries, each containing a single key-value pair.
+    
+    Returns:
+    - list: A list of dictionaries, each with a single key-value pair.
+    """
+    # Fetch dictionaries from JSON files
+    raw_data = get_data_from_json(f"{file_name}.json")
+    exists_checker(raw_data)
+
+    # Extract list from dictionary
+    list = []
+    if raw_data and attribute in raw_data:
+        list = raw_data[attribute]
+    else:
+        st.error(f"Error: '{attribute}' not found in the JSON data.")
+
+    return list
+
 def exists_checker(var):
     """
     Very simple function to check a variable's existence.
@@ -229,31 +249,35 @@ def exists_checker(var):
     - Can probably be made more robust.
     """
     if var is not None:
-        print(f"The selected variable exists.")
+        print(f"The variable '{var}' exists.")
     elif var is None:
-        st.error(f"Error: the variable does not exist/could not be loaded.")
+        st.error(f"Error: the variable '{var}' does not exist/could not be loaded.")
         
 # Load career data
 careers = get_data_from_json("careers.json")
 exists_checker(careers)
 
 # Load options data
-industries = get_data_from_json("industries.json")
+industries = return_json_list_from_dict("preferred_fields", "preferred_fields")
 exists_checker(industries)
 
-alternate_education = get_data_from_json("alternate_education.json")
+majors = return_json_list_from_dict("majors", "related_majors")
+exists_checker(majors)
+
+# Currently not used, check alt_edu logic.
+alternate_education = return_json_list_from_dict("alternate_education", "alt_education")
 exists_checker(alternate_education)
 
 alt_ed_topic_to_careers = get_data_from_json("alt_education_map.json")
 exists_checker(alt_ed_topic_to_careers)
 
-career_titles = get_data_from_json("career_titles.json")
+career_titles = return_json_list_from_dict("career_titles", "title")
 exists_checker(career_titles)
 
-hard_skills = get_data_from_json("hard_skills.json")
-exists_checker(hard_skills)
+hard_skills = return_json_list_from_dict("hard_skills", "hard_skills")
+exists_checker(hard_skills) 
 
-soft_skills = get_data_from_json("soft_skills.json")
+soft_skills = return_json_list_from_dict("soft_skills", "soft_skills")
 exists_checker(soft_skills)
 
 
@@ -272,13 +296,13 @@ user_data["interested_fields_text"] = st.text_input("Other fields of interest (o
 user_data["in_college"] = st.radio("Have you gone or are you currently in college?", ["Yes", "No"], index=None)
 if user_data["in_college"] == "Yes":
     user_data["education_level"] = "bachelor"
-    user_data["college_major"] = st.multiselect("What did you study or what are you studying in college?", options=industries, accept_new_options=True)
+    user_data["college_major"] = st.multiselect("What did you study or what are you studying in college?", options=majors, accept_new_options=True)
     user_data["in_postgrad"] = st.radio("Have you done or are you currently pursuing graduate studies?", ["Yes", "No"], index=None)
     if user_data["in_postgrad"] == "Yes":
         user_data["education_level"] = "master+"
-        user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=industries, accept_new_options=True)
+        user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=majors, accept_new_options=True)
 
-user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=alternate_education, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
+user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=alt_ed_topic_to_careers, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
 parsed_alt_education = [parse_alt_education(e) for e in user_data.get("alt_education", [])] # Parse the user's alt education
 
 # Job info

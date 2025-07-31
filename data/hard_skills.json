@@ -1,72 +1,58 @@
-[
-  {
-    "hard_skills": [
-      "Python",
-      "Data Analysis",
-      "Machine Learning"
-    ]
-  },
-  {
-    "hard_skills": [
-      "UI/UX Design",
-      "Figma",
-      "User Research"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Patient Care",
-      "Medical Terminology",
-      "IV Administration"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Lesson Planning",
-      "Subject Expertise",
-      "Classroom Management"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Wiring",
-      "Blueprint Reading",
-      "Electrical Code Knowledge"
-    ]
-  },
-  {
-    "hard_skills": [
-      "SEO",
-      "Content Strategy",
-      "Market Analysis"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Culinary Techniques",
-      "Food Safety",
-      "Menu Planning"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Legal Research",
-      "Litigation",
-      "Contract Law"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Case Management",
-      "Counseling",
-      "Report Writing"
-    ]
-  },
-  {
-    "hard_skills": [
-      "Adobe Photoshop",
-      "Typography",
-      "Brand Design"
-    ]
-  }
-]
+{
+  "hard_skills": [
+    "Accounting",
+    "Adobe Photoshop",
+    "Assessment",
+    "Blueprint Reading",
+    "Brand Design",
+    "Budgeting",
+    "Case Management",
+    "Classroom Management",
+    "Clinical Procedures",
+    "Content Strategy",
+    "Contract Law",
+    "Counseling",
+    "Culinary Techniques",
+    "Curriculum Development",
+    "Data Analysis",
+    "Debugging",
+    "Design Tools",
+    "ERP Systems",
+    "Electrical Code Knowledge",
+    "Excel",
+    "Figma",
+    "Financial Analysis",
+    "Food Safety",
+    "IV Administration",
+    "Instructional Design",
+    "Inventory Control",
+    "Layout",
+    "Legal Research",
+    "Lesson Planning",
+    "Litigation",
+    "Logistics Management",
+    "Machine Learning",
+    "Machine Operation",
+    "Market Analysis",
+    "Medical Knowledge",
+    "Medical Terminology",
+    "Menu Planning",
+    "Patient Assessment",
+    "Patient Care",
+    "Process Improvement",
+    "Programming",
+    "Python",
+    "Quality Assurance",
+    "Report Writing",
+    "SEO",
+    "Safety Procedures",
+    "Strategic Planning",
+    "Subject Expertise",
+    "System Design",
+    "Technical Skills",
+    "Typography",
+    "UI/UX Design",
+    "User Research",
+    "Wiring"
+  ]
+}

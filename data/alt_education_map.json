@@ -1,12 +1,85 @@
 {
-    "Google Data Analytics Certificate": ["Data Scientist"],
-    "UX Design Professional Certificate": ["UX Designer"],
-    "First Aid / CPR": ["Registered Nurse"],
-    "Teaching Certification": ["High School Teacher"],
-    "Electrician Training": ["Electrician"],
-    "Digital Marketing Certificate": ["Marketing Manager"],
-    "Culinary Arts Certificate": ["Chef"],
-    "Law Prep Program": ["Lawyer"],
-    "Human Services Certificate": ["Social Worker"],
-    "Adobe Creative Suite Certification": ["Graphic Designer"]
+  "Certificate: Google Data Analytics Certificate": [
+    "Data Scientist",
+    "Business Analyst",
+    "Marketing Analyst"
+  ],
+  "Certificate: UX Design Professional Certificate": [
+    "UX Designer",
+    "Product Designer"
+  ],
+  "Certification: First Aid / CPR": [
+    "Registered Nurse",
+    "Paramedic",
+    "Physical Therapist"
+  ],
+  "Teaching Certification: Teaching Certification": [
+    "High School Teacher",
+    "Elementary School Teacher",
+    "Special Education Teacher"
+  ],
+  "Vocational Training: Electrician Training": [
+    "Electrician"
+  ],
+  "Certificate: Digital Marketing Certificate": [
+    "Marketing Manager",
+    "Digital Marketing Specialist"
+  ],
+  "Culinary School: Culinary Arts Certificate": [
+    "Chef",
+    "Pastry Chef",
+    "Sous Chef"
+  ],
+  "Alternative Certification Program: Law Prep Program": [
+    "Lawyer",
+    "Legal Assistant"
+  ],
+  "Human Services Certification: Human Services Certificate": [
+    "Social Worker",
+    "Case Manager",
+    "Substance Abuse Counselor"
+  ],
+  "Certification: Adobe Creative Suite Certification": [
+    "Graphic Designer",
+    "Animator",
+    "Video Editor"
+  ],
+  "Certification: CompTIA Security+": [
+    "Cybersecurity Analyst",
+    "Network Engineer"
+  ],
+  "Certification: AWS Certified Solutions Architect": [
+    "Cloud Architect",
+    "DevOps Engineer"
+  ],
+  "Certification: PMP Certification": [
+    "Project Manager",
+    "Program Manager"
+  ],
+  "Certification: CFA (Chartered Financial Analyst)": [
+    "Financial Analyst",
+    "Investment Banker"
+  ],
+  "Certification: CPA (Certified Public Accountant)": [
+    "Accountant",
+    "Auditor"
+  ],
+  "Certification: HVAC Certification": [
+    "HVAC Technician"
+  ],
+  "Certification: Welding Certification": [
+    "Welder"
+  ],
+  "Certification: CNA (Certified Nursing Assistant)": [
+    "Nursing Assistant",
+    "Home Health Aide"
+  ],
+  "Teaching Certificate: Child Development Associate (CDA)": [
+    "Early Childhood Educator",
+    "Preschool Teacher"
+  ],
+  "Certificate: Google IT Support Certificate": [
+    "IT Support Specialist",
+    "Systems Administrator"
+  ]
 }

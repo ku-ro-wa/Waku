@@ -1,60 +1,23 @@
-[
-  {
-    "alt_education": [
-      "Bootcamp",
-      "Certificate",
-      "Self-Taught"
-    ]
-  },
-  {
-    "alt_education": [
-      "Bootcamp",
-      "Certificate",
-      "Self-Taught"
-    ]
-  },
-  {
-    "alt_education": [
-      "RN Diploma Program"
-    ]
-  },
-  {
-    "alt_education": [
-      "Teaching Certification",
-      "Alternative Certification Program"
-    ]
-  },
-  {
-    "alt_education": [
-      "Apprenticeship",
-      "Vocational Training"
-    ]
-  },
-  {
-    "alt_education": [
-      "Certificate",
-      "MBA (preferred)"
-    ]
-  },
-  {
-    "alt_education": [
-      "Culinary School",
-      "Apprenticeship"
-    ]
-  },
-  {
-    "alt_education": []
-  },
-  {
-    "alt_education": [
-      "Human Services Certification"
-    ]
-  },
-  {
-    "alt_education": [
-      "Certificate",
-      "Portfolio-Based Entry",
-      "Self-Taught"
-    ]
-  }
-]
+{
+  "alt_education": [
+    "Alternative Certification Program",
+    "Apprenticeship",
+    "Associate",
+    "Bootcamp",
+    "Certificate",
+    "Certification",
+    "Culinary School",
+    "Human Services Certification",
+    "MBA",
+    "MBA (preferred)",
+    "On-the-Job Training",
+    "Portfolio",
+    "Portfolio-Based Entry",
+    "RN Diploma Program",
+    "Residency",
+    "Self-Taught",
+    "Teaching Certificate",
+    "Teaching Certification",
+    "Vocational Training"
+  ]
+}

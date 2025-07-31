@@ -1,72 +1,36 @@
-[
-  {
-    "tags": [
-      "Analytical",
-      "Data-Driven",
-      "Curious"
-    ]
-  },
-  {
-    "tags": [
-      "Creative",
-      "User-focused",
-      "Visual"
-    ]
-  },
-  {
-    "tags": [
-      "Compassionate",
-      "Resilient",
-      "Team-Oriented"
-    ]
-  },
-  {
-    "tags": [
-      "Mentor",
-      "Supportive",
-      "Structured"
-    ]
-  },
-  {
-    "tags": [
-      "Hands-on",
-      "Skilled Trade",
-      "Independent"
-    ]
-  },
-  {
-    "tags": [
-      "Strategic",
-      "Creative",
-      "Goal-Oriented"
-    ]
-  },
-  {
-    "tags": [
-      "Artistic",
-      "Detail-Oriented",
-      "Energetic"
-    ]
-  },
-  {
-    "tags": [
-      "Analytical",
-      "Articulate",
-      "Ethical"
-    ]
-  },
-  {
-    "tags": [
-      "Supportive",
-      "Advocate",
-      "Community-Focused"
-    ]
-  },
-  {
-    "tags": [
-      "Visual",
-      "Creative",
-      "Artistic"
-    ]
-  }
-]
+{
+  "tags": [
+    "Advocate",
+    "Analytical",
+    "Articulate",
+    "Artistic",
+    "Community-Focused",
+    "Compassionate",
+    "Creative",
+    "Curious",
+    "Data-Driven",
+    "Detail-Oriented",
+    "Energetic",
+    "Ethical",
+    "Goal-Oriented",
+    "Hands-on",
+    "Independent",
+    "Innovative",
+    "Mentor",
+    "Numerical",
+    "Organized",
+    "Patient",
+    "Process-Driven",
+    "Quality-Focused",
+    "Resilient",
+    "Skilled Trade",
+    "Strategic",
+    "Structured",
+    "Supportive",
+    "Team-Oriented",
+    "Technical",
+    "Trustworthy",
+    "User-focused",
+    "Visual"
+  ]
+}
