@@ -1,9 +1,12 @@
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
+from PIL import Image
 from sentence_transformers import SentenceTransformer, util
 from textblob import TextBlob
 import json
 import os
+import pdfplumber
+import pytesseract
 import spacy 
 import streamlit as st
 
@@ -27,7 +30,7 @@ def get_synonyms(word, pos='n'):
                 synonyms.add(synonym)
     return list(synonyms)
 
-def normalise_text(text):
+def normalise_and_tokenise_text(text):
     doc = nlp(text.lower())
     return [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
 
@@ -58,7 +61,6 @@ def correct_spelling(words, known_vocab=None):
             corrected_word = str(TextBlob(word).correct())
             corrected.append(corrected_word)
     return corrected
-
 
 def parse_alt_education(entry):
     try:
@@ -145,7 +147,7 @@ def match_user_to_targets(
     matches = defaultdict(float)
 
     # Normalise and spell-correct input
-    normalised = normalise_text(", ".join(user_input))
+    normalised = normalise_and_tokenise_text(", ".join(user_input))
     corrected = correct_spelling(normalised, known_vocab)
 
     # Exact matches
@@ -247,12 +249,57 @@ def exists_checker(var):
     - var: The name of the variable to be tested.
     
     - Can probably be made more robust.
+    Returns:
+    - None if the variable exists, or an error message if it does not.
     """
     if var is not None:
         print(f"The variable '{var}' exists.")
     elif var is None:
         st.error(f"Error: the variable '{var}' does not exist/could not be loaded.")
-        
+
+def load_pdf_text(file):
+    """Extracts text from a PDF file using pdfplumber.
+    
+    Parameters:
+    - file: The user's uploaded file.
+
+    Returns:
+    - str: The extracted text from the PDF.
+    """
+    with pdfplumber.open(file) as pdf:
+        text = ""
+        for page in pdf.pages:
+            page_text = page.extract_text()
+            
+            # Check if page_text is not None
+            if page_text and page_text.strip(): 
+                text += page_text + "\n"
+            # If page_text is None or empty, use OCR (PDF may be scanned)
+            else:
+                pil_image = page.to_image(resolution=300).original
+                ocr_text = pytesseract.image_to_string(pil_image)
+                text += ocr_text + "\n"
+
+    return text.strip()
+
+def extract_skills(text, skills_list):
+    """Extracts skills from a given text using spaCy.
+    
+    Parameters:
+    - text: The input text from which to extract skills.
+    - skills_list: A list of skills to look for in the text.
+
+    Returns:
+    - list: A list of extracted skills.
+    """
+    doc = nlp(text)
+    skills = set()
+
+    for token in doc:
+        if token.text in skills_list:
+            skills.add(token.text)
+    return list(skills)
+
 # Load career data
 careers = get_data_from_json("careers.json")
 exists_checker(careers)
@@ -280,12 +327,18 @@ exists_checker(hard_skills)
 soft_skills = return_json_list_from_dict("soft_skills", "soft_skills")
 exists_checker(soft_skills)
 
+combined_skills = hard_skills + soft_skills
 
 # Form title
 st.title("Waku - Career Recommender")
 
 # Collect responses from user
 user_data = {}
+
+st.write("Welcome to Waku! Let's find your ideal career path together. You can skip any question by leaving it blank, but the more you answer, the better your recommendations will be!")
+st.write("You can also upload your CV/resume instead of filling out the form if that's what you prefer. (This feature is not yet implemented)")
+
+uploaded_file = st.file_uploader("Upload your CV/resume (optional)", type=["pdf"], help="This feature is not yet implemented. You can still fill out the form below to get recommendations.")
 
 # Basic info
 user_data["age"] = st.selectbox("How old are you?", options=[str(i) for i in range(16, 61)], index=None, placeholder="Select your age")
@@ -334,6 +387,11 @@ user_data["self_description"] = st.text_area("Describe yourself in a few words o
 # Debug print (temp)
 st.subheader("Collected Input")
 st.json(user_data)
+
+# Preparing the PDF text and extracting skills
+pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
+normalised_pdf_text = normalise_and_tokenise_text(pdf_file) if pdf_file else None
+matched_skills = extract_skills(normalised_pdf_text, combined_skills) if normalised_pdf_text else None
 
 
 # Initialise list for feedback
@@ -471,7 +529,7 @@ def career_match(user_data, career):
             score += weights["alt_education"] * 0.7
 
         else:
-            normalised = normalise_text(", ".join(topic))
+            normalised = normalise_and_tokenise_text(", ".join(topic))
             corrected = correct_spelling(normalised, KNOWN_VOCAB)
             expanded = expand_with_synonyms(corrected, 'n')
             semantic_matches = embed_user_input_and_tags("".join(corrected), career["alt_education"], model, 0.5)
