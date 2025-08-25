@@ -31,6 +31,10 @@ def get_synonyms(word, pos='n'):
     return list(synonyms)
 
 def normalise_and_tokenise_text(text):
+    # Join tokens into a string if input is a list
+    if isinstance(text, list):
+        text = " ".join(text)
+
     doc = nlp(text.lower())
     return [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
 
@@ -79,6 +83,9 @@ def relevant_to_career(topic, career):
     return any(word.lower() in topic_lower for word in fields_to_match)
 
 def embed_user_input_and_tags(user_input, tags, model, threshold=0.5):
+    if isinstance(user_input, list):
+        user_input = " ".join(user_input)
+
     user_input_embeddings = model.encode(user_input, convert_to_tensor=True)
     tags_embeddings = model.encode(tags, convert_to_tensor=True)
 
@@ -147,7 +154,7 @@ def match_user_to_targets(
     matches = defaultdict(float)
 
     # Normalise and spell-correct input
-    normalised = normalise_and_tokenise_text(", ".join(user_input))
+    normalised = normalise_and_tokenise_text(user_input)
     corrected = correct_spelling(normalised, known_vocab)
 
     # Exact matches
@@ -170,7 +177,7 @@ def match_user_to_targets(
 
     # Semantic matching
     if use_semantics and model:
-        semantic_matches = embed_user_input_and_tags("".join(corrected), target_list, model)
+        semantic_matches = embed_user_input_and_tags(corrected, target_list, model)
         for match in semantic_matches:
             matches[match] = max(matches[match], 0.4)
 
@@ -258,8 +265,8 @@ def exists_checker(var):
         st.error(f"Error: the variable '{var}' does not exist/could not be loaded.")
 
 def load_pdf_text(file):
-    """Extracts text from a PDF file using pdfplumber.
-    
+    """Extracts text from a PDF file using pdfplumber, or by using OCR if necessary.
+
     Parameters:
     - file: The user's uploaded file.
 
@@ -292,6 +299,10 @@ def extract_skills(text, skills_list):
     Returns:
     - list: A list of extracted skills.
     """
+    # Join tokens into a string if input is a list
+    if isinstance(text, list):
+        text = " ".join(text)
+
     doc = nlp(text)
     skills = set()
 
@@ -299,6 +310,42 @@ def extract_skills(text, skills_list):
         if token.text in skills_list:
             skills.add(token.text)
     return list(skills)
+
+
+def extract_entities(text):
+    """Extracts entities from a given text using spaCy."""
+
+    doc = nlp(text)
+    orgs = [ent.text for ent in doc.ents if ent.label == "ORG"]
+    dates = [ent.text for ent in doc.ents if ent.label == "DATE"]
+    gpes = [ent.text for ent in doc.ents if ent.label == "GPE"]
+    langs = [ent.text for ent in doc.ents if ent.label == "LANGUAGE"]
+
+    return orgs, dates, gpes, langs
+
+
+def parse_resume_to_form(text):
+    """Parses the resume text and extracts relevant information for the form."""
+    # Join tokens into a string if input is a list
+    if isinstance(text, list):
+        text = " ".join(text)
+    
+    # Extract entities from the text
+    orgs, dates, gpes, langs = extract_entities(text)
+    matched_hard_skills = extract_skills(text, hard_skills)
+    matched_soft_skills = extract_skills(text, soft_skills)
+
+    # Create a dictionary to hold the parsed data
+    parsed_data = {
+        "hard_skills": matched_hard_skills,
+        "soft_skills": matched_soft_skills,
+        "organizations": orgs,
+        "dates": dates,
+        "geopolitical_entities": gpes,
+        "languages": langs
+    }
+
+    return parsed_data
 
 # Load career data
 careers = get_data_from_json("careers.json")
@@ -327,7 +374,6 @@ exists_checker(hard_skills)
 soft_skills = return_json_list_from_dict("soft_skills", "soft_skills")
 exists_checker(soft_skills)
 
-combined_skills = hard_skills + soft_skills
 
 # Form title
 st.title("Waku - Career Recommender")
@@ -391,8 +437,9 @@ st.json(user_data)
 # Preparing the PDF text and extracting skills
 pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
 normalised_pdf_text = normalise_and_tokenise_text(pdf_file) if pdf_file else None
-matched_skills = extract_skills(normalised_pdf_text, combined_skills) if normalised_pdf_text else None
-
+matched_hard_skills = extract_skills(normalised_pdf_text, hard_skills) if normalised_pdf_text else None
+matched_soft_skills = extract_skills(normalised_pdf_text, soft_skills) if normalised_pdf_text else None
+parsed_data = parse_resume_to_form(normalised_pdf_text) if normalised_pdf_text else None
 
 # Initialise list for feedback
 score_breakdown = []
@@ -529,10 +576,10 @@ def career_match(user_data, career):
             score += weights["alt_education"] * 0.7
 
         else:
-            normalised = normalise_and_tokenise_text(", ".join(topic))
+            normalised = normalise_and_tokenise_text(topic)
             corrected = correct_spelling(normalised, KNOWN_VOCAB)
             expanded = expand_with_synonyms(corrected, 'n')
-            semantic_matches = embed_user_input_and_tags("".join(corrected), career["alt_education"], model, 0.5)
+            semantic_matches = embed_user_input_and_tags(corrected, career["alt_education"], model, 0.5)
 
             if expanded in career["alt_education"]:
                 score += weights["alt_education"] * 0.7
@@ -607,12 +654,18 @@ def career_match(user_data, career):
 
     return score
 
-# Display career matches
-ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True)
 
-# Display top matches
+# Display career matches
+if not uploaded_file:
+    ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True) 
+elif uploaded_file:
+    ranked_careers = sorted(careers, key=lambda c: career_match(parsed_data, c), reverse=True)
+
+# Display top matches (form)
 st.subheader("Top Career Matches:")
 for i, career in enumerate(ranked_careers[:3]):
-    st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
+    if not uploaded_file:
+        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
+    elif uploaded_file:
+        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career)}")
 
-    
