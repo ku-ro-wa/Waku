@@ -1,4 +1,5 @@
 from collections import defaultdict
+from tokenize import String
 from nltk.corpus import wordnet as wn
 from PIL import Image
 from sentence_transformers import SentenceTransformer, util
@@ -302,14 +303,22 @@ def extract_skills(text, skills_list):
     # Join tokens into a string if input is a list
     if isinstance(text, list):
         text = " ".join(text)
-
-    doc = nlp(text)
-    skills = set()
-
-    for token in doc:
-        if token.text in skills_list:
-            skills.add(token.text)
-    return list(skills)
+    text_lower = text.lower()
+    
+    matched = []
+    # Normalise skills
+    for skill in skills_list:
+        skill_norm = skill.lower()
+        # Check text for multi-word skills
+        if skill_norm in text_lower:
+            matched.append(skill)
+        else:
+            # Check individual tokens if single-word skill
+            if len(skill_norm.split()) == 1:
+                doc = nlp(text_lower)
+                if any(token.lemma_ == skill_norm for token in doc if not token.is_stop and token.is_alpha): # Tokenise and lemmatize the text
+                    matched.append(skill)
+    return matched
 
 
 def extract_entities(text):
@@ -346,6 +355,23 @@ def parse_resume_to_form(text):
     }
 
     return parsed_data
+
+def get_user_skills(data, key="hard_skills"):
+    """Extracts skills from user data, handling both list of strings and list of dicts formats.
+    
+        Parameters:
+        - data: The user data dictionary containing skills information.
+        - key: The key in the dictionary to look for skills (default is "hard_skills").
+
+        Returns:
+        - list: A list of extracted skills.
+    """
+    if not data:
+        return []
+    skills = data.get(key, [])
+    if f"{key}_text" in data and isinstance(data[f"{key}_text"], str):
+        skills += [s.strip() for s in data[f"{key}_text"].split(",") if s.strip()]
+    return skills
 
 # Load career data
 careers = get_data_from_json("careers.json")
@@ -437,9 +463,21 @@ st.json(user_data)
 # Preparing the PDF text and extracting skills
 pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
 normalised_pdf_text = normalise_and_tokenise_text(pdf_file) if pdf_file else None
+
+# debug print
+print("Extracted PDF text:", normalised_pdf_text)
+
 matched_hard_skills = extract_skills(normalised_pdf_text, hard_skills) if normalised_pdf_text else None
 matched_soft_skills = extract_skills(normalised_pdf_text, soft_skills) if normalised_pdf_text else None
+
+# debug prints
+print("Matched hard skills from PDF:", matched_hard_skills)
+print("Matched soft skills from PDF:", matched_soft_skills)
+
 parsed_data = parse_resume_to_form(normalised_pdf_text) if normalised_pdf_text else None
+
+# temp debug
+print("Parsed PDF data:", parsed_data)
 
 # Initialise list for feedback
 score_breakdown = []
@@ -465,8 +503,8 @@ def career_match(user_data, career):
             return []
         return [s.strip() for s in value.split(",") if s.strip()]
 
-    # Match hard skills
-    user_hard_skills = user_data.get("hard_skills", []) + parse_text_list("hard_skills_text")
+    # Match hard skills 
+    user_hard_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="hard_skills")
 
     hs_add_to_score, hard_skills_matches = match_user_to_targets(
         user_input=user_hard_skills,
@@ -484,7 +522,7 @@ def career_match(user_data, career):
         st.write("Matched hard skills:", hard_skills_matches)
 
     # Match soft skills
-    user_soft_skills = user_data.get("soft_skills", []) + parse_text_list("soft_skills_text")
+    user_soft_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="soft_skills")
 
     ss_add_to_score, soft_skills_matches = match_user_to_targets( 
         user_input=user_soft_skills,
