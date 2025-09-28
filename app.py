@@ -325,26 +325,31 @@ def extract_entities(text):
     """Extracts entities from a given text using spaCy."""
 
     doc = nlp(text)
-    orgs = [ent.text for ent in doc.ents if ent.label == "ORG"]
-    dates = [ent.text for ent in doc.ents if ent.label == "DATE"]
-    gpes = [ent.text for ent in doc.ents if ent.label == "GPE"]
-    langs = [ent.text for ent in doc.ents if ent.label == "LANGUAGE"]
+    orgs = [ent.text for ent in doc.ents if ent.label_ == "ORG"]
+    dates = [ent.text for ent in doc.ents if ent.label_ == "DATE"]
+    gpes = [ent.text for ent in doc.ents if ent.label_ == "GPE"]
+    langs = [ent.text for ent in doc.ents if ent.label_ == "LANGUAGE"]
+
+    # Supplement with keyword search for languages
+    language_keywords = {"french", "dutch", "english", "spanish", "german", "italian", "portuguese", "russian", "chinese", "japanese", "arabic", "hindi"}
+    found_langs = [word.capitalize() for word in language_keywords if word in text.lower()]
+    langs = list(set(langs + found_langs))
 
     return orgs, dates, gpes, langs
 
 
 def parse_resume_to_form(text):
-    """Parses the resume text and extracts relevant information for the form."""
-    # Join tokens into a string if input is a list
     if isinstance(text, list):
         text = " ".join(text)
-    
-    # Extract entities from the text
+    print("Text passed to parse_resume_to_form:", text)
+    print("hard_skills in parse_resume_to_form:", hard_skills)
+    print("soft_skills in parse_resume_to_form:", soft_skills)
     orgs, dates, gpes, langs = extract_entities(text)
+    print("Entities extracted:", orgs, dates, gpes, langs)
     matched_hard_skills = extract_skills(text, hard_skills)
     matched_soft_skills = extract_skills(text, soft_skills)
-
-    # Create a dictionary to hold the parsed data
+    print("Matched hard skills in parse_resume_to_form:", matched_hard_skills)
+    print("Matched soft skills in parse_resume_to_form:", matched_soft_skills)
     parsed_data = {
         "hard_skills": matched_hard_skills,
         "soft_skills": matched_soft_skills,
@@ -353,7 +358,6 @@ def parse_resume_to_form(text):
         "geopolitical_entities": gpes,
         "languages": langs
     }
-
     return parsed_data
 
 def get_user_skills(data, key="hard_skills"):
@@ -372,6 +376,7 @@ def get_user_skills(data, key="hard_skills"):
     if f"{key}_text" in data and isinstance(data[f"{key}_text"], str):
         skills += [s.strip() for s in data[f"{key}_text"].split(",") if s.strip()]
     return skills
+
 
 # Load career data
 careers = get_data_from_json("careers.json")
