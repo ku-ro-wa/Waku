@@ -1,6 +1,8 @@
 from collections import defaultdict
+from dotenv import load_dotenv
 from tokenize import String
 from nltk.corpus import wordnet as wn
+from openai import OpenAI
 from PIL import Image
 from sentence_transformers import SentenceTransformer, util
 from textblob import TextBlob
@@ -10,6 +12,12 @@ import pdfplumber
 import pytesseract
 import spacy 
 import streamlit as st
+import time
+
+
+load_dotenv()  # Load environment variables from .env file
+
+client = OpenAI()
 
 # Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
@@ -377,6 +385,53 @@ def get_user_skills(data, key="hard_skills"):
         skills += [s.strip() for s in data[f"{key}_text"].split(",") if s.strip()]
     return skills
 
+def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output_tokens=400):
+    sys_instruction = (
+        "Summarise the following resume text in a short paragraph. "
+        "Highlight skills, education, and experience. Provide brief insights based on the information. "
+        "Frame your response in an engaging and slightly humorous tone without impacting your assessment:"
+    )
+
+    text_input = f"Resume text: {text}"
+
+    for attempt in range(3):  # Retry mechanism
+        if use_responses_api:
+            # New API (does NOT support temperature)
+            response = client.responses.create(
+                model="gpt-5-mini",
+                instructions=sys_instruction,
+                input=text_input,
+                max_output_tokens=max_output_tokens,
+            )
+
+            if response.status == "incomplete":
+                reason = response.incomplete_details.reason if response.incomplete_details else "unknown"
+                print(f"Response incomplete (Reason: {reason}).")
+                max_output_tokens *= 2
+                time.sleep(0.5)  
+                continue
+
+            if response.output_text:
+                return response.output_text.strip()
+            elif response.output and len(response.output) > 0 and response.output[0].content:
+                return response.output[0].content.strip()
+            else:
+                return "No summary was generated."
+
+        else:
+            # Classic Chat API (DOES support temperature)
+            response = client.chat.completions.create(
+                model="gpt-5-mini",
+                messages=[
+                    {"role": "system", "content": sys_instruction},
+                    {"role": "user", "content": text_input},
+                ],
+                max_completion_tokens=max_output_tokens,
+                temperature=temperature,
+            )
+            return response.choices[0].message.content.strip()
+
+    return "Failed to generate summary after multiple attempts."
 
 # Load career data
 careers = get_data_from_json("careers.json")
@@ -711,4 +766,9 @@ for i, career in enumerate(ranked_careers[:3]):
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
     elif uploaded_file:
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career)}")
+
+if normalised_pdf_text:
+    st.subheader("AI Summary of Your Resume:")
+    result = get_resume_summary(normalised_pdf_text)
+    st.write(f"Result: {result}")
 
