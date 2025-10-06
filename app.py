@@ -1,4 +1,5 @@
 from collections import defaultdict
+from unittest import result
 from dotenv import load_dotenv
 from tokenize import String
 from nltk.corpus import wordnet as wn
@@ -349,15 +350,24 @@ def extract_entities(text):
 def parse_resume_to_form(text):
     if isinstance(text, list):
         text = " ".join(text)
-    print("Text passed to parse_resume_to_form:", text)
-    print("hard_skills in parse_resume_to_form:", hard_skills)
-    print("soft_skills in parse_resume_to_form:", soft_skills)
+
+    
+    #print("Text passed to parse_resume_to_form:", text)
+    #print("hard_skills in parse_resume_to_form:", hard_skills)
+    #print("soft_skills in parse_resume_to_form:", soft_skills) 
+
     orgs, dates, gpes, langs = extract_entities(text)
-    print("Entities extracted:", orgs, dates, gpes, langs)
+
+    # print("Entities extracted:", orgs, dates, gpes, langs)
+
     matched_hard_skills = extract_skills(text, hard_skills)
     matched_soft_skills = extract_skills(text, soft_skills)
-    print("Matched hard skills in parse_resume_to_form:", matched_hard_skills)
-    print("Matched soft skills in parse_resume_to_form:", matched_soft_skills)
+
+    
+    #print("Matched hard skills in parse_resume_to_form:", matched_hard_skills)
+    #print("Matched soft skills in parse_resume_to_form:", matched_soft_skills)
+    
+
     parsed_data = {
         "hard_skills": matched_hard_skills,
         "soft_skills": matched_soft_skills,
@@ -387,9 +397,9 @@ def get_user_skills(data, key="hard_skills"):
 
 def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output_tokens=400):
     sys_instruction = (
-        "Summarise the following resume text in a short paragraph. "
-        "Highlight skills, education, and experience. Provide brief insights based on the information. "
-        "Frame your response in an engaging and slightly humorous tone without impacting your assessment:"
+        "Summarize the following résumé in a short, engaging paragraph."
+        "Briefly highlight key skills, education, and experience."
+        "Add a light, witty tone without exaggeration or filler."
     )
 
     text_input = f"Resume text: {text}"
@@ -398,7 +408,7 @@ def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output
         if use_responses_api:
             # New API (does NOT support temperature)
             response = client.responses.create(
-                model="gpt-5-mini",
+                model="gpt-4o-mini",
                 instructions=sys_instruction,
                 input=text_input,
                 max_output_tokens=max_output_tokens,
@@ -421,7 +431,7 @@ def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output
         else:
             # Classic Chat API (DOES support temperature)
             response = client.chat.completions.create(
-                model="gpt-5-mini",
+                model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": sys_instruction},
                     {"role": "user", "content": text_input},
@@ -461,19 +471,19 @@ soft_skills = return_json_list_from_dict("soft_skills", "soft_skills")
 exists_checker(soft_skills)
 
 
-# Form title
+
+# STREAMLIT FORM CODE
 st.title("Waku - Career Recommender")
 
 # Collect responses from user
 user_data = {}
 
 st.write("Welcome to Waku! Let's find your ideal career path together. You can skip any question by leaving it blank, but the more you answer, the better your recommendations will be!")
-st.write("You can also upload your CV/resume instead of filling out the form if that's what you prefer. (This feature is not yet implemented)")
+st.write("You can also upload your CV/resume instead of filling out the form if that's what you prefer. (Your data will be utilised by OpenAI's API for analysis, but won't be stored.)")
 
-uploaded_file = st.file_uploader("Upload your CV/resume (optional)", type=["pdf"], help="This feature is not yet implemented. You can still fill out the form below to get recommendations.")
+uploaded_file = st.file_uploader("Upload your CV/resume (optional)", type=["pdf"])
 
 # Basic info
-user_data["age"] = st.selectbox("How old are you?", options=[str(i) for i in range(16, 61)], index=None, placeholder="Select your age")
 user_data["interested_fields"] = st.multiselect("Are there specific fields you already have an interest in?", options=industries)
 user_data["interested_fields_text"] = st.text_input("Other fields of interest (optional):")
 
@@ -515,10 +525,6 @@ user_data["likes"] = st.text_area("What kinds of topics, environments, or tasks 
 user_data["dislikes"] = st.text_area("Are there types of work or settings you'd prefer to avoid?")
 user_data["important"] = st.text_area("What is important to you in a career? (You can answer in a few words or sentences)")
 user_data["self_description"] = st.text_area("Describe yourself in a few words or sentences!")
-
-# Debug print (temp)
-st.subheader("Collected Input")
-st.json(user_data)
 
 # Preparing the PDF text and extracting skills
 pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
@@ -579,7 +585,7 @@ def career_match(user_data, career):
     score += hs_add_to_score
 
     if hard_skills_matches:
-        st.write("Matched hard skills:", hard_skills_matches)
+        print("Matched hard skills:", hard_skills_matches)
 
     # Match soft skills
     user_soft_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="soft_skills")
@@ -597,7 +603,7 @@ def career_match(user_data, career):
     score += ss_add_to_score
 
     if soft_skills_matches:
-        st.write("Matches soft skills: ", soft_skills_matches)
+        print("Matches soft skills: ", soft_skills_matches)
 
     # Match fields/industries
     user_fields = user_data.get("interested_fields", []) + parse_text_list("intereseted_fields_text")
@@ -616,7 +622,7 @@ def career_match(user_data, career):
     score += fields_add_to_score
 
     if field_matches:
-        st.write("Matched fields/industries: ", field_matches)
+        print("Matched fields/industries: ", field_matches)
 
     # Match college majors
     college_majors = user_data.get("college_major", [])
@@ -638,7 +644,7 @@ def career_match(user_data, career):
     score += majors_add_to_score
 
     if major_matches:
-        st.write("Matched majors: ", major_matches)
+        print("Matched majors: ", major_matches)
 
     # Match postgrad majors
     postgrad_majors = user_data.get("postgrad_major", [])
@@ -660,7 +666,7 @@ def career_match(user_data, career):
     score += postgrad_majors_add_to_score
 
     if postgrad_major_matches:
-        st.write("Matched postgrad majors: ", postgrad_major_matches)
+        print("Matched postgrad majors: ", postgrad_major_matches)
 
     # Match alt education 
     for ed_type, topic in parsed_alt_education:
@@ -702,7 +708,7 @@ def career_match(user_data, career):
     score += positive_text_add_to_score
 
     if positive_text_matches:
-        st.write("Matched positive keywords (may not be exact): ", positive_text_matches)
+        print("Matched positive keywords (may not be exact): ", positive_text_matches)
 
     # Match for negative text
     negative_text = f"{user_data.get('dislikes', '')}".lower()
@@ -721,7 +727,7 @@ def career_match(user_data, career):
     score -= negative_text_minus_from_score
 
     if negative_text_matches:
-        st.write("Matched negative keywords (may not be exact): ", negative_text_matches)
+        print("Matched negative keywords (may not be exact): ", negative_text_matches)
 
 
     # Job Satisfaction match
@@ -753,7 +759,7 @@ def career_match(user_data, career):
     return score
 
 
-# Display career matches
+# Display top matches (if uploaded)
 if not uploaded_file:
     ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True) 
 elif uploaded_file:
@@ -763,12 +769,22 @@ elif uploaded_file:
 st.subheader("Top Career Matches:")
 for i, career in enumerate(ranked_careers[:3]):
     if not uploaded_file:
-        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career)}")
+        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career):.1f}")
     elif uploaded_file:
-        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career)}")
+        st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career):.1f}")
 
+# Display resume summary (if uploaded)
 if normalised_pdf_text:
     st.subheader("AI Summary of Your Resume:")
-    result = get_resume_summary(normalised_pdf_text)
-    st.write(f"Result: {result}")
+    with st.spinner("Generating summary..."):
+        summary = get_resume_summary(normalised_pdf_text)
+
+    if "Response incomplete" in summary:
+        st.warning(summary)
+    else:
+        st.write(summary)
+
+# Debug print (temp)
+st.subheader("Collected Input")
+st.json(user_data)
 
