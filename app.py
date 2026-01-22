@@ -33,11 +33,18 @@ model = load_st_model()
 # Utility functions
 def get_synonyms(word, pos='n'):
     synonyms = set()
+    
     for syn in wn.synsets(word, pos=pos):   # 'n' noun, 'v' verb
-        for lemma in syn.lemmas():
-            synonym = lemma.name().replace("_", " ").lower()
-            if synonym != word:
-                synonyms.add(synonym)
+        try:
+            lemmas = syn.lemmas()
+            if lemmas:
+                for lemma in lemmas:
+                    synonym = lemma.name().replace("_", " ").lower()
+                    if synonym != word:
+                        synonyms.add(synonym)
+        except (AttributeError, TypeError):
+            # Skip if lemmas() fails for any reason
+            continue
     return list(synonyms)
 
 def normalise_and_tokenise_text(text):
@@ -221,22 +228,24 @@ def get_data_from_json(filename, required_keys=None):
     try:
         with open(file_path, 'r') as f:
             data = json.load(f)
+        
+        # Key validation
+        if required_keys and isinstance(data, list):
+            for entry in data:
+                for key in required_keys:
+                    if key not in entry:
+                        print(f"Warning: Missing key '{key}' in an entry of '{filename}'")
+        
         return data
     except FileNotFoundError:
         print(f"Error: The file '{filename}' was not found at '{file_path}'")
+        return None
     except json.JSONDecodeError:
         print(f"Error: Could not decode JSON from '{filename}'. Check file format.")
         return None
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         return None
-
-    # Key validation
-    if required_keys and isinstance(data, list):
-        for entry in data:
-            for key in required_keys:
-                if key not in entry:
-                    print(f"Warning: Missing key '{key}' in an entry of '{filename}'")
 
 def return_json_list_from_dict(file_name, attribute):
     """
@@ -421,12 +430,14 @@ def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output
                 time.sleep(0.5)  
                 continue
 
-            if response.output_text:
+            if hasattr(response, 'output_text') and response.output_text:
                 return response.output_text.strip()
-            elif response.output and len(response.output) > 0 and response.output[0].content:
-                return response.output[0].content.strip()
-            else:
-                return "No summary was generated."
+            elif hasattr(response, 'output') and response.output and len(response.output) > 0:
+                output_item = response.output[0]
+                content = getattr(output_item, 'content', None)
+                if content and isinstance(content, str):
+                    return content.strip()
+            return "No summary was generated."
 
         else:
             # Classic Chat API (DOES support temperature)
@@ -439,7 +450,10 @@ def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output
                 max_completion_tokens=max_output_tokens,
                 temperature=temperature,
             )
-            return response.choices[0].message.content.strip()
+            content = response.choices[0].message.content
+            if content:
+                return content.strip()
+            return "No summary was generated."
 
     return "Failed to generate summary after multiple attempts."
 
@@ -491,13 +505,13 @@ user_data["interested_fields_text"] = st.text_input("Other fields of interest (o
 user_data["in_college"] = st.radio("Have you gone or are you currently in college?", ["Yes", "No"], index=None)
 if user_data["in_college"] == "Yes":
     user_data["education_level"] = "bachelor"
-    user_data["college_major"] = st.multiselect("What did you study or what are you studying in college?", options=majors, accept_new_options=True)
+    user_data["college_major"] = st.multiselect("What did you study or what are you studying in college?", options=majors or [], accept_new_options=True)
     user_data["in_postgrad"] = st.radio("Have you done or are you currently pursuing graduate studies?", ["Yes", "No"], index=None)
     if user_data["in_postgrad"] == "Yes":
         user_data["education_level"] = "master+"
-        user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=majors, accept_new_options=True)
+        user_data["postgrad_major"] = st.multiselect("What did you study or what are you studying for your postgraduate education?", options=majors or [], accept_new_options=True)
 
-user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=alt_ed_topic_to_careers, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
+user_data["alt_education"] = st.multiselect("Have you completed any alternative or non-traditional education?", options=alt_ed_topic_to_careers or {}, accept_new_options=True, help="Include certifications, bootcamps, vocational or trade school training, etc.")
 parsed_alt_education = [parse_alt_education(e) for e in user_data.get("alt_education", [])] # Parse the user's alt education
 
 # Job info
@@ -673,7 +687,7 @@ def career_match(user_data, career):
         if ed_type in career["alt_education"]:
             score += weights["alt_education"] * 0.4
         
-        if career["title"] in alt_ed_topic_to_careers.get(topic, []):
+        if alt_ed_topic_to_careers and career["title"] in alt_ed_topic_to_careers.get(topic, []):
             score += weights["alt_education"] * 1
 
         elif relevant_to_career(topic, career):
@@ -760,10 +774,12 @@ def career_match(user_data, career):
 
 
 # Display top matches (if uploaded)
-if not uploaded_file:
-    ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True) 
-elif uploaded_file:
-    ranked_careers = sorted(careers, key=lambda c: career_match(parsed_data, c), reverse=True)
+ranked_careers = []
+if careers:
+    if not uploaded_file:
+        ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True) 
+    elif uploaded_file and parsed_data:
+        ranked_careers = sorted(careers, key=lambda c: career_match(parsed_data, c), reverse=True)
 
 # Display top matches (form)
 st.subheader("Top Career Matches:")
