@@ -31,22 +31,26 @@ def load_st_model():
 model = load_st_model()
 
 # Utility functions
+
+# Get synonyms from WordNet
 def get_synonyms(word, pos='n'):
     synonyms = set()
     
     for syn in wn.synsets(word, pos=pos):   # 'n' noun, 'v' verb
-        try:
-            lemmas = syn.lemmas()
-            if lemmas:
-                for lemma in lemmas:
-                    synonym = lemma.name().replace("_", " ").lower()
-                    if synonym != word:
-                        synonyms.add(synonym)
-        except (AttributeError, TypeError):
-            # Skip if lemmas() fails for any reason
+        # Should never be None, just for Pylance
+        if syn is None:
             continue
+
+        lemmas = syn.lemmas()
+        if lemmas:
+            for lemma in lemmas:
+                synonym = lemma.name().replace("_", " ").lower()
+                if synonym != word:
+                    synonyms.add(synonym)
+        
     return list(synonyms)
 
+# Normalise and tokenise text using spaCy
 def normalise_and_tokenise_text(text):
     # Join tokens into a string if input is a list
     if isinstance(text, list):
@@ -55,12 +59,14 @@ def normalise_and_tokenise_text(text):
     doc = nlp(text.lower())
     return [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
 
+# Expand words with synonyms
 def expand_with_synonyms(words, pos='n'):
     expanded = set(words)
     for word in words:
         expanded.update(get_synonyms(word, pos))
     return expanded
 
+# Build known vocabulary from career data for spellchecking
 def build_known_vocab(careers):
     vocab = set()
     for career in careers:
@@ -69,6 +75,7 @@ def build_known_vocab(careers):
         vocab.update(map(str.lower, career["tags"]))
     return vocab
 
+# Correct spelling using TextBlob
 def correct_spelling(words, known_vocab=None):
     corrected=[]
     for word in words:
@@ -83,6 +90,7 @@ def correct_spelling(words, known_vocab=None):
             corrected.append(corrected_word)
     return corrected
 
+# Parse user-inputted alternate education entries
 def parse_alt_education(entry):
     try:
         ed_type, topic = entry.split(":", 1)
@@ -90,6 +98,7 @@ def parse_alt_education(entry):
     except ValueError:
         return "Other", entry.strip()
 
+# Check if alt education topic is relevant to career
 def relevant_to_career(topic, career):
     topic_lower = topic.lower()
     fields_to_match = (
@@ -99,9 +108,14 @@ def relevant_to_career(topic, career):
     )
     return any(word.lower() in topic_lower for word in fields_to_match)
 
+# Embed user input and tags, return matches above threshold
 def embed_user_input_and_tags(user_input, tags, model, threshold=0.5):
     if isinstance(user_input, list):
         user_input = " ".join(user_input)
+    
+    # Return early if input is empty to avoid false semantic matches
+    if not user_input or not user_input.strip():
+        return []
 
     user_input_embeddings = model.encode(user_input, convert_to_tensor=True)
     tags_embeddings = model.encode(tags, convert_to_tensor=True)
@@ -133,6 +147,7 @@ def deduplicate_weighted_matches(match_groups: list[tuple[list[str], float]]) ->
     
     return weighted_matches
 
+# Main matching function, see details below
 def match_user_to_targets(
     user_input,
     target_list,
@@ -218,8 +233,7 @@ def get_data_from_json(filename, required_keys=None):
     - filename (str): The name of the JSON file (e.g., "careers.json").
 
     Returns:
-    - dict or list: The data loaded from the JSON file.
-                    Returns None if the file is not found or an error occurs.
+    - dict or list: The data loaded from the JSON file. Returns None if the file is not found or an error occurs.
     """ 
     # Construct the full path to the JSON file
     data_dir = "data"
@@ -247,6 +261,7 @@ def get_data_from_json(filename, required_keys=None):
         print(f"An unexpected error occurred: {e}")
         return None
 
+
 def return_json_list_from_dict(file_name, attribute):
     """
     Converts a dictionary to a list of dictionaries, each containing a single key-value pair.
@@ -267,6 +282,7 @@ def return_json_list_from_dict(file_name, attribute):
 
     return list
 
+
 def exists_checker(var):
     """
     Very simple function to check a variable's existence.
@@ -282,6 +298,7 @@ def exists_checker(var):
         print(f"The variable '{var}' exists.")
     elif var is None:
         st.error(f"Error: the variable '{var}' does not exist/could not be loaded.")
+
 
 def load_pdf_text(file):
     """Extracts text from a PDF file using pdfplumber, or by using OCR if necessary.
@@ -308,39 +325,64 @@ def load_pdf_text(file):
 
     return text.strip()
 
+
 def extract_skills(text, skills_list):
-    """Extracts skills from a given text using spaCy.
+    """Extracts skills from a given text using spaCy with improved matching.
     
     Parameters:
     - text: The input text from which to extract skills.
     - skills_list: A list of skills to look for in the text.
 
     Returns:
-    - list: A list of extracted skills.
+    - list: A list of extracted skills (deduplicated).
     """
     # Join tokens into a string if input is a list
     if isinstance(text, list):
         text = " ".join(text)
     text_lower = text.lower()
     
-    matched = []
+    matched = set()  # Use set to avoid duplicates
+    doc = nlp(text_lower)  # Parse once for efficiency
+    text_lemmas = [token.lemma_ for token in doc if not token.is_stop and token.is_alpha]
+    text_lemmas_set = set(text_lemmas)
+    
+    # Build text with lemmatized version for better matching
+    text_lemmatized = " ".join(text_lemmas)
+    
     # Normalise skills
     for skill in skills_list:
-        skill_norm = skill.lower()
-        # Check text for multi-word skills
-        if skill_norm in text_lower:
-            matched.append(skill)
-        else:
-            # Check individual tokens if single-word skill
-            if len(skill_norm.split()) == 1:
-                doc = nlp(text_lower)
-                if any(token.lemma_ == skill_norm for token in doc if not token.is_stop and token.is_alpha): # Tokenise and lemmatize the text
-                    matched.append(skill)
-    return matched
+        skill_lower = skill.lower()
+        
+        # Exact substring match (for multi-word skills)
+        if skill_lower in text_lower:
+            matched.add(skill)
+            continue
+            
+        # Lemmatized matching for multi-word skills
+        skill_lemmas = [token.lemma_ for token in nlp(skill_lower) if not token.is_stop and token.is_alpha]
+        skill_lemmatized = " ".join(skill_lemmas)
+        if skill_lemmatized in text_lemmatized and skill_lemmatized:  # Avoid empty lemma strings
+            matched.add(skill)
+            continue
+        
+        # For single-word skills, check individual tokens
+        if len(skill_lower.split()) == 1:
+            skill_lemma = nlp(skill_lower)[0].lemma_ if nlp(skill_lower) else skill_lower
+            if skill_lemma in text_lemmas_set:
+                matched.add(skill)
+    
+    return list(matched)
 
 
 def extract_entities(text):
-    """Extracts entities from a given text using spaCy."""
+    """Extracts entities from a given text using spaCy.
+    
+    Parameters:
+    - text: The input text from which to extract entities.
+
+    Returns:
+    - tuple: A tuple containing lists of organizations, dates, geopolitical entities, and languages.
+    """
 
     doc = nlp(text)
     orgs = [ent.text for ent in doc.ents if ent.label_ == "ORG"]
@@ -356,26 +398,23 @@ def extract_entities(text):
     return orgs, dates, gpes, langs
 
 
-def parse_resume_to_form(text):
+def parse_resume_to_form(text, use_llm=True):
+    """Parses resume text into structured data with optional LLM enhancement.
+    
+    Parameters:
+    - text: The resume text to be parsed.
+    - use_llm: Whether to use LLM for better context extraction (default True).
+
+    Returns:
+    - dict: A dictionary containing extracted hard skills, soft skills, organizations, dates, 
+            geopolitical entities, languages, and LLM-extracted insights.
+    """
     if isinstance(text, list):
         text = " ".join(text)
 
-    
-    #print("Text passed to parse_resume_to_form:", text)
-    #print("hard_skills in parse_resume_to_form:", hard_skills)
-    #print("soft_skills in parse_resume_to_form:", soft_skills) 
-
     orgs, dates, gpes, langs = extract_entities(text)
-
-    # print("Entities extracted:", orgs, dates, gpes, langs)
-
     matched_hard_skills = extract_skills(text, hard_skills)
     matched_soft_skills = extract_skills(text, soft_skills)
-
-    
-    #print("Matched hard skills in parse_resume_to_form:", matched_hard_skills)
-    #print("Matched soft skills in parse_resume_to_form:", matched_soft_skills)
-    
 
     parsed_data = {
         "hard_skills": matched_hard_skills,
@@ -383,9 +422,70 @@ def parse_resume_to_form(text):
         "organizations": orgs,
         "dates": dates,
         "geopolitical_entities": gpes,
-        "languages": langs
+        "languages": langs,
+        "raw_text": text  # Store raw text for semantic matching
     }
+    
+    # Use LLM to extract additional context (certifications, achievements, etc.)
+    if use_llm:
+        try:
+            llm_insights = extract_resume_context_via_llm(text)
+            if llm_insights:
+                parsed_data.update(llm_insights)
+        except Exception as e:
+            print(f"LLM context extraction failed: {e}")
+            # Gracefully degrade - continue with base extraction
+    
     return parsed_data
+
+
+def extract_resume_context_via_llm(text, max_tokens=300):
+    """Extracts additional context from resume using LLM (certifications, achievements, etc.).
+    
+    Parameters:
+    - text: The resume text to analyze.
+    - max_tokens: Maximum tokens for LLM response.
+
+    Returns:
+    - dict: Dictionary with extracted context including certifications, key_achievements, and career_interests.
+    """
+    sys_instruction = (
+        "Extract structured information from this resume. Return JSON with: "
+        "1. 'certifications': list of courses, bootcamps, certifications mentioned "
+        "2. 'key_achievements': list of 3-4 major accomplishments or projects "
+        "3. 'career_context': 1-2 sentences about the person's career trajectory and interests. "
+        "Be precise and extract only information explicitly stated."
+    )
+    
+    text_input = f"Resume: {text[:3000]}"  # Limit text length to control costs
+    
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": sys_instruction},
+                {"role": "user", "content": text_input},
+            ],
+            max_completion_tokens=max_tokens,
+            temperature=0.3,  # Lower temp for factual extraction
+            response_format={"type": "json_object"}  # Ensure JSON response
+        )
+        
+        content = response.choices[0].message.content
+        if content:
+            extracted = json.loads(content)
+            return {
+                "certifications": extracted.get("certifications", []),
+                "key_achievements": extracted.get("key_achievements", []),
+                "career_context": extracted.get("career_context", "")
+            }
+    except Exception as e:
+        print(f"LLM extraction error: {e}")
+        return None
+    
+    return None
+
+
 
 def get_user_skills(data, key="hard_skills"):
     """Extracts skills from user data, handling both list of strings and list of dicts formats.
@@ -404,14 +504,79 @@ def get_user_skills(data, key="hard_skills"):
         skills += [s.strip() for s in data[f"{key}_text"].split(",") if s.strip()]
     return skills
 
-def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output_tokens=400):
-    sys_instruction = (
-        "Summarize the following résumé in a short, engaging paragraph."
-        "Briefly highlight key skills, education, and experience."
-        "Add a light, witty tone without exaggeration or filler."
-    )
 
-    text_input = f"Resume text: {text}"
+def format_user_data_to_text(user_data):
+    """Converts structured form data into a coherent text block.
+    
+    Parameters:
+    user_data: The user's form input data dictionary.
+
+    Returns:
+    - str: A formatted text representation of the user's data.
+    """
+    parts = []
+    if user_data.get('interested_fields'):
+        parts.append(f"Interested fields: {', '.join(user_data['interested_fields'])}")
+    if user_data.get('education_level'):
+        parts.append(f"Education level: {user_data['education_level']}")
+        if user_data.get('college_major'):
+            parts.append(f"College major: {user_data['college_major']}")
+        if user_data.get('postgrad_major'):
+            parts.append(f"Postgraduate major: {user_data['postgrad_major']}")
+    if user_data.get('alt_education'):
+        parts.append(f"Alternative education: {', '.join(user_data['alt_education'])}")
+    if user_data.get('experience_details'):
+        exp_details = "; ".join([f"{exp['role']} ({exp['yoe']} years)" for exp in user_data['experience_details']])
+        parts.append(f"Work experience: {exp_details}")
+        if user_data.get('job_satisfaction') is not None:
+            parts.append(f"Job satisfaction: {user_data['job_satisfaction']}/10")
+    if user_data.get('hard_skills'):
+        parts.append(f"Hard skills: {', '.join(user_data['hard_skills'])}")
+    if user_data.get('soft_skills'):
+        parts.append(f"Soft skills: {', '.join(user_data['soft_skills'])}")
+    if user_data.get('likes'):
+        parts.append(f"Likes: {user_data['likes']}")
+    if user_data.get('dislikes'):
+        parts.append(f"Dislikes: {user_data['dislikes']}")
+    if user_data.get('important'):
+        parts.append(f"Important in a career: {user_data['important']}")
+    if user_data.get('self_description'):
+        parts.append(f"Self-description: {user_data['self_description']}")
+    
+    return " ".join(parts)
+
+
+def get_user_input_summary(text, uploaded_file=False, use_responses_api=True, temperature=0.7, max_output_tokens=400):
+    """Generates a summary of the user input text using OpenAI's API.
+    
+    Parameters:
+    - text: The user input text (resume or form data) to be summarized.
+    - uploaded_file: Whether the text is from an uploaded file (default is False).
+    - use_responses_api: Whether to use the new Responses API (default is True).
+    - temperature: The temperature setting for the classic Chat API (default is 0.7).
+    - max_output_tokens: The maximum number of tokens for the output summary (default is 400).
+
+    Returns:
+    - str: The generated summary of the user input.
+    """
+
+    if uploaded_file == False:
+        sys_instruction = (
+            "Summarize the following résumé in a short, engaging paragraph that directly addresses the user as 'you'."
+            "Briefly highlight key skills, education, and experience."
+            "Provide suggestions for suitable career paths based on the résumé content."
+            "Add a light, witty tone without exaggeration or filler."
+        )
+        text_input = f"Resume text: {text}"
+    else:
+        sys_instruction = (
+        "Create an engaging summary based on the user's form responses."
+        "Address them as 'you' and highlight the unique aspects and combinations of their skills, education, and experiences."
+        "Provide suggestions for suitable career paths based on the provided information."
+        "Maintain a light, witty tone without exaggeration or filler."
+    )
+        text_input = format_user_data_to_text(text)
+
 
     for attempt in range(3):  # Retry mechanism
         if use_responses_api:
@@ -457,6 +622,7 @@ def get_resume_summary(text, use_responses_api=True, temperature=0.7, max_output
 
     return "Failed to generate summary after multiple attempts."
 
+
 # Load career data
 careers = get_data_from_json("careers.json")
 exists_checker(careers)
@@ -486,7 +652,7 @@ exists_checker(soft_skills)
 
 
 
-# STREAMLIT FORM CODE
+# Streamlit app layout
 st.title("Waku - Career Recommender")
 
 # Collect responses from user
@@ -540,24 +706,22 @@ user_data["dislikes"] = st.text_area("Are there types of work or settings you'd 
 user_data["important"] = st.text_area("What is important to you in a career? (You can answer in a few words or sentences)")
 user_data["self_description"] = st.text_area("Describe yourself in a few words or sentences!")
 
+# Confirmation checkbox
+user_data["confirm"] = st.checkbox("I want the info inputted in this form to be used for career recommendations (You can still edit your inputs after confirming).")
+
 # Preparing the PDF text and extracting skills
 pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
+
+# Parse resume BEFORE normalizing (preserve structure for better extraction)
+if pdf_file:
+    parsed_data = parse_resume_to_form(pdf_file, use_llm=True)
+    print("Parsed PDF data:", parsed_data)
+else:
+    parsed_data = None
+
+# For semantic matching and qualitative analysis, keep normalized text
 normalised_pdf_text = normalise_and_tokenise_text(pdf_file) if pdf_file else None
-
-# debug print
-print("Extracted PDF text:", normalised_pdf_text)
-
-matched_hard_skills = extract_skills(normalised_pdf_text, hard_skills) if normalised_pdf_text else None
-matched_soft_skills = extract_skills(normalised_pdf_text, soft_skills) if normalised_pdf_text else None
-
-# debug prints
-print("Matched hard skills from PDF:", matched_hard_skills)
-print("Matched soft skills from PDF:", matched_soft_skills)
-
-parsed_data = parse_resume_to_form(normalised_pdf_text) if normalised_pdf_text else None
-
-# temp debug
-print("Parsed PDF data:", parsed_data)
+print("Extracted PDF text (normalized):", normalised_pdf_text)
 
 # Initialise list for feedback
 score_breakdown = []
@@ -565,9 +729,19 @@ score_breakdown = []
 # Initialise vocab
 KNOWN_VOCAB = build_known_vocab(careers)
 
+
 # Basic matching logic
 def career_match(user_data, career):
-    score = 0
+    """Calculates a match score between user data and a career.
+    
+    Parameters: 
+    - user_data: The user's input data (from form or parsed resume).
+    - career: The career profile to match against.
+
+    Returns:
+    - float: The calculated match score.
+    """
+    score = 0   # Initialise to 0
     weights = {
         "hard_skills": 2,
         "soft_skills": 1.5,
@@ -577,23 +751,26 @@ def career_match(user_data, career):
         "tags": 1
     }
 
+    # Helper to parse comma-separated text inputs
     def parse_text_list(field):
         value = user_data.get(field, "")
         if not isinstance(value, str):
             return []
         return [s.strip() for s in value.split(",") if s.strip()]
 
-    # Match hard skills 
+    # Match hard skills (use semantic matching for PDFs for better coverage)
     user_hard_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="hard_skills")
+    use_semantics_for_skills = uploaded_file  # Enable semantics only for resume PDFs
 
     hs_add_to_score, hard_skills_matches = match_user_to_targets(
         user_input=user_hard_skills,
         target_list=career["hard_skills"],
         weight=weights["hard_skills"],
         use_synonyms=True,
-        use_semantics=False,
+        use_semantics=use_semantics_for_skills,  # Use semantics for PDF resumes
         pos='n',
-        known_vocab=KNOWN_VOCAB
+        known_vocab=KNOWN_VOCAB,
+        model=model if use_semantics_for_skills else None
     )
 
     score += hs_add_to_score
@@ -601,23 +778,25 @@ def career_match(user_data, career):
     if hard_skills_matches:
         print("Matched hard skills:", hard_skills_matches)
 
-    # Match soft skills
+    # Match soft skills (use semantic matching for PDFs)
     user_soft_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="soft_skills")
+    use_semantics_for_soft = uploaded_file  # Enable semantics for resume PDFs
 
     ss_add_to_score, soft_skills_matches = match_user_to_targets( 
         user_input=user_soft_skills,
         target_list=career["soft_skills"],
         weight=weights["soft_skills"],
         use_synonyms=True,
-        use_semantics=False,
+        use_semantics=use_semantics_for_soft,  # Use semantics for PDF resumes
         pos='n',
-        known_vocab=KNOWN_VOCAB
+        known_vocab=KNOWN_VOCAB,
+        model=model if use_semantics_for_soft else None
     )
 
     score += ss_add_to_score
 
     if soft_skills_matches:
-        print("Matches soft skills: ", soft_skills_matches)
+        print("Matched soft skills: ", soft_skills_matches)
 
     # Match fields/industries
     user_fields = user_data.get("interested_fields", []) + parse_text_list("intereseted_fields_text")
@@ -705,7 +884,12 @@ def career_match(user_data, career):
                 score += weights["alt_education"] * 0.4
 
     # Match for tags/personality
-    combined_text = f"{user_data.get('likes', '')} {user_data.get('important', '')} {user_data.get('self_description', '')}".lower()
+    if uploaded_file and parsed_data:
+        # For PDFs, use LLM-extracted context + achievements + raw text
+        combined_text = f"{' '.join(parsed_data.get('key_achievements', []))} {parsed_data.get('career_context', '')} {parsed_data.get('raw_text', '')}".lower()
+    else:
+        # For form inputs, use user's self-description
+        combined_text = f"{user_data.get('likes', '')} {user_data.get('important', '')} {user_data.get('self_description', '')}".lower()
 
     positive_text_add_to_score, positive_text_matches = match_user_to_targets(
         user_input=combined_text,
@@ -767,13 +951,11 @@ def career_match(user_data, career):
             score += min(int(exp["yoe"]), 15) * multiplier
     
 
-    
     print(score_breakdown)
-
     return score
 
 
-# Display top matches (if uploaded)
+# Display top matches (CV upload)
 ranked_careers = []
 if careers:
     if not uploaded_file:
@@ -782,20 +964,27 @@ if careers:
         ranked_careers = sorted(careers, key=lambda c: career_match(parsed_data, c), reverse=True)
 
 # Display top matches (form)
-st.subheader("Top Career Matches:")
+st.subheader("Your Top Career Matches:")
 for i, career in enumerate(ranked_careers[:3]):
-    if not uploaded_file:
+    if (not uploaded_file and career_match(user_data, career) < 1) or (uploaded_file and career_match(parsed_data, career) < 1):
+        st.markdown("No matches yet! Please fill in the form a bit more or upload a valid resume for Waku Bot™'s insights!")
+        break
+    elif not uploaded_file and career_match(user_data, career) >= 1:
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career):.1f}")
-    elif uploaded_file:
+    elif uploaded_file and career_match(parsed_data, career) >= 1:
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career):.1f}")
+    st.write("Disclaimer: Match scores are only indicative of how much your inputted data aligns with our career profiles. Hence why resume uploads may yield lower scores due to less structured data.")
 
 # Display resume summary (if uploaded)
-if normalised_pdf_text:
-    st.subheader("AI Summary of Your Resume:")
-    with st.spinner("Generating summary..."):
-        summary = get_resume_summary(normalised_pdf_text)
-
-    if "Response incomplete" in summary:
+st.subheader("Waku Bot™ Summary of Your Resume:")
+with st.spinner("Generating summary..."):
+    summary = ""
+    if uploaded_file and normalised_pdf_text:
+        summary = get_user_input_summary(normalised_pdf_text, uploaded_file=True)
+    elif not uploaded_file and user_data.get("confirm", True):
+        summary = get_user_input_summary(user_data, uploaded_file=False)
+            
+    if summary == "" or "Response incomplete" in summary:
         st.warning(summary)
     else:
         st.write(summary)
