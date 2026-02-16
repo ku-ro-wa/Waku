@@ -15,6 +15,8 @@ import spacy
 import streamlit as st
 import time
 
+# Import the logger
+from src.logger import get_session_logger
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -134,18 +136,6 @@ def embed_user_input_and_tags(user_input, tags, model, threshold=0.5):
         return matched
     else:
         return []
-
-# For each match, apply global weight
-# Add match into dictionary if not already in dictionary
-# If match is in dictionary update weight value if value is higher than current value
-def deduplicate_weighted_matches(match_groups: list[tuple[list[str], float]]) -> dict[str, float]:
-
-    weighted_matches = {}    # Dictionary to store each match along with its respective weight
-    for matches, weight in match_groups:
-        for match in matches:
-            weighted_matches[match] = max(weighted_matches.get(match, 0), weight)
-    
-    return weighted_matches
 
 # Main matching function, see details below
 def match_user_to_targets(
@@ -550,7 +540,7 @@ def get_user_input_summary(text, uploaded_file=False, use_responses_api=True, te
     """Generates a summary of the user input text using OpenAI's API.
     
     Parameters:
-    - text: The user input text (resume or form data) to be summarized.
+    - text: The user input text (resume text string or form data dict) to be summarized.
     - uploaded_file: Whether the text is from an uploaded file (default is False).
     - use_responses_api: Whether to use the new Responses API (default is True).
     - temperature: The temperature setting for the classic Chat API (default is 0.7).
@@ -560,7 +550,7 @@ def get_user_input_summary(text, uploaded_file=False, use_responses_api=True, te
     - str: The generated summary of the user input.
     """
 
-    if uploaded_file == False:
+    if uploaded_file == True:
         sys_instruction = (
             "Summarize the following résumé in a short, engaging paragraph that directly addresses the user as 'you'."
             "Briefly highlight key skills, education, and experience."
@@ -650,6 +640,10 @@ exists_checker(hard_skills)
 soft_skills = return_json_list_from_dict("soft_skills", "soft_skills")
 exists_checker(soft_skills)
 
+# Initialise session logger
+logger = get_session_logger()
+logger.log_event("session_started", {"timestamp": str(time.time())})
+
 
 
 # Streamlit app layout
@@ -709,19 +703,27 @@ user_data["self_description"] = st.text_area("Describe yourself in a few words o
 # Confirmation checkbox
 user_data["confirm"] = st.checkbox("I want the info inputted in this form to be used for career recommendations (You can still edit your inputs after confirming).")
 
+# Log all user input data
+logger.log_all_user_data(user_data)
+
 # Preparing the PDF text and extracting skills
 pdf_file = load_pdf_text(uploaded_file) if uploaded_file else None
 
-# Parse resume BEFORE normalizing (preserve structure for better extraction)
+# Log PDF upload
+if uploaded_file:
+    logger.log_pdf_upload(uploaded_file.name, len(pdf_file) if pdf_file else 0)
+
+# Parse resume BEFORE normalising (preserve structure for better extraction)
 if pdf_file:
     parsed_data = parse_resume_to_form(pdf_file, use_llm=True)
+    logger.log_parsed_data("resume", parsed_data)
     print("Parsed PDF data:", parsed_data)
 else:
     parsed_data = None
 
-# For semantic matching and qualitative analysis, keep normalized text
+# For semantic matching and qualitative analysis, keep normalised text
 normalised_pdf_text = normalise_and_tokenise_text(pdf_file) if pdf_file else None
-print("Extracted PDF text (normalized):", normalised_pdf_text)
+print("Extracted PDF text (normalised):", normalised_pdf_text)
 
 # Initialise list for feedback
 score_breakdown = []
@@ -775,8 +777,8 @@ def career_match(user_data, career):
 
     score += hs_add_to_score
 
-    if hard_skills_matches:
-        print("Matched hard skills:", hard_skills_matches)
+    #if hard_skills_matches:
+    #   print("Matched hard skills:", hard_skills_matches)
 
     # Match soft skills (use semantic matching for PDFs)
     user_soft_skills = get_user_skills(user_data if not uploaded_file else parsed_data, key="soft_skills")
@@ -795,8 +797,8 @@ def career_match(user_data, career):
 
     score += ss_add_to_score
 
-    if soft_skills_matches:
-        print("Matched soft skills: ", soft_skills_matches)
+    #if soft_skills_matches:
+    #    print("Matched soft skills: ", soft_skills_matches)
 
     # Match fields/industries
     user_fields = user_data.get("interested_fields", []) + parse_text_list("intereseted_fields_text")
@@ -814,8 +816,8 @@ def career_match(user_data, career):
 
     score += fields_add_to_score
 
-    if field_matches:
-        print("Matched fields/industries: ", field_matches)
+    #if field_matches:
+    #    print("Matched fields/industries: ", field_matches)
 
     # Match college majors
     college_majors = user_data.get("college_major", [])
@@ -836,8 +838,8 @@ def career_match(user_data, career):
 
     score += majors_add_to_score
 
-    if major_matches:
-        print("Matched majors: ", major_matches)
+    #if major_matches:
+    #    print("Matched majors: ", major_matches)
 
     # Match postgrad majors
     postgrad_majors = user_data.get("postgrad_major", [])
@@ -858,8 +860,8 @@ def career_match(user_data, career):
 
     score += postgrad_majors_add_to_score
 
-    if postgrad_major_matches:
-        print("Matched postgrad majors: ", postgrad_major_matches)
+    #if postgrad_major_matches:
+    #    print("Matched postgrad majors: ", postgrad_major_matches)
 
     # Match alt education 
     for ed_type, topic in parsed_alt_education:
@@ -905,8 +907,8 @@ def career_match(user_data, career):
 
     score += positive_text_add_to_score
 
-    if positive_text_matches:
-        print("Matched positive keywords (may not be exact): ", positive_text_matches)
+    #if positive_text_matches:
+    #    print("Matched positive keywords (may not be exact): ", positive_text_matches)
 
     # Match for negative text
     negative_text = f"{user_data.get('dislikes', '')}".lower()
@@ -924,8 +926,8 @@ def career_match(user_data, career):
 
     score -= negative_text_minus_from_score
 
-    if negative_text_matches:
-        print("Matched negative keywords (may not be exact): ", negative_text_matches)
+    #if negative_text_matches:
+    #    print("Matched negative keywords (may not be exact): ", negative_text_matches)
 
 
     # Job Satisfaction match
@@ -958,38 +960,90 @@ def career_match(user_data, career):
 # Display top matches (CV upload)
 ranked_careers = []
 if careers:
-    if not uploaded_file:
+    if not uploaded_file and user_data["confirm"]:
         ranked_careers = sorted(careers, key=lambda c: career_match(user_data, c), reverse=True) 
     elif uploaded_file and parsed_data:
         ranked_careers = sorted(careers, key=lambda c: career_match(parsed_data, c), reverse=True)
 
+# Log career matches
+logger.log_career_matches(ranked_careers, top_n=10)
+
 # Display top matches (form)
 st.subheader("Your Top Career Matches:")
+st.write("Disclaimer: Match scores are only indicative of how much your inputted data aligns with our career profiles. Hence why resume uploads may yield lower scores due to less structured data.")
 for i, career in enumerate(ranked_careers[:3]):
     if (not uploaded_file and career_match(user_data, career) < 1) or (uploaded_file and career_match(parsed_data, career) < 1):
         st.markdown("No matches yet! Please fill in the form a bit more or upload a valid resume for Waku Bot™'s insights!")
         break
-    elif not uploaded_file and career_match(user_data, career) >= 1:
+    elif not uploaded_file and career_match(user_data, career) >= 1 and user_data["confirm"]:
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(user_data, career):.1f}")
     elif uploaded_file and career_match(parsed_data, career) >= 1:
         st.markdown(f"**{i+1}. {career['title']}** — Match Score: {career_match(parsed_data, career):.1f}")
-    st.write("Disclaimer: Match scores are only indicative of how much your inputted data aligns with our career profiles. Hence why resume uploads may yield lower scores due to less structured data.")
-
+    
 # Display resume summary (if uploaded)
 st.subheader("Waku Bot™ Summary of Your Resume:")
 with st.spinner("Generating summary..."):
     summary = ""
-    if uploaded_file and normalised_pdf_text:
-        summary = get_user_input_summary(normalised_pdf_text, uploaded_file=True)
+    if uploaded_file and pdf_file:
+        summary = get_user_input_summary(pdf_file, uploaded_file=True)
+        logger.log_summary_generated(summary, len(summary) if summary else 0)
     elif not uploaded_file and user_data.get("confirm", True):
         summary = get_user_input_summary(user_data, uploaded_file=False)
+        logger.log_summary_generated(summary, len(summary) if summary else 0)
             
     if summary == "" or "Response incomplete" in summary:
-        st.warning(summary)
+        st.write("No generated summary yet! Please ensure that a valid resume has been uploaded!")
     else:
         st.write(summary)
 
 # Debug print (temp)
-st.subheader("Collected Input")
-st.json(user_data)
+# st.subheader("Collected Input")
+# st.json(user_data)
+
+# Finalize session log
+logger.finalise()
+
+# Display log file location and download options
+st.sidebar.markdown("---")
+st.sidebar.subheader("📝 Session Logs")
+
+try:
+    # Read and display the log file content
+    with open(logger.log_file, 'r', encoding='utf-8') as f:
+        log_content = f.read()
+    
+    # Display in sidebar
+    with st.sidebar.expander("View Session Log (.log)"):
+        st.text(log_content)
+    
+    # Download button for .log file
+    st.sidebar.download_button(
+        label="⬇️ Download Log (.log)",
+        data=log_content,
+        file_name=f"session_{logger.session_id}.log",
+        mime="text/plain"
+    )
+except Exception as e:
+    st.sidebar.warning(f"Could not read log file: {e}")
+
+try:
+    # Read and display the JSON log file
+    with open(logger.json_log_file, 'r', encoding='utf-8') as f:
+        json_content = f.read()
+    
+    # Display in sidebar
+    with st.sidebar.expander("View Session Log (.json)"):
+        st.json(json.loads(json_content))
+    
+    # Download button for .json file
+    st.sidebar.download_button(
+        label="⬇️ Download Log (.json)",
+        data=json_content,
+        file_name=f"session_{logger.session_id}.json",
+        mime="application/json"
+    )
+except Exception as e:
+    st.sidebar.warning(f"Could not read JSON log file: {e}")
+
+st.sidebar.info(f"Session ID: `{logger.session_id}`")
 

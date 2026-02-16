@@ -1,0 +1,123 @@
+{
+  "session_id": "20260216_022046",
+  "start_time": "2026-02-16T02:20:46.951696",
+  "user_inputs": {
+    "interested_fields": {
+      "value": [],
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "interested_fields_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "in_college": {
+      "value": null,
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "alt_education": {
+      "value": [],
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "previous_experience": {
+      "value": null,
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "hard_skills": {
+      "value": [],
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "hard_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "soft_skills": {
+      "value": [],
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "soft_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "likes": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "dislikes": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "important": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "self_description": {
+      "value": "",
+      "timestamp": "2026-02-16T02:20:46.958699"
+    },
+    "confirm": {
+      "value": false,
+      "timestamp": "2026-02-16T02:20:46.958699"
+    }
+  },
+  "parsed_data": {},
+  "career_matches": [
+    {
+      "rank": 1,
+      "title": "Data Scientist",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 2,
+      "title": "UX Designer",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 3,
+      "title": "Registered Nurse",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 4,
+      "title": "High School Teacher",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 5,
+      "title": "Electrician",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 6,
+      "title": "Marketing Manager",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 7,
+      "title": "Chef",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 8,
+      "title": "Lawyer",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 9,
+      "title": "Social Worker",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    },
+    {
+      "rank": 10,
+      "title": "Graphic Designer",
+      "timestamp": "2026-02-16T02:20:47.436089"
+    }
+  ],
+  "errors": [],
+  "events": [
+    {
+      "event": "session_started",
+      "timestamp": "1771179646.9516969"
+    }
+  ],
+  "end_time": "2026-02-16T02:20:47.444090"
+}

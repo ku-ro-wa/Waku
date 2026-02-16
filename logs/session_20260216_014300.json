@@ -1,0 +1,203 @@
+{
+  "session_id": "20260216_014300",
+  "start_time": "2026-02-16T01:43:00.065573",
+  "user_inputs": {
+    "interested_fields": {
+      "value": [],
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "interested_fields_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "in_college": {
+      "value": null,
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "alt_education": {
+      "value": [],
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "previous_experience": {
+      "value": null,
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "hard_skills": {
+      "value": [],
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "hard_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "soft_skills": {
+      "value": [],
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "soft_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "likes": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "dislikes": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "important": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "self_description": {
+      "value": "",
+      "timestamp": "2026-02-16T02:15:53.180500"
+    },
+    "confirm": {
+      "value": false,
+      "timestamp": "2026-02-16T02:15:53.180500"
+    }
+  },
+  "parsed_data": {},
+  "career_matches": [
+    {
+      "rank": 1,
+      "title": "Data Scientist",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 2,
+      "title": "UX Designer",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 3,
+      "title": "Registered Nurse",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 4,
+      "title": "High School Teacher",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 5,
+      "title": "Electrician",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 6,
+      "title": "Marketing Manager",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 7,
+      "title": "Chef",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 8,
+      "title": "Lawyer",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 9,
+      "title": "Social Worker",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    },
+    {
+      "rank": 10,
+      "title": "Graphic Designer",
+      "timestamp": "2026-02-16T02:16:28.497263"
+    }
+  ],
+  "errors": [],
+  "events": [
+    {
+      "event": "session_started",
+      "timestamp": "1771177380.0665543"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771177493.4248462"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771177548.266867"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771178378.906454"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771178597.976773"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771178636.4297218"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179239.4507105"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179243.6173246"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179246.9294348"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179256.7974875"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179263.0751083"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179268.1092582"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179272.0461452"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179278.4851208"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179294.359677"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179298.0748956"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179307.5568368"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179314.3335466"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179322.661445"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179328.4123"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771179352.9834557"
+    }
+  ],
+  "end_time": "2026-02-16T02:16:28.899354"
+}

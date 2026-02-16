@@ -1,0 +1,1012 @@
+=== WAKU SESSION LOG ===
+Session ID: 20260215_233752
+Start Time: 2026-02-15T23:37:52.282512
+==================================================
+
+[2026-02-15T23:37:52.282512] EVENT: session_started
+  timestamp: 1771169872.282513
+
+[2026-02-15T23:37:52.289515] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:37:52.700609] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-15T23:37:52.709609
+Log file: logs\session_20260215_233752.log
+[2026-02-15T23:37:57.302577] EVENT: session_started
+  timestamp: 1771169877.3025775
+
+[2026-02-15T23:37:57.309579] === USER DATA SUMMARY ===
+  interested_fields: Advertising
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:02.936308] === CAREER MATCHES ===
+  1. UX Designer
+  2. Marketing Manager
+  3. Graphic Designer
+  4. Interior Designer
+  5. Industrial Designer
+  6. Fashion Designer
+  7. UX Researcher
+  8. Art Director
+  9. Animator
+  10. Video Editor
+
+
+==================================================
+Session End Time: 2026-02-15T23:38:02.970316
+Log file: logs\session_20260215_233752.log
+[2026-02-15T23:38:05.305372] EVENT: session_started
+  timestamp: 1771169885.305372
+
+[2026-02-15T23:38:05.312373] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:07.374838] EVENT: session_started
+  timestamp: 1771169887.3748384
+
+[2026-02-15T23:38:07.383841] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:09.209514] EVENT: session_started
+  timestamp: 1771169889.2095141
+
+[2026-02-15T23:38:09.219516] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:10.554817] === CAREER MATCHES ===
+  1. UX Designer
+  2. Marketing Manager
+  3. Lawyer
+  4. Graphic Designer
+  5. Interior Designer
+  6. Industrial Designer
+  7. Fashion Designer
+  8. UX Researcher
+  9. Art Director
+  10. Animator
+
+[2026-02-15T23:38:11.947516] EVENT: session_started
+  timestamp: 1771169891.9475167
+
+[2026-02-15T23:38:11.957519] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: bachelor
+  college_major: Accounting
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:14.603114] === CAREER MATCHES ===
+  1. UX Designer
+  2. Marketing Manager
+  3. Lawyer
+  4. Graphic Designer
+  5. Accountant
+  6. Financial Analyst
+  7. Auditor
+  8. Investment Banker
+  9. Financial Planner
+  10. Credit Analyst
+
+[2026-02-15T23:38:15.602378] EVENT: session_started
+  timestamp: 1771169895.6023788
+
+[2026-02-15T23:38:15.611377] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: bachelor
+  college_major: Accounting, Business Administration
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:16.991889] EVENT: session_started
+  timestamp: 1771169896.9918892
+
+[2026-02-15T23:38:17.006892] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting, Business Administration
+  in_postgrad: Yes
+  postgrad_major: [empty]
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:17.847081] === CAREER MATCHES ===
+  1. UX Designer
+  2. Marketing Manager
+  3. Lawyer
+  4. Graphic Designer
+  5. Accountant
+  6. Financial Analyst
+  7. Auditor
+  8. Investment Banker
+  9. Financial Planner
+  10. Credit Analyst
+
+[2026-02-15T23:38:20.312653] EVENT: session_started
+  timestamp: 1771169900.3126533
+
+[2026-02-15T23:38:20.323654] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: [empty]
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:22.532153] EVENT: session_started
+  timestamp: 1771169902.5321531
+
+[2026-02-15T23:38:22.546155] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:25.504822] EVENT: session_started
+  timestamp: 1771169905.5048225
+
+[2026-02-15T23:38:25.517825] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:27.443509] EVENT: session_started
+  timestamp: 1771169907.4435096
+
+[2026-02-15T23:38:27.463514] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: [empty]
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:32.619927] EVENT: session_started
+  timestamp: 1771169912.6199276
+
+[2026-02-15T23:38:32.642932] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 1}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:34.989389] EVENT: session_started
+  timestamp: 1771169914.9893897
+
+[2026-02-15T23:38:35.760832] EVENT: session_started
+  timestamp: 1771169915.760833
+
+[2026-02-15T23:38:35.776836] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:36.957116] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:38:46.829172] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:38:52.965547] EVENT: session_started
+  timestamp: 1771169932.965547
+
+[2026-02-15T23:38:52.981548] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 1}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:53.023558] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:38:54.885995] EVENT: session_started
+  timestamp: 1771169934.8859956
+
+[2026-02-15T23:38:54.898997] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:57.000471] EVENT: session_started
+  timestamp: 1771169937.0004714
+
+[2026-02-15T23:38:57.016475] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:38:58.795380] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:39:00.378980] EVENT: session_started
+  timestamp: 1771169940.3789809
+
+[2026-02-15T23:39:00.396985] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:39:05.133879] EVENT: session_started
+  timestamp: 1771169945.1338792
+
+[2026-02-15T23:39:05.156884] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:39:10.775567] EVENT: session_started
+  timestamp: 1771169950.7755678
+
+[2026-02-15T23:39:10.793571] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:39:13.861768] EVENT: session_started
+  timestamp: 1771169953.8617682
+
+[2026-02-15T23:39:15.197068] EVENT: session_started
+  timestamp: 1771169955.1970687
+
+[2026-02-15T23:39:15.712185] EVENT: session_started
+  timestamp: 1771169955.7121851
+
+[2026-02-15T23:39:15.733189] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:39:25.193471] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:39:42.296502] EVENT: session_started
+  timestamp: 1771169982.2965024
+
+[2026-02-15T23:39:42.319506] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:39:56.231266] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:39:58.891719] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:40:02.773019] EVENT: session_started
+  timestamp: 1771170002.7730188
+
+[2026-02-15T23:40:02.793023] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and 
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:40:08.240094] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-15T23:40:10.759671] === CAREER MATCHES ===
+  1. Accountant
+  2. Operations Manager
+  3. Project Manager
+  4. Business Analyst
+  5. HR Manager
+  6. Sales Manager
+  7. Product Manager
+  8. Management Consultant
+  9. Supply Chain Manager
+  10. Procurement Manager
+
+[2026-02-15T23:40:23.100231] EVENT: session_started
+  timestamp: 1771170023.1002314
+
+[2026-02-15T23:40:23.120236] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:40:31.774891] === CAREER MATCHES ===
+  1. Accountant
+  2. Operations Manager
+  3. Project Manager
+  4. Business Analyst
+  5. HR Manager
+  6. Sales Manager
+  7. Product Manager
+  8. Management Consultant
+  9. Supply Chain Manager
+  10. Procurement Manager
+
+[2026-02-15T23:40:33.397833] EVENT: session_started
+  timestamp: 1771170033.397833
+
+[2026-02-15T23:40:33.423839] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: [empty]
+  confirm: False
+
+[2026-02-15T23:40:36.900100] === CAREER MATCHES ===
+  1. Accountant
+  2. Operations Manager
+  3. Project Manager
+  4. Business Analyst
+  5. HR Manager
+  6. Sales Manager
+  7. Product Manager
+  8. Management Consultant
+  9. Supply Chain Manager
+  10. Procurement Manager
+
+[2026-02-15T23:40:40.134581] EVENT: session_started
+  timestamp: 1771170040.1345818
+
+[2026-02-15T23:40:40.156586] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: Adventurous and capable
+  confirm: False
+
+[2026-02-15T23:40:41.452893] EVENT: session_started
+  timestamp: 1771170041.4528937
+
+[2026-02-15T23:40:41.465895] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: Adventurous and capable
+  confirm: True
+
+[2026-02-15T23:40:41.851982] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:40:42.795699] === CAREER MATCHES ===
+  1. Accountant
+  2. Operations Manager
+  3. Project Manager
+  4. Business Analyst
+  5. HR Manager
+  6. Sales Manager
+  7. Product Manager
+  8. Management Consultant
+  9. Supply Chain Manager
+  10. Procurement Manager
+
+[2026-02-15T23:40:57.109076] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:40:59.817845] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:02.939514] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:25.435959] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:50.433848] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:52.586447] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:55.901194] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:41:57.920603] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:42:00.859087] === CAREER MATCHES ===
+  1. Accountant
+  2. Financial Analyst
+  3. Auditor
+  4. Investment Banker
+  5. Financial Planner
+  6. Credit Analyst
+  7. Tax Specialist
+  8. Treasury Analyst
+  9. Risk Manager
+  10. Budget Analyst
+
+[2026-02-15T23:42:06.067445] SUMMARY GENERATED
+  Length: 700 characters
+
+
+==================================================
+Session End Time: 2026-02-15T23:42:06.069446
+Log file: logs\session_20260215_233752.log
+[2026-02-15T23:43:13.132337] EVENT: session_started
+  timestamp: 1771170193.1323373
+
+[2026-02-15T23:43:13.142339] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: Adventurous and capable
+  confirm: True
+

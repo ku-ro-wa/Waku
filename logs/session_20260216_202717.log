@@ -1,0 +1,1869 @@
+=== WAKU SESSION LOG ===
+Session ID: 20260216_202717
+Start Time: 2026-02-16T20:27:17.048635
+==================================================
+
+[2026-02-16T20:27:17.048635] EVENT: session_started
+  timestamp: 1771244837.048636
+
+[2026-02-16T20:27:17.056638] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:27:17.057638] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:27:17.060637
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:36.296914] EVENT: session_started
+  timestamp: 1771244916.2969146
+
+[2026-02-16T20:28:36.304917] === USER DATA SUMMARY ===
+  interested_fields: Data
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:36.305917] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:36.309917
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:38.586433] EVENT: session_started
+  timestamp: 1771244918.5864332
+
+[2026-02-16T20:28:38.594434] === USER DATA SUMMARY ===
+  interested_fields: Data, Advertising
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:38.596434] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:38.599435
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:40.608759] EVENT: session_started
+  timestamp: 1771244920.6087594
+
+[2026-02-16T20:28:40.615760] === USER DATA SUMMARY ===
+  interested_fields: Data
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:40.616761] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:40.620761
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:43.409069] EVENT: session_started
+  timestamp: 1771244923.4090693
+
+[2026-02-16T20:28:43.415069] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:43.417069] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:43.420071
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:46.564870] EVENT: session_started
+  timestamp: 1771244926.5648706
+
+[2026-02-16T20:28:46.572872] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:46.573871] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:46.576872
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:51.061668] EVENT: session_started
+  timestamp: 1771244931.0616684
+
+[2026-02-16T20:28:51.067859] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:51.069861] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:51.072861
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:52.540441] EVENT: session_started
+  timestamp: 1771244932.5404413
+
+[2026-02-16T20:28:52.550444] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:52.551444] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:52.555445
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:56.788038] EVENT: session_started
+  timestamp: 1771244936.788039
+
+[2026-02-16T20:28:56.800041] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: Computer Science
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:56.802041] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:56.806043
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:28:58.829676] EVENT: session_started
+  timestamp: 1771244938.8296769
+
+[2026-02-16T20:28:58.838680] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: [empty]
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:28:58.840680] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:28:58.844681
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:01.617984] EVENT: session_started
+  timestamp: 1771244941.6179848
+
+[2026-02-16T20:29:01.626986] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:01.627987] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:01.630988
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:05.072963] EVENT: session_started
+  timestamp: 1771244945.072963
+
+[2026-02-16T20:29:05.080964] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:05.082965] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:05.086965
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:11.234759] EVENT: session_started
+  timestamp: 1771244951.234759
+
+[2026-02-16T20:29:11.242760] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:11.243761] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:11.247763
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:12.758103] EVENT: session_started
+  timestamp: 1771244952.7581038
+
+[2026-02-16T20:29:12.768105] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: [empty]
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:12.770106] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:12.773107
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:16.273406] EVENT: session_started
+  timestamp: 1771244956.2734067
+
+[2026-02-16T20:29:16.283408] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 1}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:16.285409] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:16.289411
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:18.660032] EVENT: session_started
+  timestamp: 1771244958.6600325
+
+[2026-02-16T20:29:18.670033] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:18.672034] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:18.675035
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:19.840946] EVENT: session_started
+  timestamp: 1771244959.8409462
+
+[2026-02-16T20:29:19.851947] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:19.853948] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:19.857949
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:21.257643] EVENT: session_started
+  timestamp: 1771244961.2576435
+
+[2026-02-16T20:29:21.269647] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:21.270646] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:21.274647
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:25.559877] EVENT: session_started
+  timestamp: 1771244965.5598774
+
+[2026-02-16T20:29:25.572879] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:25.574880] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:25.579881
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:28.434531] EVENT: session_started
+  timestamp: 1771244968.4345317
+
+[2026-02-16T20:29:28.444534] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:28.445534] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:28.449535
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:31.819336] EVENT: session_started
+  timestamp: 1771244971.8193362
+
+[2026-02-16T20:29:31.830337] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:31.831337] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:31.834339
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:38.031623] EVENT: session_started
+  timestamp: 1771244978.0316231
+
+[2026-02-16T20:29:38.043624] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:38.045624] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:38.048625
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:41.487530] EVENT: session_started
+  timestamp: 1771244981.4875302
+
+[2026-02-16T20:29:41.497532] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:41.498533] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:41.502533
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:42.622753] EVENT: session_started
+  timestamp: 1771244982.6227534
+
+[2026-02-16T20:29:42.633756] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:42.635756] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:42.639757
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:47.175025] EVENT: session_started
+  timestamp: 1771244987.175026
+
+[2026-02-16T20:29:47.184026] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:47.185028] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:47.189028
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:54.121667] EVENT: session_started
+  timestamp: 1771244994.1216674
+
+[2026-02-16T20:29:54.130669] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:54.131669] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:54.135670
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:29:58.172191] EVENT: session_started
+  timestamp: 1771244998.172192
+
+[2026-02-16T20:29:58.181194] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:29:58.183194] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:29:58.187195
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:30:03.337260] EVENT: session_started
+  timestamp: 1771245003.3372607
+
+[2026-02-16T20:30:03.350264] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:30:03.352264] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:30:03.355265
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:30:08.346460] EVENT: session_started
+  timestamp: 1771245008.34646
+
+[2026-02-16T20:30:08.355638] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: False
+
+[2026-02-16T20:30:08.357639] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:30:08.360639
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:30:10.357200] EVENT: session_started
+  timestamp: 1771245010.3572
+
+[2026-02-16T20:30:10.367201] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: True
+
+[2026-02-16T20:32:27.154903] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Data Engineer
+  3. Network Engineer
+  4. Cybersecurity Analyst
+  5. DevOps Engineer
+  6. Cloud Architect
+  7. Database Administrator
+  8. Systems Administrator
+  9. Mobile Developer
+  10. QA Engineer
+
+[2026-02-16T20:32:45.674903] SUMMARY GENERATED
+  Length: 1357 characters
+
+
+==================================================
+Session End Time: 2026-02-16T20:32:45.676903
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:39:33.430217] EVENT: session_started
+  timestamp: 1771245573.4302173
+
+[2026-02-16T20:39:33.439220] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: True
+
+[2026-02-16T20:39:40.861889] EVENT: session_started
+  timestamp: 1771245580.8618894
+
+[2026-02-16T20:39:40.874891] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: True
+
+[2026-02-16T20:44:12.746740] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Data Engineer
+  3. Network Engineer
+  4. Cybersecurity Analyst
+  5. DevOps Engineer
+  6. Cloud Architect
+  7. Database Administrator
+  8. Systems Administrator
+  9. Mobile Developer
+  10. QA Engineer
+
+[2026-02-16T20:44:18.807153] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Data Engineer
+  3. Network Engineer
+  4. Cybersecurity Analyst
+  5. DevOps Engineer
+  6. Cloud Architect
+  7. Database Administrator
+  8. Systems Administrator
+  9. Mobile Developer
+  10. QA Engineer
+
+[2026-02-16T20:44:40.832853] EVENT: session_started
+  timestamp: 1771245880.832853
+
+[2026-02-16T20:44:40.838853] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:44:40.839854] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:44:40.842856
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:44:52.686884] EVENT: session_started
+  timestamp: 1771245892.6868849
+
+[2026-02-16T20:44:52.693886] === USER DATA SUMMARY ===
+  interested_fields: Data
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:44:52.694887] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:44:52.697888
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:44:55.650368] EVENT: session_started
+  timestamp: 1771245895.6503687
+
+[2026-02-16T20:44:55.655369] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:44:55.656369] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:44:55.659369
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:44:57.700892] EVENT: session_started
+  timestamp: 1771245897.7008927
+
+[2026-02-16T20:44:57.707894] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:44:57.708894] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:44:57.711895
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:02.354921] EVENT: session_started
+  timestamp: 1771245902.3549216
+
+[2026-02-16T20:45:02.361197] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:02.362197] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:02.366198
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:03.650139] EVENT: session_started
+  timestamp: 1771245903.6501393
+
+[2026-02-16T20:45:03.658141] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:03.659141] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:03.662141
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:07.875548] EVENT: session_started
+  timestamp: 1771245907.8755481
+
+[2026-02-16T20:45:07.882549] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: Computer Science
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:07.883549] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:07.886550
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:09.335902] EVENT: session_started
+  timestamp: 1771245909.335903
+
+[2026-02-16T20:45:09.342903] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: [empty]
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:09.343904] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:09.346905
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:12.220846] EVENT: session_started
+  timestamp: 1771245912.2208462
+
+[2026-02-16T20:45:12.228848] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:12.229848] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:12.232848
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:14.284313] EVENT: session_started
+  timestamp: 1771245914.284314
+
+[2026-02-16T20:45:14.292314] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:14.293315] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:14.296316
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:19.655881] EVENT: session_started
+  timestamp: 1771245919.655881
+
+[2026-02-16T20:45:19.663882] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:19.664884] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:19.667884
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:21.666173] EVENT: session_started
+  timestamp: 1771245921.6661737
+
+[2026-02-16T20:45:21.675175] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: [empty]
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:21.676176] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:21.679177
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:25.189559] EVENT: session_started
+  timestamp: 1771245925.1895597
+
+[2026-02-16T20:45:25.198562] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 1}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:25.199561] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:25.202563
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:27.260093] EVENT: session_started
+  timestamp: 1771245927.260094
+
+[2026-02-16T20:45:27.269095] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:27.270095] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:27.274097
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:28.418585] EVENT: session_started
+  timestamp: 1771245928.4185853
+
+[2026-02-16T20:45:28.428586] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:28.429587] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:28.433587
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:33.207482] EVENT: session_started
+  timestamp: 1771245933.2074828
+
+[2026-02-16T20:45:33.215485] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:33.216485] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:33.219486
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:36.327648] EVENT: session_started
+  timestamp: 1771245936.3276484
+
+[2026-02-16T20:45:36.335651] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:36.337650] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:36.340650
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:40.575149] EVENT: session_started
+  timestamp: 1771245940.575149
+
+[2026-02-16T20:45:40.583149] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:40.584150] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:40.588151
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:43.258418] EVENT: session_started
+  timestamp: 1771245943.258418
+
+[2026-02-16T20:45:43.267421] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:43.269421] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:43.272421
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:44.481695] EVENT: session_started
+  timestamp: 1771245944.4816954
+
+[2026-02-16T20:45:44.489696] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:44.491697] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:44.494697
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:45.218861] EVENT: session_started
+  timestamp: 1771245945.2188618
+
+[2026-02-16T20:45:45.226863] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:45.227863] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:45.230864
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:48.647200] EVENT: session_started
+  timestamp: 1771245948.6472006
+
+[2026-02-16T20:45:48.655203] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:48.656202] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:48.659203
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:45:55.461541] EVENT: session_started
+  timestamp: 1771245955.461542
+
+[2026-02-16T20:45:55.469542] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:45:55.471543] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:45:55.474544
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:46:00.207444] EVENT: session_started
+  timestamp: 1771245960.2074444
+
+[2026-02-16T20:46:00.214446] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:46:00.216447] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:46:00.219447
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:46:04.599570] EVENT: session_started
+  timestamp: 1771245964.599571
+
+[2026-02-16T20:46:04.607573] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+
+  important: Work-life balance, business and social impact
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T20:46:04.608574] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:46:04.611574
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:46:09.208377] EVENT: session_started
+  timestamp: 1771245969.2083778
+
+[2026-02-16T20:46:09.216379] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: False
+
+[2026-02-16T20:46:09.217379] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T20:46:09.221380
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:46:11.483614] EVENT: session_started
+  timestamp: 1771245971.483615
+
+[2026-02-16T20:46:11.491616] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: True
+
+[2026-02-16T20:48:21.970415] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Data Engineer
+  3. Network Engineer
+  4. Cybersecurity Analyst
+  5. DevOps Engineer
+  6. Cloud Architect
+  7. Database Administrator
+  8. Systems Administrator
+  9. Mobile Developer
+  10. QA Engineer
+
+[2026-02-16T20:48:54.903784] SUMMARY GENERATED
+  Length: 2248 characters
+
+
+==================================================
+Session End Time: 2026-02-16T20:48:54.904783
+Log file: logs\session_20260216_202717.log
+[2026-02-16T20:53:57.313589] EVENT: session_started
+  timestamp: 1771246437.3135898
+
+[2026-02-16T20:53:57.323591] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+
+  confirm: True
+
+[2026-02-16T20:53:59.144002] PDF UPLOADED: 無題.pdf
+  Extracted text length: 1217 characters
+
+[2026-02-16T20:54:03.374904] PARSED RESUME DATA:
+  hard_skills: Budgeting
+  soft_skills: Organization, Problem Solving, Communication
+  organizations: Ebony Moore
+
+Flint, NJ, NJ, Customer Service
+  dates: two or more years, 2019, October 2019 - Current, weekly, 1076, September 2018 - October, 2019
+  geopolitical_entities: Cranford
+  languages: [empty]
+  certifications: Certified Administrative Assistant
+  key_achievements: Managed the calendar for office staff of 10 employees, Generated weekly reports on business performance to share with relevant teams, Oversaw expense reports and made budget adjustments to decrease costs by $1,076
+  career_context: Ebony Moore is a professional administrative assistant with over two years of experience in managing schedules, generating reports, and overseeing client databases. She is self-motivated and skilled in various office software and organizational tasks.
+
+[2026-02-16T20:58:03.032061] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-16T20:58:28.085322] SUMMARY GENERATED
+  Length: 611 characters
+
+
+==================================================
+Session End Time: 2026-02-16T20:58:28.086322
+Log file: logs\session_20260216_202717.log
+[2026-02-16T21:33:45.021330] EVENT: session_started
+  timestamp: 1771248825.0213308
+
+[2026-02-16T21:33:45.030333] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T21:33:45.031332] === CAREER MATCHES ===
+
+
+==================================================
+Session End Time: 2026-02-16T21:33:45.035333
+Log file: logs\session_20260216_202717.log

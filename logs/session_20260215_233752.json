@@ -1,0 +1,295 @@
+{
+  "session_id": "20260215_233752",
+  "start_time": "2026-02-15T23:37:52.280513",
+  "user_inputs": {
+    "interested_fields": {
+      "value": [
+        "Advertising",
+        "Business",
+        "Corporate"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "interested_fields_text": {
+      "value": "",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "in_college": {
+      "value": "Yes",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "education_level": {
+      "value": "master+",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "college_major": {
+      "value": [
+        "Accounting"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "in_postgrad": {
+      "value": "Yes",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "postgrad_major": {
+      "value": [
+        "Business Administration"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "alt_education": {
+      "value": [
+        "Certificate: Digital Marketing Certificate"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "previous_experience": {
+      "value": "Yes",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "experience_details": {
+      "value": [
+        {
+          "role": "Accountant",
+          "yoe": 3
+        },
+        {
+          "role": "Marketing Manager",
+          "yoe": 2
+        }
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "job_satisfaction": {
+      "value": 9,
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "hard_skills": {
+      "value": [
+        "Accounting",
+        "Case Management",
+        "Financial Analysis"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "hard_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "soft_skills": {
+      "value": [
+        "Communication",
+        "Collaboration",
+        "Analytical"
+      ],
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "soft_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "likes": {
+      "value": "Challenging and exciting work environments.",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "dislikes": {
+      "value": "Time sensitive and emotional settings",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "important": {
+      "value": "Work life balance and compensation.",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "self_description": {
+      "value": "Adventurous and capable",
+      "timestamp": "2026-02-15T23:40:41.465895"
+    },
+    "confirm": {
+      "value": true,
+      "timestamp": "2026-02-15T23:40:41.465895"
+    }
+  },
+  "parsed_data": {},
+  "career_matches": [
+    {
+      "rank": 1,
+      "title": "Accountant",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 2,
+      "title": "Financial Analyst",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 3,
+      "title": "Auditor",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 4,
+      "title": "Investment Banker",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 5,
+      "title": "Financial Planner",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 6,
+      "title": "Credit Analyst",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 7,
+      "title": "Tax Specialist",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 8,
+      "title": "Treasury Analyst",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 9,
+      "title": "Risk Manager",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    },
+    {
+      "rank": 10,
+      "title": "Budget Analyst",
+      "timestamp": "2026-02-15T23:42:00.859087"
+    }
+  ],
+  "errors": [],
+  "events": [
+    {
+      "event": "session_started",
+      "timestamp": "1771169872.282513"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169877.3025775"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169885.305372"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169887.3748384"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169889.2095141"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169891.9475167"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169895.6023788"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169896.9918892"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169900.3126533"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169902.5321531"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169905.5048225"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169907.4435096"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169912.6199276"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169914.9893897"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169915.760833"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169932.965547"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169934.8859956"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169937.0004714"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169940.3789809"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169945.1338792"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169950.7755678"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169953.8617682"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169955.1970687"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169955.7121851"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771169982.2965024"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771170002.7730188"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771170023.1002314"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771170033.397833"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771170040.1345818"
+    },
+    {
+      "event": "session_started",
+      "timestamp": "1771170041.4528937"
+    },
+    {
+      "event": "summary_generated",
+      "length": 700,
+      "timestamp": "2026-02-15T23:42:06.067445"
+    }
+  ],
+  "end_time": "2026-02-15T23:42:06.069446"
+}

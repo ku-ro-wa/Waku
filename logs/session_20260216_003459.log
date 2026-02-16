@@ -1,0 +1,118 @@
+=== WAKU SESSION LOG ===
+Session ID: 20260216_003459
+Start Time: 2026-02-16T00:34:59.699657
+==================================================
+
+[2026-02-16T00:34:59.699657] EVENT: session_started
+  timestamp: 1771173299.6996577
+
+[2026-02-16T00:34:59.708659] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: Adventurous and capable
+  confirm: True
+
+[2026-02-16T00:35:00.815829] PDF UPLOADED: 無題.pdf
+  Extracted text length: 1217 characters
+
+[2026-02-16T00:35:04.799733] PARSED RESUME DATA:
+  hard_skills: Budgeting
+  soft_skills: Problem Solving, Organization, Communication
+  organizations: Ebony Moore
+
+Flint, NJ, NJ, Customer Service
+  dates: two or more years, 2019, October 2019 - Current, weekly, 1076, September 2018 - October, 2019
+  geopolitical_entities: Cranford
+  languages: [empty]
+  certifications: Certified Administrative Assistant
+  key_achievements: Managed the calendar for office staff of 10 employees, Generated weekly reports on business performance to share with relevant teams, Oversaw expense reports and made budget adjustments to decrease costs by 1076
+  career_context: Ebony Moore is a professional administrative assistant with over two years of experience in managing schedules, generating reports, and overseeing client databases. She is self-motivated and has a strong background in office administration.
+
+[2026-02-16T00:38:35.311730] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+
+[2026-02-16T00:38:58.257816] SUMMARY GENERATED
+  Length: 717 characters
+
+
+==================================================
+Session End Time: 2026-02-16T00:38:58.259816
+Log file: logs\session_20260216_003459.log
+[2026-02-16T00:39:33.763360] EVENT: session_started
+  timestamp: 1771173573.76336
+
+[2026-02-16T00:39:33.772363] === USER DATA SUMMARY ===
+  interested_fields: Advertising, Business, Corporate
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: master+
+  college_major: Accounting
+  in_postgrad: Yes
+  postgrad_major: Business Administration
+  alt_education: Certificate: Digital Marketing Certificate
+  previous_experience: Yes
+  experience_details: {'role': 'Accountant', 'yoe': 3}, {'role': 'Marketing Manager', 'yoe': 2}
+  job_satisfaction: 9
+  hard_skills: Accounting, Case Management, Financial Analysis
+  hard_skills_text: [empty]
+  soft_skills: Communication, Collaboration, Analytical
+  soft_skills_text: [empty]
+  likes: Challenging and exciting work environments.
+  dislikes: Time sensitive and emotional settings
+  important: Work life balance and compensation.
+  self_description: Adventurous and capable
+  confirm: True
+
+[2026-02-16T00:39:34.891510] PDF UPLOADED: 無題.pdf
+  Extracted text length: 1217 characters
+
+[2026-02-16T00:39:38.167253] PARSED RESUME DATA:
+  hard_skills: Budgeting
+  soft_skills: Problem Solving, Organization, Communication
+  organizations: Ebony Moore
+
+Flint, NJ, NJ, Customer Service
+  dates: two or more years, 2019, October 2019 - Current, weekly, 1076, September 2018 - October, 2019
+  geopolitical_entities: Cranford
+  languages: [empty]
+  certifications: Certified Administrative Assistant
+  key_achievements: Managed the calendar for office staff of 10 employees, Generated weekly reports on business performance to share with relevant teams, Oversaw expense reports and made budget adjustments to decrease costs by $1,076
+  career_context: Ebony Moore is a professional administrative assistant with over two years of experience in managing schedules, generating reports, and overseeing client databases. She is self-motivated and has a strong background in office administration.
+
+[2026-02-16T00:43:07.280035] === CAREER MATCHES ===
+  1. Operations Manager
+  2. Project Manager
+  3. Business Analyst
+  4. HR Manager
+  5. Sales Manager
+  6. Product Manager
+  7. Management Consultant
+  8. Supply Chain Manager
+  9. Procurement Manager
+  10. Quality Manager
+

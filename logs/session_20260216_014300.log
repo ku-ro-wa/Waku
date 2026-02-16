@@ -1,0 +1,628 @@
+=== WAKU SESSION LOG ===
+Session ID: 20260216_014300
+Start Time: 2026-02-16T01:43:00.065573
+==================================================
+
+[2026-02-16T01:43:00.066554] EVENT: session_started
+  timestamp: 1771177380.0665543
+
+[2026-02-16T01:43:00.073555] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T01:43:00.494990] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T01:43:00.504151
+Log file: logs\session_20260216_014300.log
+[2026-02-16T01:44:53.424846] EVENT: session_started
+  timestamp: 1771177493.4248462
+
+[2026-02-16T01:44:53.431848] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T01:44:53.830482] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T01:44:53.838485
+Log file: logs\session_20260216_014300.log
+[2026-02-16T01:45:48.266866] EVENT: session_started
+  timestamp: 1771177548.266867
+
+[2026-02-16T01:45:48.275869] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: Yes
+  experience_details: [empty]
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T01:45:48.666956] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T01:45:48.674957
+Log file: logs\session_20260216_014300.log
+[2026-02-16T01:59:38.906453] EVENT: session_started
+  timestamp: 1771178378.906454
+
+[2026-02-16T01:59:38.912455] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T01:59:39.314547] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T01:59:39.322547
+Log file: logs\session_20260216_014300.log
+[2026-02-16T02:03:17.976773] EVENT: session_started
+  timestamp: 1771178597.976773
+
+[2026-02-16T02:03:17.983773] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:03:18.349859] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T02:03:18.356861
+Log file: logs\session_20260216_014300.log
+[2026-02-16T02:03:56.429721] EVENT: session_started
+  timestamp: 1771178636.4297218
+
+[2026-02-16T02:03:56.435722] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:03:56.831812] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T02:03:56.840390
+Log file: logs\session_20260216_014300.log
+[2026-02-16T02:13:59.450710] EVENT: session_started
+  timestamp: 1771179239.4507105
+
+[2026-02-16T02:13:59.458712] === USER DATA SUMMARY ===
+  interested_fields: Data
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:03.617324] EVENT: session_started
+  timestamp: 1771179243.6173246
+
+[2026-02-16T02:14:03.647331] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:06.929435] EVENT: session_started
+  timestamp: 1771179246.9294348
+
+[2026-02-16T02:14:06.936436] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:16.797487] EVENT: session_started
+  timestamp: 1771179256.7974875
+
+[2026-02-16T02:14:16.809490] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:23.075108] EVENT: session_started
+  timestamp: 1771179263.0751083
+
+[2026-02-16T02:14:23.085110] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: [empty]
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:28.109258] EVENT: session_started
+  timestamp: 1771179268.1092582
+
+[2026-02-16T02:14:28.119260] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: bachelor
+  college_major: Computer Science
+  in_postgrad: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:32.046145] EVENT: session_started
+  timestamp: 1771179272.0461452
+
+[2026-02-16T02:14:32.059148] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: [empty]
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:38.485120] EVENT: session_started
+  timestamp: 1771179278.4851208
+
+[2026-02-16T02:14:38.617150] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:54.359677] EVENT: session_started
+  timestamp: 1771179294.359677
+
+[2026-02-16T02:14:54.377681] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:14:58.074895] EVENT: session_started
+  timestamp: 1771179298.0748956
+
+[2026-02-16T02:14:58.094900] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certification: AWS Certified Solutions Architect
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:15:07.556836] EVENT: session_started
+  timestamp: 1771179307.5568368
+
+[2026-02-16T02:15:07.571840] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certification: AWS Certified Solutions Architect, Certificate: IBM Data Science
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:15:14.333546] EVENT: session_started
+  timestamp: 1771179314.3335466
+
+[2026-02-16T02:15:14.395560] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certification: AWS Certified Solutions Architect, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: [empty]
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:15:22.661444] EVENT: session_started
+  timestamp: 1771179322.661445
+
+[2026-02-16T02:15:22.684450] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certification: AWS Certified Solutions Architect, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 1}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:15:28.412300] EVENT: session_started
+  timestamp: 1771179328.4123
+
+[2026-02-16T02:15:28.428303] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certification: AWS Certified Solutions Architect, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 0
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:15:52.983455] EVENT: session_started
+  timestamp: 1771179352.9834557
+
+[2026-02-16T02:15:53.180500] === USER DATA SUMMARY ===
+  interested_fields: [empty]
+  interested_fields_text: [empty]
+  in_college: None
+  alt_education: [empty]
+  previous_experience: None
+  hard_skills: [empty]
+  hard_skills_text: [empty]
+  soft_skills: [empty]
+  soft_skills_text: [empty]
+  likes: [empty]
+  dislikes: [empty]
+  important: [empty]
+  self_description: [empty]
+  confirm: False
+
+[2026-02-16T02:16:10.786339] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+[2026-02-16T02:16:28.497263] === CAREER MATCHES ===
+  1. Data Scientist
+  2. UX Designer
+  3. Registered Nurse
+  4. High School Teacher
+  5. Electrician
+  6. Marketing Manager
+  7. Chef
+  8. Lawyer
+  9. Social Worker
+  10. Graphic Designer
+
+
+==================================================
+Session End Time: 2026-02-16T02:16:28.899354
+Log file: logs\session_20260216_014300.log
+[2026-02-16T02:18:09.671220] === CAREER MATCHES ===
+  1. Registered Nurse
+  2. Social Worker
+  3. Pharmacist
+  4. Physical Therapist
+  5. Occupational Therapist
+  6. Radiologic Technologist
+  7. Medical Laboratory Scientist
+  8. Dietitian
+  9. Respiratory Therapist
+  10. Dentist
+
+[2026-02-16T02:18:52.486209] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Registered Nurse
+  3. Social Worker
+  4. Pharmacist
+  5. Physical Therapist
+  6. Occupational Therapist
+  7. Radiologic Technologist
+  8. Medical Laboratory Scientist
+  9. Dietitian
+  10. Respiratory Therapist
+
+[2026-02-16T02:18:59.693727] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Registered Nurse
+  3. Social Worker
+  4. Pharmacist
+  5. Physical Therapist
+  6. Occupational Therapist
+  7. Radiologic Technologist
+  8. Medical Laboratory Scientist
+  9. Dietitian
+  10. Respiratory Therapist
+
+[2026-02-16T02:19:08.409649] === CAREER MATCHES ===
+  1. Data Scientist
+  2. Registered Nurse
+  3. Social Worker
+  4. Pharmacist
+  5. Physical Therapist
+  6. Occupational Therapist
+  7. Radiologic Technologist
+  8. Medical Laboratory Scientist
+  9. Dietitian
+  10. Respiratory Therapist
+

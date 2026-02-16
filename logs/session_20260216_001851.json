@@ -1,0 +1,228 @@
+{
+  "session_id": "20260216_001851",
+  "start_time": "2026-02-16T00:18:51.543577",
+  "user_inputs": {
+    "interested_fields": {
+      "value": [
+        "Advertising",
+        "Business",
+        "Corporate"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "interested_fields_text": {
+      "value": "",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "in_college": {
+      "value": "Yes",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "education_level": {
+      "value": "master+",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "college_major": {
+      "value": [
+        "Accounting"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "in_postgrad": {
+      "value": "Yes",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "postgrad_major": {
+      "value": [
+        "Business Administration"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "alt_education": {
+      "value": [
+        "Certificate: Digital Marketing Certificate"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "previous_experience": {
+      "value": "Yes",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "experience_details": {
+      "value": [
+        {
+          "role": "Accountant",
+          "yoe": 3
+        },
+        {
+          "role": "Marketing Manager",
+          "yoe": 2
+        }
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "job_satisfaction": {
+      "value": 9,
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "hard_skills": {
+      "value": [
+        "Accounting",
+        "Case Management",
+        "Financial Analysis"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "hard_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "soft_skills": {
+      "value": [
+        "Communication",
+        "Collaboration",
+        "Analytical"
+      ],
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "soft_skills_text": {
+      "value": "",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "likes": {
+      "value": "Challenging and exciting work environments.",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "dislikes": {
+      "value": "Time sensitive and emotional settings",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "important": {
+      "value": "Work life balance and compensation.",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "self_description": {
+      "value": "Adventurous and capable",
+      "timestamp": "2026-02-16T00:18:51.555581"
+    },
+    "confirm": {
+      "value": true,
+      "timestamp": "2026-02-16T00:18:51.555581"
+    }
+  },
+  "parsed_data": {
+    "resume": {
+      "data": {
+        "hard_skills": [
+          "Budgeting"
+        ],
+        "soft_skills": [
+          "Problem Solving",
+          "Organization",
+          "Communication"
+        ],
+        "organizations": [
+          "Ebony Moore\n\nFlint",
+          "NJ",
+          "NJ",
+          "Customer Service"
+        ],
+        "dates": [
+          "two or more years",
+          "2019",
+          "October 2019 - Current",
+          "weekly",
+          "1076",
+          "September 2018 - October",
+          "2019"
+        ],
+        "geopolitical_entities": [
+          "Cranford"
+        ],
+        "languages": [],
+        "raw_text": "Ebony Moore\n\nFlint, MI | 771-555-0199 | emoore@email.com\n\nSummary\n\nProfessional and organized administrative assistant with two or more years of\nexperience generating and sharing reports and managing team schedules. Self-\nmotivated team player with expertise in word processing programs, formatting\nspreadsheets and data entry.\n\nEducation\n\nWestfield University 2019\nBachelor of Science in business administration\n\nExperience\n\nOfficialOffices, Cranford, NJ, Administrative Assistant October 2019 - Current\n\n\u00ab Manage the calendar for office staff of 10 employees\n\n* Submit and file timesheets for all employees\n\n* Oversee client databases and update client information\n\n* Generate weekly reports on business performance to share with relevant\nteams\n\n* Oversee expense reports and make budget adjustments to decrease costs\nby 1076\n\nWeSellAds, Westfield, NJ, Customer Service September 2018 - October\nRepresentative 2019\n\n* Answered phone calls for each customer request\n* Documented and filed customer communications\n* Responded to email queries and concerns within 24 hours\n\nCertifications\n\n* Certified Administrative Assistant\n\nSkills\n\n\u00bb Communication\n* Office 365 Suite\n\n* Organization\n\n* Problem-solving\n* Data entry",
+        "certifications": [
+          "Certified Administrative Assistant"
+        ],
+        "key_achievements": [
+          "Managed the calendar for office staff of 10 employees",
+          "Generated weekly reports on business performance to share with relevant teams",
+          "Oversaw expense reports and made budget adjustments to decrease costs by 1076"
+        ],
+        "career_context": "Ebony Moore is an organized administrative assistant with over two years of experience in managing schedules, generating reports, and overseeing client databases. She is self-motivated and has expertise in various office software."
+      },
+      "timestamp": "2026-02-16T00:18:56.285023"
+    }
+  },
+  "career_matches": [
+    {
+      "rank": 1,
+      "title": "Operations Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 2,
+      "title": "Project Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 3,
+      "title": "Business Analyst",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 4,
+      "title": "HR Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 5,
+      "title": "Sales Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 6,
+      "title": "Product Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 7,
+      "title": "Management Consultant",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 8,
+      "title": "Supply Chain Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 9,
+      "title": "Procurement Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    },
+    {
+      "rank": 10,
+      "title": "Quality Manager",
+      "timestamp": "2026-02-16T00:22:29.199613"
+    }
+  ],
+  "errors": [],
+  "events": [
+    {
+      "event": "session_started",
+      "timestamp": "1771172331.5445774"
+    },
+    {
+      "event": "pdf_upload",
+      "filename": "\u7121\u984c.pdf",
+      "text_length": 1217,
+      "timestamp": "2026-02-16T00:18:52.640463"
+    },
+    {
+      "event": "summary_generated",
+      "length": 667,
+      "timestamp": "2026-02-16T00:22:52.965655"
+    }
+  ],
+  "end_time": "2026-02-16T00:22:52.967656"
+}

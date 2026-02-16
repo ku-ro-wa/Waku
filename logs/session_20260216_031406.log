@@ -1,0 +1,30 @@
+=== WAKU SESSION LOG ===
+Session ID: 20260216_031406
+Start Time: 2026-02-16T03:14:06.524077
+==================================================
+
+[2026-02-16T03:14:06.569202] EVENT: session_started
+  timestamp: 1771182846.5692027
+
+[2026-02-16T03:14:06.597289] === USER DATA SUMMARY ===
+  interested_fields: Data, Healthcare, Tech
+  interested_fields_text: Fintech
+  in_college: Yes
+  education_level: master+
+  college_major: Computer Science
+  in_postgrad: Yes
+  postgrad_major: Data Science
+  alt_education: Certificate: Google Data Analytics Certificate, Certificate: IBM Data Science
+  previous_experience: Yes
+  experience_details: {'role': 'Data Engineer', 'yoe': 2}
+  job_satisfaction: 8
+  hard_skills: Python, Machine Learning
+  hard_skills_text: SQL
+  soft_skills: Analytical, Communication, Critical Thinking
+  soft_skills_text: Confidence
+  likes: I enjoy new and evolving environments that challenge me to solve problems creatively.
+  dislikes: Bland and stagnant environments with a repetitive work cycle.
+  important: Work-life balance, business and social impact
+  self_description: I'm a go-getter and love meeting new people and solving interesting problems!
+  confirm: True
+
