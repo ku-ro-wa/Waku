@@ -3,6 +3,8 @@
 
 Waku is an intelligent career recommendation system that analyzes user profiles (via resume upload or interactive form) and matches them against a comprehensive career database to provide personalized career path suggestions. The application combines natural language processing, semantic matching, and weighted skill analysis to deliver highly relevant recommendations.
 
+## (Will be updated in the future to optimize performance and enable deployment)
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -408,7 +410,7 @@ The modular design with separate `src/logger.py` and structured data files refle
 
 ## License
 
-[Add your license here]
+MIT License
 
 ## Contact
 
